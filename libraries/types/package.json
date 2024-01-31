@@ -1,0 +1,11 @@
+{
+  "name": "@phoenix_ui/types",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {},  
+  "dependencies": {
+    "react": "^18",
+    "@phoenix_ui/constants": "workspace:*"
+  },
+  "devDependencies": {}
+}
