@@ -2,12 +2,14 @@
   "name": "phoenix-ui",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+  },
   "workspaces": [
-    "components/*",
-    "libraries/*"
+    "packages/libraries/*",
+    "packages/components/primitives/*"
   ],
   "devDependencies": {
-    "@types/bun": "latest"
+    "bun-types": "^1.0.16"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

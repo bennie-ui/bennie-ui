@@ -1,4 +1,4 @@
-# phoenix_ui
+# phoenix-ui
 
 To install dependencies:
 

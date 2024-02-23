@@ -1,0 +1,14 @@
+{
+  "name": "@phoenix-ui/attribute-utils",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@phoenix-ui/types": "workspace:*"
+  },  
+  "devDependencies": {
+  }
+}
