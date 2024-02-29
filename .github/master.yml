@@ -1,0 +1,53 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+
+
+env:
+  PROJECT_ID: garrison-298703
+  REGION: us-west2
+  GAR_LOCATION: us-west2-docker.pkg.dev/garrison-298703/bolanos-dev-docker-snapshot
+  REPO_NAME: phoenix-ui
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions: {}
+jobs:
+  release-packages:
+    permissions:
+      contents: write # to create release (changesets/action)
+      issues: write # to post issue comments (changesets/action)
+      pull-requests: write # to create pull request (changesets/action)
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+      - run: bun i
+      - run: bun test
+
+  deploy-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - run: bun i
+      - run: bun run build
+      - run: ls -la storybook-static
+      - id: "auth"
+        uses: "google-github-actions/auth@v2"
+        with:
+          credentials_json: "${{ secrets.GCLOUD_ACCOUNT_KEY }}"
+
+      - name: "set up cloud sdk"
+        uses: "google-github-actions/setup-gcloud@v2"
+
+      - name: docker build
+        run: docker build . --tag ${{ env.GAR_LOCATION }}/${{REPO_NAME}}
+
+      - name: docker push
+        run: docker push ${{ env.GAR_LOCATION }}/${{REPO_NAME}}
+      
