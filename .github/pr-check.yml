@@ -1,7 +1,8 @@
 name: pull request
 on:
   pull_request:
-    types: [opened, synchronize]
+    branches: [main]      
+    types: [labeled, opened, synchronize]
 
 env:
   TITLE: ${{ github.event.pull_request.title }}
