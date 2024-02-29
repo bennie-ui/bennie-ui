@@ -4,7 +4,7 @@ import {
   getBackgroundColorAttribute,
   getClassByViewPort  
 } from "@phoenix-ui/attribute-utils";
-import {  getProperties,} from './react-base-component.utils';
+import {  getProperties } from '../src/attribute-utils';
 import type { ClassByResponsiveProps } from '@phoenix-ui/attribute-utils/types'
 import type { TextColorType, BackgroundColorType } from "@phoenix-ui/types/attributes";
 import { ReactBaseComponentProperties } from "../../types";

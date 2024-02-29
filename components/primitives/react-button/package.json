@@ -4,8 +4,7 @@
   "main": "src/index.ts",
   "scripts": {},
   "dependencies": {
-    "classnames": "^2.3.2",
-    "@phoenix-ui/react-base-component": "workspace:*",
+    "react": "^18.2.0",
     "@phoenix-ui/attribute-utils": "workspace:*"
   },
   "devDependencies": {

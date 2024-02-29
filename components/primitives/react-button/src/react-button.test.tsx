@@ -1,13 +1,9 @@
-import {test, expect} from 'bun:test';
-
-
-import React from 'react'
 import { describe, test, expect, mock } from 'bun:test'
 import { render, fireEvent } from '@testing-library/react'
 
 import { Button } from './react-button'
 import { ColorStubs } from '@phoenix-ui/attribute-utils/stubs'
-import { type ButtonProperties } from '../types/react-button.types';
+import { type ButtonProperties } from './react-button.types';
 
 describe('Button', () => {
   test(':default', () => {
