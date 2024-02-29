@@ -10,7 +10,7 @@ import {
 import type { ButtonAttributes, ButtonProperties } from "./react-button.types";
 //import "./react-button.css";
 
-export const Button: React.FC = (properties: ButtonProperties) => {
+export const Button: React.FC<ButtonProperties> = (properties: ButtonProperties) => {
   const classNames = `button ${properties.scale ?? "medium"} ${properties.rounded ?? ""} `;
   //const classNames = classnames(
   //"button",
