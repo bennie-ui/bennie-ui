@@ -20,6 +20,6 @@ export const Primary: {args: ButtonProperties} = {
     args: {
       action: 'primary',
       onClick: () => {alert('click')},
-      children: 'I am a button',
+      children: 'I am a button updated',
     },
   };
