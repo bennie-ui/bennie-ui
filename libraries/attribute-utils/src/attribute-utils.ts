@@ -4,16 +4,20 @@ import {
   type BackgroundColorType,
   type ActionType,
 } from "@phoenix-ui/types/attributes";
-import { ActionsMap } from './attribute.action-map';
+import { ActionsMap } from "./attribute.action-map";
 import { DATA_TEST_ID } from "@phoenix-ui/constants";
 import { type AllWidths, type AllHeights } from "@phoenix-ui/types/sizing";
 import { type ClassByResponsiveProps } from "../types";
+
+export const getClassNames = (...args) => {
+  return args.filter((it) => it ?? "").join(" ");
+};
 
 export const getActionColorAttribute = (action: ActionType): string => {
   const defaultAction = ActionsMap[action];
   const textAttribute = getTextColorAttribute(defaultAction.text);
   const backgroundAttribute = getBackgroundColorAttribute(
-    defaultAction.background,
+    defaultAction.background
   );
 
   return `${textAttribute} ${backgroundAttribute}`;
@@ -23,7 +27,7 @@ export const getTextColorAttribute = (
   { color = "text-white", weight = "400" }: TextColorType | undefined = {
     color: "text-white",
     weight: "400",
-  },
+  }
 ): string => {
   if (color === "text-white" || color === "text-black") return color;
   return color + "-" + weight;
@@ -33,7 +37,7 @@ export const getBackgroundColorAttribute = (
   { color = "bg-slate", weight = "400" }: BackgroundColorType | undefined = {
     color: "bg-slate",
     weight: "400",
-  },
+  }
 ): string => {
   if (color === "bg-white" || color === "bg-black") return color;
   return color + "-" + weight;
@@ -42,7 +46,7 @@ export const getBackgroundColorAttribute = (
 export const getResponsiveClassName = (
   parentNames: string[],
   propertyName: string,
-  className: string,
+  className: string
 ): string => {
   // eslint-disable-next-line
   if (parentNames.find?.((it) => it === "medium")) {
@@ -58,7 +62,7 @@ export const getResponsiveClassName = (
 export const getDarkClassName = (
   parentNames: string[],
   propertyName: string,
-  className: string,
+  className: string
 ): string => {
   if (parentNames.includes("dark") || propertyName === "dark") {
     return `dark:${className}`;
@@ -69,7 +73,7 @@ export const getDarkClassName = (
 export const recusiveClassSearch = (
   activeProperty: ClassByResponsiveProps,
   propertyName: string,
-  parentNames: string[],
+  parentNames: string[]
 ): string => {
   if (activeProperty === undefined) {
     return "";
@@ -90,19 +94,19 @@ export const recusiveClassSearch = (
       const darkColorClass = getDarkClassName(
         parentNames,
         propertyName,
-        colorClass,
+        colorClass
       );
       return getResponsiveClassName(parentNames, propertyName, darkColorClass);
     }
 
     if (isBackgroundColor) {
       const colorClass = getBackgroundColorAttribute(
-        activeProperty as BackgroundColorType,
+        activeProperty as BackgroundColorType
       );
       const darkColorClass = getDarkClassName(
         parentNames,
         propertyName,
-        colorClass,
+        colorClass
       );
       return getResponsiveClassName(parentNames, propertyName, darkColorClass);
     }
@@ -112,7 +116,7 @@ export const recusiveClassSearch = (
     return getResponsiveClassName(
       parentNames,
       propertyName,
-      `w-${(activeProperty as AllWidths).value}`,
+      `w-${(activeProperty as AllWidths).value}`
     );
   }
 
@@ -120,7 +124,7 @@ export const recusiveClassSearch = (
     return getResponsiveClassName(
       parentNames,
       propertyName,
-      `h-${(activeProperty as AllHeights).value}`,
+      `h-${(activeProperty as AllHeights).value}`
     );
   }
 
@@ -135,7 +139,7 @@ export const recusiveClassSearch = (
       // @ts-ignore
       activeProperty[childPropertyName] as ClassByResponsiveProps,
       childPropertyName,
-      [propertyName, ...parentNames],
+      [propertyName, ...parentNames]
     );
   });
 
@@ -143,7 +147,7 @@ export const recusiveClassSearch = (
 };
 
 export const getClassByViewPort = (
-  properties: ClassByResponsiveProps,
+  properties: ClassByResponsiveProps
 ): string => {
   let classes = "";
 
@@ -152,7 +156,7 @@ export const getClassByViewPort = (
       classes += recusiveClassSearch(
         property as ClassByResponsiveProps,
         propertyName,
-        [""],
+        [""]
       );
     }
   });
@@ -176,7 +180,7 @@ export const getProperties = (properties: ReactBaseComponentProperties) => {
     onClick,
   } = properties;
   let attributes: ReactBaseComponentAttributes = {};
-  
+
   className += getClassByViewPort({
     size,
     width,

@@ -1,0 +1,26 @@
+const bgVariants = {
+  white: "bg-white hover:bg-white focus:bg-white",
+  black: "bg-black hover:bg-black focus:bg-black",
+  neutral: {
+    "100": "bg-neutral-100 hover:bg-neutral-100 focus:bg-neutral-100",
+    "200": "bg-neutral-200 hover:bg-neutral-200 focus:bg-neutral-200",
+    "300": "bg-neutral-300 hover:bg-neutral-300 focus:bg-neutral-300",
+    "400": "bg-neutral-400 hover:bg-neutral-400 focus:bg-neutral-400",
+    "500": "bg-neutral-500 hover:bg-neutral-500 focus:bg-neutral-500",
+    "600": "bg-neutral-600 hover:bg-neutral-600 focus:bg-neutral-600",
+    "700": "bg-neutral-700 hover:bg-neutral-700 focus:bg-neutral-700",
+    "800": "bg-neutral-800 hover:bg-neutral-800 focus:bg-neutral-800",
+    "900": "bg-neutral-900 hover:bg-neutral-900 focus:bg-neutral-900",
+  },
+  blue: {
+    "100": "bg-blue-100 hover:bg-blue-100 focus:bg-blue-100",
+    "200": "bg-blue-200 hover:bg-blue-200 focus:bg-blue-200",
+    "300": "bg-blue-300 hover:bg-blue-300 focus:bg-blue-300",
+    "400": "bg-blue-400 hover:bg-blue-400 focus:bg-blue-400",
+    "500": "bg-blue-500 hover:bg-blue-500 focus:bg-blue-500",
+    "600": "bg-blue-600 hover:bg-blue-600 focus:bg-blue-600",
+    "700": "bg-blue-700 hover:bg-blue-700 focus:bg-blue-700",
+    "800": "bg-blue-800 hover:bg-blue-800 focus:bg-blue-800",
+    "900": "bg-blue-900 hover:bg-blue-900 focus:bg-blue-900",
+  },
+};

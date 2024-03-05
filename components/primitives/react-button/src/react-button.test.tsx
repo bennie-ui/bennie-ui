@@ -6,7 +6,7 @@ import { ColorStubs } from '@phoenix-ui/attribute-utils/stubs'
 import { type ButtonProperties } from './react-button.types';
 
 describe('Button', () => {
-  test(':default', () => {
+  test.only(':default', () => {
     const button = <Button>Hello World</Button>
     const { container } = render(button)
     expect(container.querySelector('button')?.className).toEqual(
