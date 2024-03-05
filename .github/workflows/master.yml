@@ -34,6 +34,7 @@ jobs:
       - run: bun i
       - run: bun run build
       - run: ls -la storybook-static
+
       - id: "auth"
         uses: "google-github-actions/auth@v2"
         with:
@@ -41,6 +42,9 @@ jobs:
 
       - name: "set up cloud sdk"
         uses: "google-github-actions/setup-gcloud@v2"
+
+      - name: "docker auth"
+        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
 
       - name: docker build
         run: docker build . --tag ${{ env.GAR_LOCATION }}/${{ env.REPO_NAME }}
