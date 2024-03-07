@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import {
   getClassNames,
   getTextColorAttribute,
@@ -10,9 +10,7 @@ import {
 import type { ButtonAttributes, ButtonProperties } from "./react-button.types";
 //import "./react-button.css";
 
-export const Button: React.FC<ButtonProperties> = (
-  properties: ButtonProperties
-) => {
+export const Button: FC<ButtonProperties> = (properties) => {
   const className = getClassNames(
     "button",
     properties.scale ?? "medium",
@@ -32,7 +30,6 @@ export const Button: React.FC<ButtonProperties> = (
     attributes.disabled = true;
   }
 
-  console.log("f: className", className);
   return (
     <button {...attributes} {...getProperties({ ...properties, className })}>
       {properties.children}
