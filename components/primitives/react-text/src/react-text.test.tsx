@@ -11,4 +11,20 @@ describe("should test react-text component", () => {
 
     expect(container.querySelector("span").innerHTML).toEqual("Hello World");
   });
+
+  test(":size", () => {
+    const text = (
+      <Text
+        size="text-sm"
+        overrides={{ medium: { size: "text-lg" }, large: { size: "text-3xl" } }}
+      >
+        Hello World
+      </Text>
+    );
+    const { container } = render(text);
+
+    expect(container.querySelector("span")?.className).toEqual(
+      "text-sm md:text-lg lg:text-3xl"
+    );
+  });
 });

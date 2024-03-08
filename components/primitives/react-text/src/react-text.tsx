@@ -4,13 +4,13 @@ import {
   getClassNames,
   getTextColorAttribute,
   getBackgroundColorAttribute,
+  getProperties,
 } from "@phoenix-ui/attribute-utils";
 
 const Text: FC<TextProperties> = (properties) => {
   const TagType = properties.tag || "span";
 
-  const classNames = getClassNames(
-    properties.size,
+  const className = getClassNames(
     properties.colors?.text && getTextColorAttribute(properties.colors.text),
     properties.colors?.background &&
       getBackgroundColorAttribute(properties.colors.background),
@@ -24,7 +24,12 @@ const Text: FC<TextProperties> = (properties) => {
     properties.className
   );
 
-  return <span>{properties.children}</span>;
+  console.log("f: className", className);
+  return (
+    <TagType {...getProperties({ ...properties, className })}>
+      {properties.children}
+    </TagType>
+  );
   //return BaseComponent({
   //component: TagType,
   //className: classNames,
