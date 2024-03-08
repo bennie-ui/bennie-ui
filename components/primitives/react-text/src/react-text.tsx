@@ -24,18 +24,11 @@ const Text: FC<TextProperties> = (properties) => {
     properties.className
   );
 
-  console.log("f: className", className);
   return (
     <TagType {...getProperties({ ...properties, className })}>
       {properties.children}
     </TagType>
   );
-  //return BaseComponent({
-  //component: TagType,
-  //className: classNames,
-  //attributes: {},
-  //properties,
-  //});
 };
 
 Text.displayName = "Text";
