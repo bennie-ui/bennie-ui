@@ -1,5 +1,4 @@
 import {
-  type FlexType,
   type TextColorType,
   type BackgroundColorType,
   type ActionType,
@@ -128,10 +127,10 @@ export const recusiveClassSearch = (
     );
   }
 
-  if ((activeProperty as FlexType).basis !== undefined) {
-    const basisClass = `basis-${(activeProperty as FlexType).basis}`;
-    return getResponsiveClassName(parentNames, propertyName, basisClass);
-  }
+  //if ((activeProperty as FlexType).basis !== undefined) {
+  //const basisClass = `basis-${(activeProperty as FlexType).basis}`;
+  //return getResponsiveClassName(parentNames, propertyName, basisClass);
+  //}
 
   let classes = "";
   Object.entries(activeProperty).forEach(([childPropertyName]) => {
@@ -179,7 +178,7 @@ export const getProperties = (properties: ReactBaseComponentProperties) => {
     dataTestId,
     onClick,
   } = properties;
-  let attributes: ReactBaseComponentAttributes = {};
+  const attributes: ReactBaseComponentAttributes = {};
 
   className += getClassByViewPort({
     size,
@@ -201,7 +200,7 @@ export const getProperties = (properties: ReactBaseComponentProperties) => {
   }
 
   if (className !== "") {
-    attributes.className = className;
+    attributes.className = className.trim();
   }
 
   if (dataTestId !== "") {

@@ -16,11 +16,6 @@ type Story = StoryObj<typeof Text>;
 
 export const Primary: Story = {
   args: {
-    size: "text-xs",
-    overrides: {
-      medium: { size: "text-xl" },
-      large: { size: "text-5xl" },
-    },
     children: "I am a text",
   },
 };

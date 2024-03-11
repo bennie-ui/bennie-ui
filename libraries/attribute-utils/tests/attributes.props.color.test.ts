@@ -6,12 +6,16 @@ import type {
   BackgroundWeight,
 } from "@phoenix-ui/types/attributes";
 import { getClassByViewPort } from "../src/attribute-utils";
-import type { ClassByResponsiveProps } from '../types'
+import type { ClassByResponsiveProps } from "../types";
 
-describe("react-base-component.props.color", () => {
+describe("attributes.props.color", () => {
   test(`:text-color default weight`, () => {
     const color: TextColor = "text-blue";
-    const properties: ClassByResponsiveProps = { colors: { text: { color } } };
+    const properties: ClassByResponsiveProps = {
+      colors: {
+        text: { color },
+      },
+    };
     const result = getClassByViewPort(properties);
     expect(result.trim()).toBe(`${color}-400`);
   });
@@ -20,7 +24,9 @@ describe("react-base-component.props.color", () => {
     const color: TextColor = "text-blue";
     const weight: TextWeight = "200";
     const properties: ClassByResponsiveProps = {
-      colors: { text: { color, weight } },
+      colors: {
+        text: { color, weight },
+      },
     };
     const result = getClassByViewPort(properties);
     expect(result.trim()).toBe(`${color}-${weight}`);
@@ -29,7 +35,9 @@ describe("react-base-component.props.color", () => {
   test(`:bg-color default weight`, () => {
     const color: BackgroundColor = "bg-blue";
     const properties: ClassByResponsiveProps = {
-      colors: { background: { color } },
+      colors: {
+        background: { color },
+      },
     };
     const result = getClassByViewPort(properties);
     expect(result.trim()).toBe(`${color}-400`);
@@ -39,7 +47,9 @@ describe("react-base-component.props.color", () => {
     const color: BackgroundColor = "bg-blue";
     const weight: BackgroundWeight = "200";
     const properties: ClassByResponsiveProps = {
-      colors: { background: { color, weight } },
+      colors: {
+        background: { color, weight },
+      },
     };
     const result = getClassByViewPort(properties);
     expect(result.trim()).toBe(`${color}-${weight}`);

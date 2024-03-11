@@ -2,18 +2,21 @@ import { describe, test, expect, mock } from "bun:test";
 import {
   getTextColorAttribute,
   getBackgroundColorAttribute,
-  getClassByViewPort  
+  getClassByViewPort,
 } from "@phoenix-ui/attribute-utils";
-import {  getProperties } from '../src/attribute-utils';
-import type { ClassByResponsiveProps } from '@phoenix-ui/attribute-utils/types'
-import type { TextColorType, BackgroundColorType } from "@phoenix-ui/types/attributes";
-import { ReactBaseComponentProperties } from "../../types";
+import { getProperties } from "../src/attribute-utils";
+import type { ClassByResponsiveProps } from "@phoenix-ui/attribute-utils/types";
+import type {
+  TextColorType,
+  BackgroundColorType,
+} from "@phoenix-ui/types/attributes";
+import { ReactBaseComponentProperties } from "@phoenix-ui/types";
 
 describe("base-attribute", () => {
   describe(":getTextColorAttribute", () => {
     test(" should return default values", () => {
       const color: TextColorType = {};
-      const result = getTextColorAttribute(color);      
+      const result = getTextColorAttribute(color);
       expect(result).toEqual("text-white");
     });
 

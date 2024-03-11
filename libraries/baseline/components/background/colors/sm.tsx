@@ -1,4 +1,4 @@
-const bgVariants = [
+export const variants = [
   "bg-white bg-black",
   [
     "bg-neutral-100 bg-stone-100 bg-slate-100 bg-gray-100 bg-zync-100 bg-red-100 bg-orange-100",
