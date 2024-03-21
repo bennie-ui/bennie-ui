@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Text } from "../../../../components/primitives/react-text";
+import { Text } from "../../../../components/primitives/text";
 
 const meta: Meta<typeof Text> = {
   title: "UI-Components/Primitives/Text",
   component: Text,
   tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
+  parameters: {},
   argTypes: {},
 };
 

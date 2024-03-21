@@ -1,4 +1,5 @@
-import { ReactBaseComponentProperties } from "@phoenix-ui/types";
+import type { ComponentProperties } from "@phoenix-ui/attribute-utils";
+
 import type {
   TextTagType,
   TextOverflowType,
@@ -7,7 +8,7 @@ import type {
   TextDisplayType,
 } from "@phoenix-ui/types/texts";
 
-export interface TextProperties extends ReactBaseComponentProperties {
+export interface TextProperties extends ComponentProperties {
   tag?: TextTagType;
   overflow?: TextOverflowType;
   weight?: TextWeightType;

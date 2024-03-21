@@ -1,5 +1,5 @@
 {
-  "name": "@phoenix-ui/react-button",
+  "name": "@phoenix-ui/button",
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {},
@@ -7,6 +7,5 @@
     "react": "^18.2.0",
     "@phoenix-ui/attribute-utils": "workspace:*"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

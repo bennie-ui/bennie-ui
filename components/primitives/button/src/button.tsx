@@ -7,8 +7,7 @@ import {
   getProperties,
 } from "@phoenix-ui/attribute-utils";
 
-import type { ButtonAttributes, ButtonProperties } from "./react-button.types";
-//import "./react-button.css";
+import type { ButtonAttributes, ButtonProperties } from "./button.types";
 
 export const Button: FC<ButtonProperties> = (properties) => {
   const className = getClassNames(

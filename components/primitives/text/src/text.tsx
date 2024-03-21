@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { TextProperties } from "./react-text.types.ts";
+import { TextProperties } from "./text.types.js";
 import {
   getClassNames,
   getTextColorAttribute,

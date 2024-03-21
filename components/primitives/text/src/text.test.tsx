@@ -2,7 +2,7 @@ import React from "react";
 
 import { describe, test, expect } from "bun:test";
 import { render } from "@testing-library/react";
-import { Text } from "./react-text.tsx";
+import { Text } from "./text.js";
 
 describe("should test react-text component", () => {
   test(":default", () => {
