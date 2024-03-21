@@ -1,7 +1,7 @@
 import { test, expect } from "bun:test";
 import { getClassByViewPort } from "../src/attribute-utils";
 import type { ClassByResponsiveProps } from "../types";
-import { variants } from "@phoenix-ui/baseline/components/text/align";
+import { variants } from "@phoenix-ui/baseline/components/attributes/align";
 import { resolutions } from "./utils";
 import { TextAlignmentType } from "@phoenix-ui/types/texts";
 
