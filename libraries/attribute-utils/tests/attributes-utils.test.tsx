@@ -10,7 +10,7 @@ import type {
   TextColorType,
   BackgroundColorType,
 } from "@phoenix-ui/types/attributes";
-import { ReactBaseComponentProperties } from "@phoenix-ui/types";
+import { ComponentProperties } from "@phoenix-ui/types/components";
 
 describe("base-attribute", () => {
   describe(":getTextColorAttribute", () => {
@@ -67,7 +67,7 @@ describe("base-attribute", () => {
 
   describe("base-properties", () => {
     test("should return properties className", () => {
-      const properties: ReactBaseComponentProperties = {
+      const properties: ComponentProperties = {
         size: "text-3xl",
         className: "foo",
       };
@@ -77,7 +77,7 @@ describe("base-attribute", () => {
     });
 
     test("should return add data-testid", () => {
-      const properties: ReactBaseComponentProperties = {
+      const properties: ComponentProperties = {
         dataTestId: "foo-test-id",
       };
       const result = getProperties(properties);
@@ -86,7 +86,7 @@ describe("base-attribute", () => {
 
     test("should return onClickEvent", () => {
       const onClickSpy = mock();
-      const properties: ReactBaseComponentProperties = {
+      const properties: ComponentProperties = {
         onClick: onClickSpy,
       };
       const result = getProperties(properties);

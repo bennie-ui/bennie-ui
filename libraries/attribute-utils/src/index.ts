@@ -1,2 +1,1 @@
-export * from './attribute-utils'
-export* from './attribute-utils.types'
+export * from "./attribute-utils";

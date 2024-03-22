@@ -1,17 +1,14 @@
-import type { SyntheticEvent } from "react";
 import type { TextSizeType } from "@phoenix-ui/types/texts";
 import type { AllMargins, AllPaddings } from "@phoenix-ui/types/spacing";
 import type { AllHeights, AllWidths } from "@phoenix-ui/types/sizing";
+import type { DarkOverrides } from "@phoenix-ui/types/utilities";
+
 import type {
-  ResponsiveComponentOverrides,
-  ResponsiveSectionOverrides,
-  DarkOverrides,
-} from "@phoenix-ui/types/utilities";
-import type {
-  FlexType,
   ColorPropertyType,
   OpacityType,
+  FlavorType,
 } from "@phoenix-ui/types/attributes";
+
 import { DATA_TEST_ID } from "@phoenix-ui/constants";
 
 export interface BaseAttributes {
@@ -22,6 +19,7 @@ export interface BaseAttributes {
 
 export interface BaseProperties {
   id?: string;
+  flavor?: FlavorType;
   dataTestId?: string;
 
   children?: React.ReactNode;
@@ -38,18 +36,3 @@ export interface BaseProperties {
 
   dark?: DarkOverrides;
 }
-
-export interface ComponentAttributes extends BaseAttributes {
-  onClick?: (event: SyntheticEvent) => void;
-}
-
-export interface ComponentProperties extends BaseProperties {
-  onClick?: (event: SyntheticEvent) => void;
-  overrides?: ResponsiveComponentOverrides;
-}
-
-export interface SectionProprties extends BaseProperties {
-  flex?: FlexType;
-  overrides?: ResponsiveSectionOverrides;
-}
-

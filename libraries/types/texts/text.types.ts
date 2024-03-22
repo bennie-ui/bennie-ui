@@ -1,5 +1,3 @@
-import { ReactBaseComponentProperties } from "../index.ts";
-
 export type TextSizeType =
   | "text-xs"
   | "text-sm"

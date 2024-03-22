@@ -1,4 +1,4 @@
-import type { ComponentProperties } from "@phoenix-ui/attribute-utils";
+import type { ComponentProperties } from "@phoenix-ui/types/components";
 
 import type {
   TextTagType,

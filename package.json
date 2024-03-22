@@ -12,21 +12,26 @@
     "components/primitives/*"
   ],
   "dependencies": {
+    "@remix-run/react": "^2.8.1",
     "react": "^18"
   },
   "devDependencies": {
     "@happy-dom/global-registrator": "^13.6.2",
-    "@storybook/addon-essentials": "^7.6.17",
-    "@storybook/addon-interactions": "^7.6.17",
-    "@storybook/addon-links": "^7.6.17",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.17",
-    "@storybook/react": "^7.6.17",
-    "@storybook/react-vite": "^7.6.17",
-    "@storybook/test": "^7.6.17",
+    "@storybook/addon-essentials": "^8.0.4",
+    "@storybook/addon-interactions": "^8.0.4",
+    "@storybook/addon-links": "^8.0.4",
+    "@storybook/addon-onboarding": "^8.0.4",
+    "@storybook/blocks": "^8.0.4",
+    "@storybook/react": "^8.0.4",
+    "@storybook/react-vite": "^8.0.4",
+    "@storybook/test": "^8.0.4",
+    "autoprefixer": "^10.4.19",
     "bun-types": "^1.0.16",
     "prop-types": "^15.8.1",
     "react-dom": "^18.2.0",
-    "storybook": "^7.6.17"
+    "storybook": "^8.0.4",
+    "postcss-import": "^16.1.0",
+    "postcss-nesting": "^12.1.0",
+    "tailwindcss": "^3.4.1"
   }
 }

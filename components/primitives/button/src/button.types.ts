@@ -7,7 +7,7 @@ import type {
 import type {
   ComponentAttributes,
   ComponentProperties,
-} from "@phoenix-ui/attribute-utils";
+} from "@phoenix-ui/types/components";
 
 export interface ButtonAttributes extends ComponentAttributes {
   disabled?: boolean;
