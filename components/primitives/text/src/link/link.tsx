@@ -1,10 +1,5 @@
 import { FC } from "react";
-import { NavLink } from "@remix-run/react";
-import {
-  LinkAttributes,
-  RemixNavLinkAttributes,
-  LinkProperties,
-} from "./link.types";
+import { LinkAttributes, LinkProperties } from "./link.types";
 import {
   getClassNames,
   getTextColorAttribute,
@@ -24,27 +19,16 @@ const Link: FC<LinkProperties> = (properties) => {
     properties.align,
     properties.display,
     properties.weight,
-    properties.className
+    properties.className,
   );
 
-  const attributes: LinkAttributes | RemixNavLinkAttributes =
-    properties.flavor === "react"
-      ? {
-          href: properties.href || "#",
-          target: properties.target || "_self",
-        }
-      : {
-          to: properties.href,
-        };
+  const attributes: LinkAttributes = {
+    href: properties.href || "#",
+    target: properties.target || "_self",
+  };
 
   if (properties.target === "_blank") {
     attributes.rel = "noreferrer noopener";
-  }
-
-  if (properties.flavor === "remix") {
-    <NavLink {...attributes} {...getProperties({ ...properties, className })}>
-      {properties.children}
-    </NavLink>;
   }
 
   return (
