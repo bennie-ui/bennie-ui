@@ -10,7 +10,7 @@ describe("Button", () => {
     const button = <Button>Hello World</Button>;
     const { container } = render(button);
     expect(container.querySelector("button")?.className).toEqual(
-      "button medium text-white bg-blue-500"
+      "button medium text-white bg-blue-500",
     );
   });
 
@@ -22,7 +22,7 @@ describe("Button", () => {
     const button = <Button {...props} />;
     const { container } = render(button);
     expect(container.querySelector("button")?.className).toEqual(
-      "button medium text-white bg-blue-500"
+      "button medium text-white bg-blue-500",
     );
   });
 
@@ -34,7 +34,7 @@ describe("Button", () => {
     const button = <Button {...props} />;
     const { container } = render(button);
     expect(container.querySelector("button")?.className).toEqual(
-      "button large text-white bg-blue-500"
+      "button large text-white bg-blue-500",
     );
   });
 
@@ -46,7 +46,7 @@ describe("Button", () => {
     const button = <Button {...props} />;
     const { container } = render(button);
     expect(container.querySelector("button")?.className).toEqual(
-      "button medium rounded-lg text-white bg-blue-500"
+      "button medium rounded-lg text-white bg-blue-500",
     );
   });
 
@@ -58,7 +58,7 @@ describe("Button", () => {
     const button = <Button {...props} />;
     const { container } = render(button);
     expect(container.querySelector("button")?.className).toEqual(
-      "button medium text-white bg-blue-500 w-full"
+      "button medium text-white bg-blue-500 w-full",
     );
   });
 
@@ -85,7 +85,7 @@ describe("Button", () => {
     const { container } = render(<Button {...props} />);
 
     expect(container.querySelector("button")?.hasAttribute("disabled")).toBe(
-      true
+      true,
     );
   });
 
@@ -105,29 +105,29 @@ describe("Button", () => {
     expect(result).toContain(`dark:${ColorStubs.dark.colors.text.color}-400`);
 
     expect(result).toContain(
-      `md:${ColorStubs.overrides.medium.colors.text.color}-400`
+      `md:${ColorStubs.overrides.medium.colors.text.color}-400`,
     );
     expect(result).toContain(
-      `md:${ColorStubs.overrides.medium.colors.background.color}-400`
+      `md:${ColorStubs.overrides.medium.colors.background.color}-400`,
     );
     expect(result).toContain(
-      `md:dark:${ColorStubs.overrides.medium.dark.colors.text.color}-400`
+      `md:dark:${ColorStubs.overrides.medium.dark.colors.text.color}-400`,
     );
     expect(result).toContain(
-      `md:dark:${ColorStubs.overrides.medium.dark.colors.background.color}-400`
+      `md:dark:${ColorStubs.overrides.medium.dark.colors.background.color}-400`,
     );
 
     expect(result).toContain(
-      `lg:${ColorStubs.overrides.large.colors.text.color}-400`
+      `lg:${ColorStubs.overrides.large.colors.text.color}-400`,
     );
     expect(result).toContain(
-      `lg:${ColorStubs.overrides.large.colors.background.color}-400`
+      `lg:${ColorStubs.overrides.large.colors.background.color}-400`,
     );
     expect(result).toContain(
-      `lg:dark:${ColorStubs.overrides.large.dark.colors.text.color}-400`
+      `lg:dark:${ColorStubs.overrides.large.dark.colors.text.color}-400`,
     );
     expect(result).toContain(
-      `lg:dark:${ColorStubs.overrides.large.dark.colors.background.color}-400`
+      `lg:dark:${ColorStubs.overrides.large.dark.colors.background.color}-400`,
     );
   });
 });

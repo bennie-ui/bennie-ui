@@ -75,5 +75,5 @@ export const Section: FC<SectionExtendedProperties> = ({
     };
   }
 
-  return <TagType { ...props }) />;
+  return <TagType {...props} />;
 };
