@@ -1,7 +1,7 @@
 name: pull request
 on:
   pull_request:
-    branches: [main]      
+    branches: [main]
     types: [labeled, opened, synchronize]
 
 env:
@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1        
-      - run: bun i      
-      - run: bun  test
+      - uses: oven-sh/setup-bun@v1
+      - run: bun i
+      - run: bun test

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { TextProperties } from "./text.types.js";
 import {
   getClassNames,
@@ -21,7 +21,7 @@ const Text: FC<TextProperties> = (properties) => {
     properties.overflow &&
       properties.display === "block" &&
       properties.overflow,
-    properties.className
+    properties.className,
   );
 
   return (

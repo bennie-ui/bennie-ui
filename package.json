@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "tw": "cd libraries/baseline && bun run dev",
-    "dev": "storybook dev -p 6006",
-    "build": "storybook build"
+    "build": "storybook build",
+    "deploy": "wrangler pages deploy ./storybook-static",
+    "start": "wrangler pages dev ./storybook-static",
+    "dev": "storybook dev -p 6006"
   },
   "workspaces": [
     "libraries/*",

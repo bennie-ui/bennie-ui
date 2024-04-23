@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { getTagSize, getTagWeight } from "./heading.utils";
 import { HeadingProps } from "./heading.types";
 

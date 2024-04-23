@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import {
   getClassNames,
   getTextColorAttribute,
@@ -20,7 +20,7 @@ export const Button: FC<ButtonProperties> = (properties) => {
       getBackgroundColorAttribute(properties.colors.background),
     getActionColorAttribute(properties.action || "primary"),
     properties.isFullWidth ?? false ? "w-full" : "",
-    properties.className
+    properties.className,
   );
 
   const attributes: ButtonAttributes = {};
