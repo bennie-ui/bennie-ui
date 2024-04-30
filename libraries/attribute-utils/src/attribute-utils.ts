@@ -115,6 +115,8 @@ export const recusiveClassSearch = (
     }
   }
 
+  // TODO: do the same for margin and height
+
   if (propertyName === "width") {
     return getResponsiveClassName(
       parentNames,
