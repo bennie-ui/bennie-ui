@@ -1,7 +1,7 @@
 import { test, expect } from "bun:test";
 import { getClassByViewPort } from "../src/attribute-utils";
 import type { ClassByResponsiveProps } from "../types";
-import { variants } from "@phoenix-ui/baseline/components/attributes/size";
+import { variants } from "@phoenix-ui/baseline/tailwind/attributes/size";
 import { resolutions } from "./utils";
 import { TextSizeType } from "@phoenix-ui/types/texts";
 

@@ -73,6 +73,52 @@ export const getDarkClassName = (
   return `${className}`;
 };
 
+export const getPrefix = (property: string, propertyName: string) => {
+  let prefix = property;
+  switch (propertyName) {
+    case "all": {
+      prefix = property;
+      break;
+    }
+
+    case "x": {
+      prefix = property + "x";
+      break;
+    }
+
+    case "y": {
+      prefix = property + "y";
+      break;
+    }
+
+    case "top": {
+      prefix = property + "t";
+      break;
+    }
+
+    case "bottom": {
+      prefix = property + "b";
+      break;
+    }
+
+    case "left": {
+      prefix = property + "l";
+      break;
+    }
+
+    case "right": {
+      prefix = property + "r";
+      break;
+    }
+
+    default: {
+      prefix = property;
+      break;
+    }
+  }
+  return prefix;
+};
+
 export const recusiveClassSearch = (
   activeProperty: ClassByResponsiveProps,
   propertyName: string,
@@ -80,10 +126,6 @@ export const recusiveClassSearch = (
 ): string => {
   if (activeProperty === undefined) {
     return "";
-  }
-
-  if (typeof activeProperty === "string") {
-    return getResponsiveClassName(parentNames, propertyName, activeProperty);
   }
 
   if (
@@ -115,28 +157,53 @@ export const recusiveClassSearch = (
     }
   }
 
-  // TODO: do the same for margin and height
-
   if (propertyName === "width") {
+    const activePropertyValue = (activeProperty as AllWidths).value;
     return getResponsiveClassName(
       parentNames,
       propertyName,
-      `w-${(activeProperty as AllWidths).value}`,
+      activePropertyValue?.toString().includes("w")
+        ? activePropertyValue
+        : `w-${activePropertyValue}`,
     );
   }
 
   if (propertyName === "height") {
+    const activePropertyValue = (activeProperty as AllHeights).value;
+
     return getResponsiveClassName(
       parentNames,
       propertyName,
-      `h-${(activeProperty as AllHeights).value}`,
+      activePropertyValue?.toString().includes("h")
+        ? activePropertyValue
+        : `h-${activePropertyValue}`,
     );
   }
 
-  //if ((activeProperty as FlexType).basis !== undefined) {
-  //const basisClass = `basis-${(activeProperty as FlexType).basis}`;
-  //return getResponsiveClassName(parentNames, propertyName, basisClass);
-  //}
+  if (parentNames.includes("padding")) {
+    const pading_prefix = getPrefix("p", propertyName);
+
+    return getResponsiveClassName(
+      parentNames,
+      propertyName,
+      `${pading_prefix}-${activeProperty}`,
+    );
+  }
+
+   if (parentNames.includes("margin")) {
+    const is_auto = activeProperty.includes('auto')
+    const margin_prefix = getPrefix('m', propertyName);
+
+    return getResponsiveClassName(
+      parentNames,
+      propertyName,
+      is_auto ? activeProperty : `${margin_prefix}-${activeProperty}`,
+    );
+  }
+
+  if (typeof activeProperty === "string") {
+    return getResponsiveClassName(parentNames, propertyName, activeProperty);
+  }
 
   let classes = "";
   Object.entries(activeProperty).forEach(([childPropertyName]) => {

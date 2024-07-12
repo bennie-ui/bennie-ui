@@ -1,7 +1,7 @@
 import { describe, test, expect } from "bun:test";
 import { getClassByViewPort } from "../src/attribute-utils";
 import type { ClassByResponsiveProps } from "../types";
-import { variants } from "@phoenix-ui/baseline/components/opacity";
+import { variants } from "@phoenix-ui/baseline/tailwind/attributes/opacity";
 
 describe("attributes.props.opacity", () => {
   test(`opacity`, () => {

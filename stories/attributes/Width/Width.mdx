@@ -1,0 +1,15 @@
+import { Section } from '../../../components/primitives/section'
+import {data} from './data'
+import { variants } from '../../../libraries/baseline/tailwind/attributes/width'
+
+# Demo on Widths
+{ data.map((value, idx) => 
+  <Section key={idx} 
+    data-test-id={value} 
+    width={{ value }} 
+    className="border border-sky-500">{value}</Section>) 
+}
+
+
+
+

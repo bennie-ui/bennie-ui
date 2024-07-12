@@ -1,7 +1,5 @@
 import type { SyntheticEvent } from "react";
-
 import type { ResponsiveComponentOverrides } from "@phoenix-ui/types/utilities";
-
 import type { BaseAttributes, BaseProperties } from "./base.types";
 
 export interface ComponentAttributes extends BaseAttributes {

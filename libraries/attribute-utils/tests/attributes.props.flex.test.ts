@@ -1,6 +1,6 @@
 import { describe, test, expect } from "bun:test";
 import { getClassByViewPort } from "../src/attribute-utils";
-import { variants } from "@phoenix-ui/baseline/components/flex";
+import { variants } from "@phoenix-ui/baseline/tailwind/display/flex";
 import type { ClassByResponsiveProps } from "../types";
 import { resolutions, getProperties } from "./utils";
 

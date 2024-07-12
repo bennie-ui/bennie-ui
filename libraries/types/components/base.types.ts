@@ -1,6 +1,9 @@
 import type { TextSizeType } from "@phoenix-ui/types/texts";
-import type { AllMargins, AllPaddings } from "@phoenix-ui/types/spacing";
-import type { AllHeights, AllWidths } from "@phoenix-ui/types/sizing";
+import type { AllMargins } from "@phoenix-ui/types/attributes/margin.types";
+import type { AllPaddings } from "@phoenix-ui/types/attributes/padding.types";
+import type { AllHeights } from "@phoenix-ui/types/attributes/height.types";
+import type { AllWidths } from "@phoenix-ui/types/attributes/width.types";
+
 import type { DarkOverrides } from "@phoenix-ui/types/utilities";
 
 import type {
