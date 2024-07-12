@@ -1,0 +1,29 @@
+import { Unstyled } from "@storybook/blocks";
+import { Section } from '../../../components/primitives/section'
+import { variants } from '../../../libraries/baseline/tailwind/attributes/width'
+
+# Demo of supported margin values
+
+## Example
+```
+<Section width={{ value: '0' }}Content</Section>
+```
+## Types
+[See Margin Values](https://github.com/bolanosdev/phoenix-ui/blob/main/libraries/types/sizing/width.types.ts)
+
+
+# Compiled tests
+{
+  variants.base.map((value, idx) => {
+    const full_clases = ["w-full","w-screen","w-svw","w-lvw","w-min","w-max","w-fit"]
+    const w_value = full_clases.includes(value) ? value: value.split('-')[1]
+
+    return <Unstyled>
+        <Section  
+        width={{ value: w_value }} 
+        className="border border-sky-500">{value}</Section>
+    </Unstyled>
+  })
+}
+
+

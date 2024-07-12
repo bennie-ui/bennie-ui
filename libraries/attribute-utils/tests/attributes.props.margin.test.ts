@@ -7,34 +7,38 @@ import { AllMargins } from "@phoenix-ui/types/attributes/margin.types";
 import type { ClassByResponsiveProps } from "../types";
 
 describe("attributes.props.margin", () => {
-  ['all', 'x', 'y', 'left', 'right', 'top', 'bottom' ].forEach((testCase) => {
-  test(`margin :${testCase}`, () => {
-    resolutions.forEach((res) => {
-      variants.base[testCase].forEach((m) => {
-          const m_value = m.includes('auto') ? m : m.split('-')[1]
-          const properties = getProperties(res.name, "margin", testCase, m_value);
-          const result = getClassByViewPort(properties as ClassByResponsiveProps);
+  ["all", "x", "y", "left", "right", "top", "bottom"].forEach((testCase) => {
+    test(`margin :${testCase}`, () => {
+      resolutions.forEach((res) => {
+        variants.base[testCase].forEach((m) => {
+          const m_value = m.includes("auto") ? m : m.split("-")[1];
+          const properties = getProperties(
+            res.name,
+            "margin",
+            testCase,
+            m_value,
+          );
+          const result = getClassByViewPort(
+            properties as ClassByResponsiveProps,
+          );
 
           expect(result.trim()).toBe(
             res.name === "base" ? m : `${res.value}:${m}`,
           );
+        });
       });
     });
   });
 
-  })
-
-
-
   test(`:combined (left, right, top, bottom)`, () => {
     resolutions.forEach((res) => {
       const margin: AllMargins = {
-        x: '0',
-        y: '0',
-        left: '1',
-        right: '2',
-        top: '3',
-        bottom: '4',
+        x: "0",
+        y: "0",
+        left: "1",
+        right: "2",
+        top: "3",
+        bottom: "4",
       };
 
       const properties: ClassByResponsiveProps =
@@ -45,26 +49,32 @@ describe("attributes.props.margin", () => {
       const result = getClassByViewPort(properties);
 
       expect(result.trim()).toContain(
-        res.name === "base" ? 'mx-'+ margin.x : `${res.value}:mx-${margin.x}`,
+        res.name === "base" ? "mx-" + margin.x : `${res.value}:mx-${margin.x}`,
       );
       expect(result.trim()).toContain(
-        res.name === "base" ? 'my-'+ margin.y : `${res.value}:my-${margin.y}`,
+        res.name === "base" ? "my-" + margin.y : `${res.value}:my-${margin.y}`,
       );
 
       expect(result.trim()).toContain(
-        res.name === "base" ? 'ml-'+margin.left : `${res.value}:ml-${margin.left}`,
+        res.name === "base"
+          ? "ml-" + margin.left
+          : `${res.value}:ml-${margin.left}`,
       );
       expect(result.trim()).toContain(
-        res.name === "base" ? 'mr-'+margin.right : `${res.value}:mr-${margin.right}`,
+        res.name === "base"
+          ? "mr-" + margin.right
+          : `${res.value}:mr-${margin.right}`,
       );
       expect(result.trim()).toContain(
-        res.name === "base" ? 'mt-'+ margin.top : `${res.value}:mt-${margin.top}`,
+        res.name === "base"
+          ? "mt-" + margin.top
+          : `${res.value}:mt-${margin.top}`,
       );
       expect(result.trim()).toContain(
-        res.name === "base" ? 'mb-'+ margin.bottom : `${res.value}:mb-${margin.bottom}`,
+        res.name === "base"
+          ? "mb-" + margin.bottom
+          : `${res.value}:mb-${margin.bottom}`,
       );
     });
   });
-
- 
 });
