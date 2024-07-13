@@ -6,7 +6,7 @@ import { getClassByViewPort } from "../src/attribute-utils";
 import { variants } from "@phoenix-ui/baseline/tailwind/attributes/padding";
 import { AllPaddings } from "@phoenix-ui/types/attributes/padding.types";
 
-describe("attributes.props.padding", () => {
+describe("attributes.padding", () => {
   ["all", "x", "y", "top", "bottom", "left", "right"].forEach((testCase) => {
     test(`padding :${testCase}`, () => {
       resolutions.forEach((res) => {

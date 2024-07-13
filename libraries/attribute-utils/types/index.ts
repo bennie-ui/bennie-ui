@@ -2,13 +2,17 @@ import type {
   FlexType,
   OpacityType,
   ColorPropertyType,
+  RoundingType,
 } from "@phoenix-ui/types/attributes";
-import { AllMargins, AllPaddings } from "@phoenix-ui/types/spacing";
-import { AllWidths, AllHeights } from "@phoenix-ui/types/sizing";
-import { TextSizeType, TextAlignmentType } from "@phoenix-ui/types/texts";
+import { AllHeights } from "@phoenix-ui/types/attributes/height.types";
+import { AllMargins } from "@phoenix-ui/types/attributes/margin.types";
+import { AllPaddings } from "@phoenix-ui/types/attributes/padding.types";
+import { AllWidths } from "@phoenix-ui/types/attributes/width.types";
+import { TextAlignmentType, TextSizeType } from "@phoenix-ui/types/texts";
 import {
-  ResponsiveOverrides,
   DarkOverrides,
+  ResponsiveComponentOverrides,
+  ResponsiveSectionOverrides,
 } from "@phoenix-ui/types/utilities";
 
 export type ClassByResponsiveProps = {
@@ -22,5 +26,6 @@ export type ClassByResponsiveProps = {
   align?: TextAlignmentType;
   flex?: FlexType;
   dark?: DarkOverrides;
-  overrides?: ResponsiveOverrides | undefined;
+  overrides?: ResponsiveComponentOverrides | ResponsiveSectionOverrides;
+  rounding?: RoundingType;
 };

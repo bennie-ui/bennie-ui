@@ -1,6 +1,6 @@
 export const variants = {
   base: [
-    ...["w-full","w-screen","w-svw","w-lvw","w-min","w-max","w-fit"],
+    ...["w-full","w-screen","w-min","w-max","w-fit"],
     ...["w-0.5","w-1.5","w-2.5","w-3.5", "w-1/2","w-1/3","w-2/3","w-1/4","w-2/4","w-3/4"],
     ...["w-1/5","w-2/5","w-3/5","w-4/5","w-1/6","w-2/6","w-3/6","w-4/6","w-5/6"],
     ...["w-1/12","w-2/12","w-3/12","w-4/12","w-5/12","w-6/12","w-7/12","w-8/12","w-9/12","w-10/12","w-11/12"],
@@ -9,7 +9,7 @@ export const variants = {
     ...["w-36","w-40","w-44","w-48","w-52","w-56","w-60","w-64","w-72","w-80","w-96"]
   ],
   medium: [
-    ...["md:w-full","md:w-screen","md:w-svmd:w","md:w-lvmd:w","md:w-min","md:w-max","md:w-fit"],
+    ...["md:w-full","md:w-screen","md:w-min","md:w-max","md:w-fit"],
     ...["md:w-0.5","md:w-1.5","md:w-2.5","md:w-3.5", "md:w-1/2","md:w-1/3","md:w-2/3","md:w-1/4","md:w-2/4","md:w-3/4"],
     ...["md:w-1/5","md:w-2/5","md:w-3/5","md:w-4/5","md:w-1/6","md:w-2/6","md:w-3/6","md:w-4/6","md:w-5/6"],
     ...["md:w-1/12","md:w-2/12","md:w-3/12","md:w-4/12","md:w-5/12","md:w-6/12","md:w-7/12","md:w-8/12","md:w-9/12","md:w-10/12","md:w-11/12"],
@@ -18,7 +18,7 @@ export const variants = {
     ...["md:w-36","md:w-40","md:w-44","md:w-48","md:w-52","md:w-56","md:w-60","md:w-64","md:w-72","md:w-80","md:w-96"]
   ],
   large: [
-    ...["lg:w-full","lg:w-screen","lg:w-svlg:w","lg:w-lvlg:w","lg:w-min","lg:w-max","lg:w-fit"],
+    ...["lg:w-full","lg:w-screen","lg:w-min","lg:w-max","lg:w-fit"],
     ...["lg:w-0.5","lg:w-1.5","lg:w-2.5","lg:w-3.5", "lg:w-1/2","lg:w-1/3","lg:w-2/3","lg:w-1/4","lg:w-2/4","lg:w-3/4"],
     ...["lg:w-1/5","lg:w-2/5","lg:w-3/5","lg:w-4/5","lg:w-1/6","lg:w-2/6","lg:w-3/6","lg:w-4/6","lg:w-5/6"],
     ...["lg:w-1/12","lg:w-2/12","lg:w-3/12","lg:w-4/12","lg:w-5/12","lg:w-6/12","lg:w-7/12","lg:w-8/12","lg:w-9/12","lg:w-10/12","lg:w-11/12"],

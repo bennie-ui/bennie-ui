@@ -10,6 +10,7 @@ import type {
   ColorPropertyType,
   OpacityType,
   FlavorType,
+  RoundingType,
 } from "@phoenix-ui/types/attributes";
 
 import { DATA_TEST_ID } from "@phoenix-ui/constants";
@@ -22,21 +23,18 @@ export interface BaseAttributes {
 
 export interface BaseProperties {
   id?: string;
-  flavor?: FlavorType;
-  dataTestId?: string;
-
-  children?: React.ReactNode;
-  className?: string;
-
-  size?: TextSizeType;
   align?: TextAlignmentType;
+  children?: React.ReactNode;
   colors?: ColorPropertyType;
-  opacity?: OpacityType;
-
-  width?: AllWidths;
+  className?: string;
+  dataTestId?: string;
+  dark?: DarkOverrides;
+  flavor?: FlavorType;
   height?: AllHeights;
   margin?: AllMargins;
+  size?: TextSizeType;
+  opacity?: OpacityType;
   padding?: AllPaddings;
-
-  dark?: DarkOverrides;
+  rounding?: RoundingType;
+  width?: AllWidths;
 }

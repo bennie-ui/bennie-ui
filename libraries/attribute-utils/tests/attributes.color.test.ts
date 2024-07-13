@@ -8,7 +8,7 @@ import type {
 import { getClassByViewPort } from "../src/attribute-utils";
 import type { ClassByResponsiveProps } from "../types";
 
-describe("attributes.props.color", () => {
+describe("attributes.color", () => {
   test(`:text-color default weight`, () => {
     const color: TextColor = "text-blue";
     const properties: ClassByResponsiveProps = {

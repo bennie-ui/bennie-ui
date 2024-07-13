@@ -46,8 +46,6 @@ export const getBackgroundColorAttribute = (
   return color + "-" + weight;
 };
 
-
-
 export const getDarkClassName = (
   parentNames: string[],
   propertyName: string,
@@ -125,6 +123,7 @@ export const recusiveClassSearch = (
   propertyName: string,
   parentNames: string[],
 ): string => {
+  //console.log("f: data", { activeProperty, propertyName, parentNames });
   if (activeProperty === undefined) {
     return "";
   }
@@ -192,8 +191,8 @@ export const recusiveClassSearch = (
   }
 
   if (parentNames.includes("margin")) {
-    const is_auto = activeProperty.includes('auto')
-    const margin_prefix = getPrefix('m', propertyName);
+    const is_auto = activeProperty.toString().includes("auto");
+    const margin_prefix = getPrefix("m", propertyName);
 
     return getResponsiveClassName(
       parentNames,
@@ -202,9 +201,19 @@ export const recusiveClassSearch = (
     );
   }
 
-  if(propertyName === 'align') {
-    const align_value = `text-${activeProperty}`
-    return getResponsiveClassName(parentNames, propertyName, align_value)
+  if (propertyName === "align") {
+    const align_value = `text-${activeProperty}`;
+    return getResponsiveClassName(parentNames, propertyName, align_value);
+  }
+
+  if (propertyName === "opacity") {
+    const opacity_value = `opacity-${activeProperty}`;
+    return getResponsiveClassName(parentNames, propertyName, opacity_value);
+  }
+
+  if (propertyName === "rounding") {
+    const rounding_value = `rounded-${activeProperty}`;
+    return getResponsiveClassName(parentNames, propertyName, rounding_value);
   }
 
   if (typeof activeProperty === "string") {
@@ -246,16 +255,17 @@ export const getProperties = (properties: ComponentProperties) => {
   const {
     id,
     align,
-    size,
-    width,
+    dataTestId,
+    dark,
+    flex,
     height,
     margin,
-    padding,
-    flex,
-    dark,
     opacity,
     overrides,
-    dataTestId,
+    padding,
+    rounding,
+    size,
+    width,
     onClick,
   } = properties;
   const attributes: ComponentAttributes = {};
@@ -273,6 +283,7 @@ export const getProperties = (properties: ComponentProperties) => {
       dark,
       opacity,
       overrides,
+      rounding,
     });
 
   if (onClick) {

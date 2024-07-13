@@ -6,9 +6,9 @@ import { variants } from "@phoenix-ui/baseline/tailwind/attributes/margin";
 import { AllMargins } from "@phoenix-ui/types/attributes/margin.types";
 import type { ClassByResponsiveProps } from "../types";
 
-describe("attributes.props.margin", () => {
+describe("attributes.margin", () => {
   ["all", "x", "y", "left", "right", "top", "bottom"].forEach((testCase) => {
-    test(`margin :${testCase}`, () => {
+    test(`:${testCase}`, () => {
       resolutions.forEach((res) => {
         variants.base[testCase].forEach((m) => {
           const m_value = m.includes("auto") ? m : m.split("-")[1];

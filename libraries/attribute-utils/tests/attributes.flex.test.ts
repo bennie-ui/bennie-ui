@@ -4,7 +4,7 @@ import { variants } from "@phoenix-ui/baseline/tailwind/display/flex";
 import type { ClassByResponsiveProps } from "../types";
 import { resolutions, getProperties } from "./utils";
 
-describe("react-base-component.props.flex", () => {
+describe("attributes.flex", () => {
   test(`:direction`, () => {
     resolutions.forEach((res) => {
       variants.base.directions.split(" ").forEach((direction) => {
@@ -12,11 +12,11 @@ describe("react-base-component.props.flex", () => {
           res.name,
           "flex",
           "direction",
-          direction
+          direction,
         ) as ClassByResponsiveProps;
         const result = getClassByViewPort(properties);
         expect(result.trim()).toBe(
-          res.name === "base" ? direction : `${res.value}:${direction}`
+          res.name === "base" ? direction : `${res.value}:${direction}`,
         );
       });
     });
@@ -29,11 +29,11 @@ describe("react-base-component.props.flex", () => {
           res.name,
           "flex",
           "shrink",
-          shrink
+          shrink,
         ) as ClassByResponsiveProps;
         const result = getClassByViewPort(properties);
         expect(result.trim()).toBe(
-          res.name === "base" ? shrink : `${res.value}:${shrink}`
+          res.name === "base" ? shrink : `${res.value}:${shrink}`,
         );
       });
     });
@@ -46,11 +46,11 @@ describe("react-base-component.props.flex", () => {
           res.name,
           "flex",
           "grow",
-          grow
+          grow,
         ) as ClassByResponsiveProps;
         const result = getClassByViewPort(properties);
         expect(result.trim()).toBe(
-          res.name === "base" ? grow : `${res.value}:${grow}`
+          res.name === "base" ? grow : `${res.value}:${grow}`,
         );
       });
     });
@@ -63,11 +63,11 @@ describe("react-base-component.props.flex", () => {
           res.name,
           "flex",
           "alignItems",
-          alignItems
+          alignItems,
         ) as ClassByResponsiveProps;
         const result = getClassByViewPort(properties);
         expect(result.trim()).toBe(
-          res.name === "base" ? alignItems : `${res.value}:${alignItems}`
+          res.name === "base" ? alignItems : `${res.value}:${alignItems}`,
         );
       });
     });
@@ -80,13 +80,13 @@ describe("react-base-component.props.flex", () => {
           res.name,
           "flex",
           "justifyContent",
-          justifyContent
+          justifyContent,
         ) as ClassByResponsiveProps;
         const result = getClassByViewPort(properties);
         expect(result.trim()).toBe(
           res.name === "base"
             ? justifyContent
-            : `${res.value}:${justifyContent}`
+            : `${res.value}:${justifyContent}`,
         );
       });
     });
