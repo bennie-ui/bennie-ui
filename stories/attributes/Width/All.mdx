@@ -18,10 +18,12 @@ import { variants } from '../../../libraries/baseline/tailwind/attributes/width'
     const full_clases = ["w-full","w-screen","w-svw","w-lvw","w-min","w-max","w-fit"]
     const w_value = full_clases.includes(value) ? value: value.split('-')[1]
 
-    return <Unstyled>
-        <Section  
-        width={{ value: w_value }} 
-        className="border border-sky-500">{value}</Section>
+    return <Unstyled key={idx}>
+      <Section width={{value: 'full'}} className="border">
+        <Section width={{ value: w_value }} className="border border-sky-500">
+          {value}
+        </Section>
+      </Section>
     </Unstyled>
   })
 }

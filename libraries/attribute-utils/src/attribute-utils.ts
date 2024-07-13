@@ -46,21 +46,7 @@ export const getBackgroundColorAttribute = (
   return color + "-" + weight;
 };
 
-export const getResponsiveClassName = (
-  parentNames: string[],
-  propertyName: string,
-  className: string,
-): string => {
-  // eslint-disable-next-line
-  if (parentNames.find?.((it) => it === "medium")) {
-    return ` md:${className}`;
-  }
-  // eslint-disable-next-line
-  if (parentNames.find?.((it) => it === "large")) {
-    return ` lg:${className}`;
-  }
-  return ` ${className}`;
-};
+
 
 export const getDarkClassName = (
   parentNames: string[],
@@ -119,6 +105,21 @@ export const getPrefix = (property: string, propertyName: string) => {
   return prefix;
 };
 
+export const getResponsiveClassName = (
+  parentNames: string[],
+  propertyName: string,
+  className: string,
+): string => {
+  // eslint-disable-next-line
+  if (parentNames.find?.((it) => it === "medium")) {
+    return ` md:${className}`;
+  }
+  // eslint-disable-next-line
+  if (parentNames.find?.((it) => it === "large")) {
+    return ` lg:${className}`;
+  }
+  return ` ${className}`;
+};
 export const recusiveClassSearch = (
   activeProperty: ClassByResponsiveProps,
   propertyName: string,
@@ -190,7 +191,7 @@ export const recusiveClassSearch = (
     );
   }
 
-   if (parentNames.includes("margin")) {
+  if (parentNames.includes("margin")) {
     const is_auto = activeProperty.includes('auto')
     const margin_prefix = getPrefix('m', propertyName);
 
@@ -199,6 +200,11 @@ export const recusiveClassSearch = (
       propertyName,
       is_auto ? activeProperty : `${margin_prefix}-${activeProperty}`,
     );
+  }
+
+  if(propertyName === 'align') {
+    const align_value = `text-${activeProperty}`
+    return getResponsiveClassName(parentNames, propertyName, align_value)
   }
 
   if (typeof activeProperty === "string") {
@@ -239,6 +245,7 @@ export const getClassByViewPort = (
 export const getProperties = (properties: ComponentProperties) => {
   const {
     id,
+    align,
     size,
     width,
     height,
@@ -256,6 +263,7 @@ export const getProperties = (properties: ComponentProperties) => {
   const className =
     properties.className +
     getClassByViewPort({
+      align,
       size,
       width,
       height,

@@ -1,7 +1,11 @@
 import type {
   NumericType,
   DecimalType,
-  PercentageType,
+  PercentageHalvesType,
+  PercentageThirdsType,
+  PercentageFourthsType,
+  PercentageFifthsType,
+  PercentageSixtsType,
 } from "../attributes/attribute.types";
 
 export type HeightType =
@@ -16,10 +20,12 @@ export type HeightType =
   | "dvh"
   | "svh";
 
+export type HeightPercentageType = PercentageHalvesType | PercentageThirdsType | PercentageFourthsType | PercentageFifthsType | PercentageSixtsType ;
+
 export type HeightPropertyType =
   | NumericType
   | DecimalType
-  | PercentageType
+  | HeightPercentageType
   | HeightType;
 
 export type HeightMinPropertyType =

@@ -4,7 +4,11 @@ export type PercentageFourthsType = '1/4'|'2/4'|'3/4';
 export type PercentageFifthsType = '1/5'|'2/5'|'3/5'|'4/5';
 export type PercentageSixtsType = '1/6'|'2/6'|'3/6'|'4/6'|'5/6';
 export type PercentageTwelveType = '1/12'|'2/12'|'3/12'|'4/12'|'5/12'|'6/12'|'7/12'|'8/12'|'9/12'|'10/12'|'11/12';
-export type NumericType = '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'|'11'|'12'|'14'|'16'|'20'|'24'|'28'|'32'|'36'|'40'|'44'|'48'|'52'|'56'|'60'|'64'|'72'|'80'|'96';
+
+export type NumericMinRangeType = '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'10'|'11'|'12'|'14'|'16'|'20'|'24'|'28'|'32'|'36'|'40'
+export type NumericMaxRangeType = '44'|'48'|'52'|'56'|'60'|'64'|'72'|'80'|'96';
+
+export type NumericType = NumericMinRangeType | NumericMaxRangeType
 
 export type DecimalType = '0'|'0.5'|'1.5'|'2.5'|'3.5';
 export type PercentageType = PercentageHalvesType | PercentageThirdsType | PercentageFourthsType | PercentageFifthsType | PercentageSixtsType | PercentageTwelveType;

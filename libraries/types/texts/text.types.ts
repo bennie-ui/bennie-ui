@@ -18,12 +18,12 @@ export type TextWeightType =
   | "font-bold";
 export type TextOverflowType = "none" | "truncate";
 export type TextAlignmentType =
-  | "text-left"
-  | "text-right"
-  | "text-center"
-  | "text-justify"
-  | "text-start"
-  | "text-end";
+  | "left"
+  | "right"
+  | "center"
+  | "justify"
+  | "start"
+  | "end";
 export type TextTagType =
   | "span"
   | "div"

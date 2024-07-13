@@ -7,15 +7,17 @@ import { TextAlignmentType } from "@phoenix-ui/types/texts";
 
 test("attributes.props.text-align", () => {
   resolutions.forEach((resolution) => {
-    variants.base.split(" ").forEach((align) => {
+    variants.base.forEach((align) => {
+      const align_value = align.split('-')[1]
       const properties: ClassByResponsiveProps =
         resolution.name === "base"
-          ? { align: align as TextAlignmentType }
+          ? { align: align_value as TextAlignmentType }
           : {
               overrides: {
-                [resolution.name]: { align: align as TextAlignmentType },
+                [resolution.name]: { align: align_value as TextAlignmentType },
               },
             };
+
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
         resolution.name === "base" ? align : `${resolution.value}:${align}`

@@ -8,7 +8,7 @@ import {
 } from "@phoenix-ui/attribute-utils";
 export const Section: FC<SectionExtendedProperties> = ({
   children,
-  // align,
+  align,
   display,
   //weight,
   height,
@@ -33,7 +33,7 @@ export const Section: FC<SectionExtendedProperties> = ({
     colors?.text && getTextColorAttribute(colors.text),
     colors?.background && getBackgroundColorAttribute(colors.background),
     rounded,
-    //align,
+    align,
     display,
     //weight,
     flex && "flex",
@@ -62,6 +62,7 @@ export const Section: FC<SectionExtendedProperties> = ({
     props = {
       children,
       ...getProperties({
+        align,
         width,
         height,
         margin,

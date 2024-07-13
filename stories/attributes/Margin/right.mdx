@@ -16,12 +16,16 @@ Tailwind supports values up to margin(96), initially phoenix-ui will go as far a
 {
   variants.base.right.map((value, idx) => {
     const [, m_value] = value.split('-')
-    return <Unstyled>
-      <Section key={idx} 
-        data-test-id={value} 
-        margin={{ right: m_value }} 
-        height={{ value: 'fit'}}
-        className="border border-sky-500">{value}</Section>
+    return <Unstyled key={idx}>
+      <Section flex={{justifyContent: 'justify-end'}} width={{value: 'full'}} className="border">
+        <Section key={idx} 
+          margin={{ right: m_value }} 
+          width={{ value: 'fit'}}
+          height={{ value: 'fit'}}
+          className="border border-sky-500">
+            {value}
+        </Section>
+      </Section>
     </Unstyled>
   })
 }

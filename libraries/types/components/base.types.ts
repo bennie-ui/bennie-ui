@@ -1,4 +1,4 @@
-import type { TextSizeType } from "@phoenix-ui/types/texts";
+import type { TextSizeType, TextAlignmentType } from "@phoenix-ui/types/texts";
 import type { AllMargins } from "@phoenix-ui/types/attributes/margin.types";
 import type { AllPaddings } from "@phoenix-ui/types/attributes/padding.types";
 import type { AllHeights } from "@phoenix-ui/types/attributes/height.types";
@@ -29,6 +29,7 @@ export interface BaseProperties {
   className?: string;
 
   size?: TextSizeType;
+  align?: TextAlignmentType;
   colors?: ColorPropertyType;
   opacity?: OpacityType;
 
