@@ -1,9 +1,9 @@
 import { test, expect } from "bun:test";
+import { TextSizeType } from "@phoenix-ui/types/texts";
+import { variants } from "@phoenix-ui/baseline/tailwind/attributes/text-size";
 import { getClassByViewPort } from "../src/attribute-utils";
 import type { ClassByResponsiveProps } from "../types";
-import { variants } from "@phoenix-ui/baseline/tailwind/attributes/size";
 import { resolutions } from "./utils";
-import { TextSizeType } from "@phoenix-ui/types/texts";
 
 test("attributes.props.text-size", () => {
   resolutions.forEach((resolution) => {
