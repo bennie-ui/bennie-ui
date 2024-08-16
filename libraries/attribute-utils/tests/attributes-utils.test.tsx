@@ -3,37 +3,32 @@ import {
   getTextColorAttribute,
   getBackgroundColorAttribute,
   getClassByViewPort,
+  getComponentProperties,
 } from "@phoenix-ui/attribute-utils";
-import { getProperties } from "../src/attribute-utils";
-import type { ClassByResponsiveProps } from "@phoenix-ui/attribute-utils/types";
-import type {
-  TextColorType,
-  BackgroundColorType,
-} from "@phoenix-ui/types/attributes";
-import { ComponentProperties } from "@phoenix-ui/types/components";
+import { ComponentProperties } from "@phoenix-ui/types";
 
 describe("base-attribute", () => {
   describe(":getTextColorAttribute", () => {
     test(" should return default values", () => {
-      const color: TextColorType = {};
+      const color: ColorPropertiesType = {};
       const result = getTextColorAttribute(color);
       expect(result).toEqual("text-white");
     });
 
     test(" should return black or white without weight", () => {
-      let color: TextColorType = { color: "text-black" };
+      let color: ColorPropertiesType = { color: "black" };
       let result = getTextColorAttribute(color);
       expect(result).toEqual("text-black");
 
-      color = { color: "text-black", weight: "300" };
+      color = { color: "black", weight: "300" };
       result = getTextColorAttribute(color);
       expect(result).toEqual("text-black");
 
-      color = { color: "text-white" };
+      color = { color: "white" };
       result = getTextColorAttribute(color);
       expect(result).toEqual("text-white");
 
-      color = { color: "text-white", weight: "300" };
+      color = { color: "white", weight: "300" };
       result = getTextColorAttribute(color);
       expect(result).toEqual("text-white");
     });
@@ -41,25 +36,25 @@ describe("base-attribute", () => {
 
   describe(":getBackgroundColorAttribute", () => {
     test(" should return default values", () => {
-      const color: BackgroundColorType = {};
+      const color: ColorPropertiesType = {};
       const result = getBackgroundColorAttribute(color);
-      expect(result).toEqual("bg-slate-400");
+      expect(result).toEqual("bg-slate-500");
     });
 
     test(" should return black or white without weight", () => {
-      let color: BackgroundColorType = { color: "bg-black" };
+      let color: ColorPropertiesType = { color: "black" };
       let result = getBackgroundColorAttribute(color);
       expect(result).toEqual("bg-black");
 
-      color = { color: "bg-black", weight: "300" };
+      color = { color: "black", weight: "300" };
       result = getBackgroundColorAttribute(color);
       expect(result).toEqual("bg-black");
 
-      color = { color: "bg-white" };
+      color = { color: "white" };
       result = getBackgroundColorAttribute(color);
       expect(result).toEqual("bg-white");
 
-      color = { color: "bg-white", weight: "300" };
+      color = { color: "white", weight: "300" };
       result = getBackgroundColorAttribute(color);
       expect(result).toEqual("bg-white");
     });
@@ -71,7 +66,7 @@ describe("base-attribute", () => {
         size: "text-3xl",
         className: "foo",
       };
-      const result = getProperties(properties);
+      const result = getComponentProperties(properties);
       expect(result.className).toContain(properties.className);
       expect(result.className).toContain(properties.size);
     });
@@ -80,7 +75,7 @@ describe("base-attribute", () => {
       const properties: ComponentProperties = {
         dataTestId: "foo-test-id",
       };
-      const result = getProperties(properties);
+      const result = getComponentProperties(properties);
       expect(result["data-testid"]).toContain(properties.dataTestId);
     });
 
@@ -89,7 +84,7 @@ describe("base-attribute", () => {
       const properties: ComponentProperties = {
         onClick: onClickSpy,
       };
-      const result = getProperties(properties);
+      const result = getComponentProperties(properties);
       expect(result.onClick).toBe(onClickSpy);
     });
   });
@@ -98,15 +93,15 @@ describe("base-attribute", () => {
 describe("responsive utils", () => {
   describe("getClassByViewPort", () => {
     test("empty properties", () => {
-      const properties: ClassByResponsiveProps = {};
+      const properties: ComponentProperties = {};
       const result = getClassByViewPort(properties);
-      expect(result).toBe("");
+      expect(result.trim()).toBe("");
     });
 
     test("doesnt throw properties", () => {
-      const properties: ClassByResponsiveProps = { size: undefined };
+      const properties: ComponentProperties = { size: undefined };
       const result = getClassByViewPort(properties);
-      expect(result).toBe("");
+      expect(result.trim()).toBe("");
     });
   });
 });

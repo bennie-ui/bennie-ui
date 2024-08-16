@@ -1,18 +1,18 @@
 import { describe, test, expect } from "bun:test";
-import { TextColor, BackgroundColor } from "@phoenix-ui/types/attributes";
-import { getClassByViewPort } from "../src/attribute-utils";
-import type { ClassByResponsiveProps } from "../types";
+import { ColorValue } from "@phoenix-ui/types/attributes";
+import { getClassByViewPort } from "../src/attributes.classes.utils";
 
 import { ColorStubs } from "../stubs/colors.stubs";
+import { ComponentProperties } from "@phoenix-ui/types";
 
 describe("react-base-component.props.overrides:color", () => {
   describe(":TextColorType", () => {
     test(`text-color and md::dark:text-color`, () => {
-      const color: TextColor = "text-blue";
-      const dark_color: TextColor = "text-amber";
-      const md_color: TextColor = "text-cyan";
-      const md_dark_color: TextColor = "text-fuchsia";
-      const properties: ClassByResponsiveProps = {
+      const color: ColorValue = "blue";
+      const dark_color: ColorValue = "amber";
+      const md_color: ColorValue = "cyan";
+      const md_dark_color: ColorValue = "fuchsia";
+      const properties: ComponentProperties = {
         colors: { text: { color } },
         dark: {
           colors: { text: { color: dark_color } },
@@ -28,16 +28,16 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400`
+        `text-${color}-500 dark:text-${dark_color}-500 md:text-${md_color}-500 md:dark:text-${md_dark_color}-500`,
       );
     });
 
     test(`concatenate text-color and md:dark:text-color`, () => {
-      const color: TextColor = "text-blue";
-      const dark_color: TextColor = "text-amber";
-      const lg_color: TextColor = "text-cyan";
-      const lg_dark_color: TextColor = "text-fuchsia";
-      const properties: ClassByResponsiveProps = {
+      const color: ColorValue = "blue";
+      const dark_color: ColorValue = "amber";
+      const lg_color: ColorValue = "cyan";
+      const lg_dark_color: ColorValue = "fuchsia";
+      const properties: ComponentProperties = {
         colors: { text: { color } },
         dark: {
           colors: { text: { color: dark_color } },
@@ -53,18 +53,18 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`
+        `text-${color}-500 dark:text-${dark_color}-500 lg:text-${lg_color}-500 lg:dark:text-${lg_dark_color}-500`,
       );
     });
 
     test(`combine text-color and (md|lg):dark:text-color`, () => {
-      const color: TextColor = "text-blue";
-      const dark_color: TextColor = "text-amber";
-      const md_color: TextColor = "text-gray";
-      const md_dark_color: TextColor = "text-green";
-      const lg_color: TextColor = "text-cyan";
-      const lg_dark_color: TextColor = "text-fuchsia";
-      const properties: ClassByResponsiveProps = {
+      const color: ColorValue = "blue";
+      const dark_color: ColorValue = "amber";
+      const md_color: ColorValue = "gray";
+      const md_dark_color: ColorValue = "green";
+      const lg_color: ColorValue = "cyan";
+      const lg_dark_color: ColorValue = "fuchsia";
+      const properties: ComponentProperties = {
         colors: { text: { color } },
         dark: {
           colors: { text: { color: dark_color } },
@@ -86,18 +86,18 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`
+        `text-${color}-500 dark:text-${dark_color}-500 md:text-${md_color}-500 md:dark:text-${md_dark_color}-500 lg:text-${lg_color}-500 lg:dark:text-${lg_dark_color}-500`,
       );
     });
   });
 
   describe(":BackgroundColorType", () => {
     test(`concatenate bg-color and md::dark:bg-color`, () => {
-      const color: BackgroundColor = "bg-black";
-      const dark_color: BackgroundColor = "bg-cyan";
-      const md_color: BackgroundColor = "bg-amber";
-      const md_dark_color: BackgroundColor = "bg-green";
-      const properties: ClassByResponsiveProps = {
+      const color: ColorValue = "black";
+      const dark_color: ColorValue = "cyan";
+      const md_color: ColorValue = "amber";
+      const md_dark_color: ColorValue = "green";
+      const properties: ComponentProperties = {
         colors: { background: { color } },
         dark: {
           colors: { background: { color: dark_color } },
@@ -113,16 +113,16 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color} dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400`
+        `bg-${color} dark:bg-${dark_color}-500 md:bg-${md_color}-500 md:dark:bg-${md_dark_color}-500`,
       );
     });
 
     test(`concatenate bg-color and md:dark:bg-color`, () => {
-      const color: BackgroundColor = "bg-blue";
-      const dark_color: BackgroundColor = "bg-amber";
-      const lg_color: BackgroundColor = "bg-cyan";
-      const lg_dark_color: BackgroundColor = "bg-fuchsia";
-      const properties: ClassByResponsiveProps = {
+      const color: ColorValue = "blue";
+      const dark_color: ColorValue = "amber";
+      const lg_color: ColorValue = "cyan";
+      const lg_dark_color: ColorValue = "fuchsia";
+      const properties: ComponentProperties = {
         colors: { background: { color } },
         dark: {
           colors: { background: { color: dark_color } },
@@ -138,18 +138,18 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`
+        `bg-${color}-500 dark:bg-${dark_color}-500 lg:bg-${lg_color}-500 lg:dark:bg-${lg_dark_color}-500`,
       );
     });
 
     test(`combine bg-color and (md|lg):dark:bg-color`, () => {
-      const color: BackgroundColor = "bg-blue";
-      const dark_color: BackgroundColor = "bg-amber";
-      const md_color: BackgroundColor = "bg-gray";
-      const md_dark_color: BackgroundColor = "bg-green";
-      const lg_color: BackgroundColor = "bg-cyan";
-      const lg_dark_color: BackgroundColor = "bg-fuchsia";
-      const properties: ClassByResponsiveProps = {
+      const color: ColorValue = "blue";
+      const dark_color: ColorValue = "amber";
+      const md_color: ColorValue = "gray";
+      const md_dark_color: ColorValue = "green";
+      const lg_color: ColorValue = "cyan";
+      const lg_dark_color: ColorValue = "fuchsia";
+      const properties: ComponentProperties = {
         colors: { background: { color } },
         dark: {
           colors: { background: { color: dark_color } },
@@ -171,45 +171,49 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`
+        `bg-${color}-500 dark:bg-${dark_color}-500 md:bg-${md_color}-500 md:dark:bg-${md_dark_color}-500 lg:bg-${lg_color}-500 lg:dark:bg-${lg_dark_color}-500`,
       );
     });
   });
 
   describe(":TextColorType and :BackgroundColorType", () => {
     test(`concatenate bg-color and md::dark:bg-color`, () => {
-      const properties: ClassByResponsiveProps = ColorStubs;
+      const properties: ComponentProperties = ColorStubs;
 
       const result = getClassByViewPort(properties);
-      expect(result).toContain(`${ColorStubs.colors.text.color}-400`);
-      expect(result).toContain(`${ColorStubs.colors.background.color}-400`);
-      expect(result).toContain(`dark:${ColorStubs.dark.colors.text.color}-400`);
-      expect(result).toContain(`dark:${ColorStubs.dark.colors.text.color}-400`);
-
+      expect(result).toContain(`text-${ColorStubs.colors.text.color}-500`);
+      expect(result).toContain(`bg-${ColorStubs.colors.background.color}-500`);
       expect(result).toContain(
-        `md:${ColorStubs.overrides.medium.colors.text.color}-400`
+        `dark:text-${ColorStubs.dark.colors.text.color}-500`,
       );
       expect(result).toContain(
-        `md:${ColorStubs.overrides.medium.colors.background.color}-400`
-      );
-      expect(result).toContain(
-        `md:dark:${ColorStubs.overrides.medium.dark.colors.text.color}-400`
-      );
-      expect(result).toContain(
-        `md:dark:${ColorStubs.overrides.medium.dark.colors.background.color}-400`
+        `dark:text-${ColorStubs.dark.colors.text.color}-500`,
       );
 
       expect(result).toContain(
-        `lg:${ColorStubs.overrides.large.colors.text.color}-400`
+        `md:text-${ColorStubs.overrides.medium.colors.text.color}-500`,
       );
       expect(result).toContain(
-        `lg:${ColorStubs.overrides.large.colors.background.color}-400`
+        `md:bg-${ColorStubs.overrides.medium.colors.background.color}-500`,
       );
       expect(result).toContain(
-        `lg:dark:${ColorStubs.overrides.large.dark.colors.text.color}-400`
+        `md:dark:text-${ColorStubs.overrides.medium.dark.colors.text.color}-500`,
       );
       expect(result).toContain(
-        `lg:dark:${ColorStubs.overrides.large.dark.colors.background.color}-400`
+        `md:dark:bg-${ColorStubs.overrides.medium.dark.colors.background.color}-500`,
+      );
+
+      expect(result).toContain(
+        `lg:text-${ColorStubs.overrides.large.colors.text.color}-500`,
+      );
+      expect(result).toContain(
+        `lg:bg-${ColorStubs.overrides.large.colors.background.color}-500`,
+      );
+      expect(result).toContain(
+        `lg:dark:text-${ColorStubs.overrides.large.dark.colors.text.color}-500`,
+      );
+      expect(result).toContain(
+        `lg:dark:bg-${ColorStubs.overrides.large.dark.colors.background.color}-500`,
       );
     });
   });

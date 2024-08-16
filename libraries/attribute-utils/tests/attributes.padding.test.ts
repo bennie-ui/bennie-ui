@@ -1,14 +1,14 @@
 import { describe, test, expect } from "bun:test";
 
 import { resolutions, getProperties } from "./utils";
-import type { ClassByResponsiveProps } from "../types";
-import { getClassByViewPort } from "../src/attribute-utils";
+import { getClassByViewPort } from "../src/attributes.classes.utils";
 import { variants } from "@phoenix-ui/baseline/tailwind/attributes/padding";
 import { AllPaddings } from "@phoenix-ui/types/attributes/padding.types";
+import { ComponentProperties } from "@phoenix-ui/types";
 
 describe("attributes.padding", () => {
   ["all", "x", "y", "top", "bottom", "left", "right"].forEach((testCase) => {
-    test(`padding :${testCase}`, () => {
+    test.only(`padding :${testCase}`, () => {
       resolutions.forEach((res) => {
         variants.base[testCase].slice(0, 1).forEach((p) => {
           const p_value = p.split("-")[1];
@@ -18,9 +18,7 @@ describe("attributes.padding", () => {
             testCase,
             p_value,
           );
-          const result = getClassByViewPort(
-            properties as ClassByResponsiveProps,
-          );
+          const result = getClassByViewPort(properties as ComponentProperties);
           expect(result.trim()).toBe(
             res.name === "base" ? p : `${res.value}:${p}`,
           );
@@ -40,7 +38,7 @@ describe("attributes.padding", () => {
         y: "5",
       };
 
-      const properties: ClassByResponsiveProps =
+      const properties: ComponentProperties =
         res.name === "base"
           ? { padding }
           : { overrides: { [res.name]: { padding } } };

@@ -1,24 +1,26 @@
 import { test, expect } from "bun:test";
 import { TextSizeType } from "@phoenix-ui/types/texts";
 import { variants } from "@phoenix-ui/baseline/tailwind/attributes/text-size";
-import { getClassByViewPort } from "../src/attribute-utils";
-import type { ClassByResponsiveProps } from "../types";
+import { getClassByViewPort } from "@phoenix-ui/attribute-utils";
 import { resolutions } from "./utils";
+import { ComponentProperties } from "@phoenix-ui/types";
 
-test("attributes.props.text-size", () => {
-  resolutions.forEach((resolution) => {
-    variants.base.split(" ").forEach((size) => {
-      const properties: ClassByResponsiveProps =
+resolutions.forEach((resolution) => {
+  variants.base.forEach((size) => {
+    test(`attributes.props.text-size: ${size}`, () => {
+      const size_value = size.split("-")[1];
+
+      const properties: ComponentProperties =
         resolution.name === "base"
-          ? { size: size as TextSizeType }
+          ? { size: size_value as TextSizeType }
           : {
               overrides: {
-                [resolution.name]: { size: size as TextSizeType },
+                [resolution.name]: { size: size_value as TextSizeType },
               },
             };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        resolution.name === "base" ? size : `${resolution.value}:${size}`
+        resolution.name === "base" ? size : `${resolution.value}:${size}`,
       );
     });
   });

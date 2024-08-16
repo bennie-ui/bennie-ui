@@ -71,94 +71,8 @@ export type ActionType =
   | "info"
   | "light"
   | "dark";
+
 export type RoundingType = "none" | "md" | "lg" | "full";
-export type ScaleType = "small" | "medium" | "large";
-
-export type TextColor =
-  | "text-black"
-  | "text-white"
-  | "text-neutral"
-  | "text-stone"
-  | "text-slate"
-  | "text-gray"
-  | "text-zinc"
-  | "text-red"
-  | "text-orange"
-  | "text-amber"
-  | "text-yellow"
-  | "text-lime"
-  | "text-green"
-  | "text-emerald"
-  | "text-teal"
-  | "text-cyan"
-  | "text-sky"
-  | "text-blue"
-  | "text-indigo"
-  | "text-violet"
-  | "text-purple"
-  | "text-fuchsia"
-  | "text-pink"
-  | "text-rose";
-export type TextWeight =
-  | "0"
-  | "50"
-  | "100"
-  | "200"
-  | "300"
-  | "400"
-  | "500"
-  | "600"
-  | "700"
-  | "800"
-  | "900"
-  | "950";
-export type TextColorType = { color?: TextColor; weight?: TextWeight };
-
-export type BackgroundColor =
-  | "bg-black"
-  | "bg-white"
-  | "bg-neutral"
-  | "bg-stone"
-  | "bg-slate"
-  | "bg-gray"
-  | "bg-zinc"
-  | "bg-red"
-  | "bg-orange"
-  | "bg-amber"
-  | "bg-yellow"
-  | "bg-lime"
-  | "bg-green"
-  | "bg-emerald"
-  | "bg-teal"
-  | "bg-cyan"
-  | "bg-sky"
-  | "bg-blue"
-  | "bg-indigo"
-  | "bg-violet"
-  | "bg-purple"
-  | "bg-fuchsia"
-  | "bg-pink"
-  | "bg-rose";
-export type BackgroundWeight =
-  | "50"
-  | "100"
-  | "200"
-  | "300"
-  | "400"
-  | "500"
-  | "600"
-  | "700"
-  | "800"
-  | "900"
-  | "950";
-export type BackgroundColorType = {
-  color?: BackgroundColor;
-  weight?: BackgroundWeight;
-};
-export type ColorPropertyType = {
-  text?: TextColorType;
-  background?: BackgroundColorType;
-};
 
 export type OpacityType =
   | "100"
@@ -174,3 +88,52 @@ export type OpacityType =
   | "10"
   | "5"
   | "0";
+export type ScaleType = "small" | "medium" | "large";
+
+export type ColorValue =
+  | "black"
+  | "white"
+  | "neutral"
+  | "stone"
+  | "slate"
+  | "gray"
+  | "zinc"
+  | "red"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "green"
+  | "emerald"
+  | "teal"
+  | "cyan"
+  | "sky"
+  | "blue"
+  | "indigo"
+  | "violet"
+  | "purple"
+  | "fuchsia"
+  | "pink"
+  | "rose";
+
+export type ColorWeight =
+  | "0"
+  | "50"
+  | "100"
+  | "200"
+  | "300"
+  | "400"
+  | "500"
+  | "600"
+  | "700"
+  | "800"
+  | "900"
+  | "950";
+
+export type ColorPropertiesType = { color?: ColorValue; weight?: ColorWeight };
+
+export type ColorType = {
+  text?: ColorPropertiesType;
+  background?: ColorPropertiesType;
+  border?: ColorPropertiesType;
+};

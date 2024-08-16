@@ -1,21 +1,18 @@
-import {
-  TextColor,
-  BackgroundColor,
-} from "@phoenix-ui/types/attributes";
-const text_color: TextColor = "text-blue";
-const bg_color: BackgroundColor = "bg-amber";
-const dark_text_color: TextColor = "text-cyan";
-const dark_bg_color: BackgroundColor = "bg-emerald";
+import { ColorValue } from "@phoenix-ui/types/attributes";
+const text_color: ColorValue = "blue";
+const bg_color: ColorValue = "amber";
+const dark_text_color: ColorValue = "cyan";
+const dark_bg_color: ColorValue = "emerald";
 
-const md_text_color: TextColor = "text-fuchsia";
-const md_bg_color: BackgroundColor = "bg-gray";
-const md_dark_text_color: TextColor = "text-emerald";
-const md_dark_bg_color: BackgroundColor = "bg-orange";
+const md_text_color: ColorValue = "fuchsia";
+const md_bg_color: ColorValue = "gray";
+const md_dark_text_color: ColorValue = "emerald";
+const md_dark_bg_color: ColorValue = "orange";
 
-const lg_text_color: TextColor = "text-amber";
-const lg_bg_color: BackgroundColor = "bg-cyan";
-const lg_dark_text_color: TextColor = "text-green";
-const lg_dark_bg_color: BackgroundColor = "bg-emerald";
+const lg_text_color: ColorValue = "amber";
+const lg_bg_color: ColorValue = "cyan";
+const lg_dark_text_color: ColorValue = "green";
+const lg_dark_bg_color: ColorValue = "emerald";
 
 export const ColorStubs = {
   colors: {

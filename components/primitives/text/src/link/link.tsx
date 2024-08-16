@@ -4,7 +4,7 @@ import {
   getClassNames,
   getTextColorAttribute,
   getBackgroundColorAttribute,
-  getProperties,
+  getComponentProperties,
 } from "@phoenix-ui/attribute-utils";
 
 const Link: FC<LinkProperties> = (properties) => {
@@ -32,7 +32,10 @@ const Link: FC<LinkProperties> = (properties) => {
   }
 
   return (
-    <a {...attributes} {...getProperties({ ...properties, className })}>
+    <a
+      {...attributes}
+      {...getComponentProperties({ ...properties, className })}
+    >
       {properties.children}
     </a>
   );

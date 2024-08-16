@@ -4,12 +4,7 @@ import { AllWidths } from "../attributes/width.types";
 import { AllHeights } from "../attributes/height.types";
 import { AllMargins } from "../attributes/margin.types";
 import { AllPaddings } from "../attributes/padding.types";
-import {
-  OpacityType,
-  FlexType,
-  ColorPropertyType,
-  RoundingType,
-} from "../attributes";
+import { OpacityType, FlexType, ColorType, RoundingType } from "../attributes";
 
 export type AllResponsiveBreakpoints = "sm" | "md" | "lg" | "xl" | "2xl";
 
@@ -20,7 +15,7 @@ interface BaseBreakpointProperties {
   margin?: AllMargins;
   padding?: AllPaddings;
   rounding?: RoundingType;
-  colors?: ColorPropertyType;
+  colors?: ColorType;
   dark?: DarkOverrides;
   align?: TextAlignmentType;
 }

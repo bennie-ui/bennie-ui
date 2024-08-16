@@ -6,12 +6,10 @@ import { ColorStubs } from "@phoenix-ui/attribute-utils/stubs";
 import { type ButtonProperties } from "./button.types";
 
 describe("Button", () => {
-  test.only(":default", () => {
+  test(":default", () => {
     const button = <Button>Hello World</Button>;
     const { container } = render(button);
-    expect(container.querySelector("button")?.className).toEqual(
-      "button medium text-white bg-blue-500",
-    );
+    expect(container.querySelector("button")?.className).toEqual("button p-2");
   });
 
   test(":action", () => {
@@ -22,7 +20,66 @@ describe("Button", () => {
     const button = <Button {...props} />;
     const { container } = render(button);
     expect(container.querySelector("button")?.className).toEqual(
-      "button medium text-white bg-blue-500",
+      "button p-2 text-white bg-blue-500",
+    );
+  });
+
+  test(":colors", () => {
+    const props: ButtonProperties = {
+      children: "Hello World",
+      colors: {
+        text: { color: "red" },
+        background: { color: "gray" },
+      },
+    };
+    const button = <Button {...props} />;
+    const { container } = render(button);
+    const result = container.querySelector("button")?.className;
+    expect(result).toEqual("button p-2 text-red-500 bg-gray-500");
+  });
+
+  test(":action should override :color", () => {
+    const props: ButtonProperties = {
+      children: "Hello World",
+      action: "primary",
+      colors: {
+        text: { color: "red" },
+        background: { color: "gray" },
+      },
+    };
+    const button = <Button {...props} />;
+    const { container } = render(button);
+    expect(container.querySelector("button")?.className).toEqual(
+      "button p-2 text-white bg-blue-500",
+    );
+  });
+
+  test(":action should override :classname", () => {
+    const props: ButtonProperties = {
+      children: "Hello World",
+      action: "primary",
+      className: "text-red-500 bg-teal-200",
+    };
+    const button = <Button {...props} />;
+    const { container } = render(button);
+    expect(container.querySelector("button")?.className).toEqual(
+      "button p-2 text-white bg-blue-500",
+    );
+  });
+
+  test(":classname should override :colors", () => {
+    const props: ButtonProperties = {
+      children: "Hello World",
+      className: "text-yellow-100 bg-teal-200",
+      colors: {
+        text: { color: "red" },
+        background: { color: "gray" },
+      },
+    };
+    const button = <Button {...props} />;
+    const { container } = render(button);
+    expect(container.querySelector("button")?.className).toEqual(
+      "button p-2 text-yellow-100 bg-teal-200",
     );
   });
 
@@ -30,23 +87,24 @@ describe("Button", () => {
     const props: ButtonProperties = {
       children: "Hello World",
       scale: "large",
+      action: "neutral",
     };
     const button = <Button {...props} />;
     const { container } = render(button);
     expect(container.querySelector("button")?.className).toEqual(
-      "button large text-white bg-blue-500",
+      "button px-16 py-3 text-white bg-slate-500",
     );
   });
 
   test(":rounded", () => {
     const props: ButtonProperties = {
       children: "Hello World",
-      rounded: "rounded-lg",
+      rounding: "lg",
     };
     const button = <Button {...props} />;
     const { container } = render(button);
     expect(container.querySelector("button")?.className).toEqual(
-      "button medium rounded-lg text-white bg-blue-500",
+      "button p-2 rounded-lg",
     );
   });
 
@@ -58,7 +116,7 @@ describe("Button", () => {
     const button = <Button {...props} />;
     const { container } = render(button);
     expect(container.querySelector("button")?.className).toEqual(
-      "button medium text-white bg-blue-500 w-full",
+      "button p-2 w-full",
     );
   });
 
@@ -98,36 +156,41 @@ describe("Button", () => {
     const button = <Button {...props} />;
     const { container } = render(button);
     const result = container.querySelector("button")?.className;
-
-    expect(result).toContain(`${ColorStubs.colors.text.color}-400`);
-    expect(result).toContain(`${ColorStubs.colors.background.color}-400`);
-    expect(result).toContain(`dark:${ColorStubs.dark.colors.text.color}-400`);
-    expect(result).toContain(`dark:${ColorStubs.dark.colors.text.color}-400`);
-
+    //console.log("f: result", result);
+    expect(result).toContain(`text-${ColorStubs.colors.text.color}-500`);
+    expect(result).toContain(`bg-${ColorStubs.colors.background.color}-500`);
     expect(result).toContain(
-      `md:${ColorStubs.overrides.medium.colors.text.color}-400`,
+      `dark:text-${ColorStubs.dark.colors.text.color}-500`,
     );
     expect(result).toContain(
-      `md:${ColorStubs.overrides.medium.colors.background.color}-400`,
-    );
-    expect(result).toContain(
-      `md:dark:${ColorStubs.overrides.medium.dark.colors.text.color}-400`,
-    );
-    expect(result).toContain(
-      `md:dark:${ColorStubs.overrides.medium.dark.colors.background.color}-400`,
+      `dark:bg-${ColorStubs.dark.colors.background.color}-500`,
     );
 
     expect(result).toContain(
-      `lg:${ColorStubs.overrides.large.colors.text.color}-400`,
+      `md:text-${ColorStubs.overrides.medium.colors.text.color}-500`,
     );
     expect(result).toContain(
-      `lg:${ColorStubs.overrides.large.colors.background.color}-400`,
+      `md:bg-${ColorStubs.overrides.medium.colors.background.color}-500`,
     );
     expect(result).toContain(
-      `lg:dark:${ColorStubs.overrides.large.dark.colors.text.color}-400`,
+      `md:dark:text-${ColorStubs.overrides.medium.dark.colors.text.color}-500`,
     );
     expect(result).toContain(
-      `lg:dark:${ColorStubs.overrides.large.dark.colors.background.color}-400`,
+      `md:dark:bg-${ColorStubs.overrides.medium.dark.colors.background.color}-500`,
+    );
+
+    expect(result).toContain(
+      `lg:text-${ColorStubs.overrides.large.colors.text.color}-500`,
+    );
+    expect(result).toContain(
+      `lg:bg-${ColorStubs.overrides.large.colors.background.color}-500`,
+    );
+
+    expect(result).toContain(
+      `lg:dark:text-${ColorStubs.overrides.large.dark.colors.text.color}-500`,
+    );
+    expect(result).toContain(
+      `lg:dark:bg-${ColorStubs.overrides.large.dark.colors.background.color}-500`,
     );
   });
 });

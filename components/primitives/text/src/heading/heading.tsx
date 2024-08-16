@@ -6,7 +6,7 @@ import {
   getClassNames,
   getTextColorAttribute,
   getBackgroundColorAttribute,
-  getProperties,
+  getComponentProperties,
 } from "@phoenix-ui/attribute-utils";
 
 export const Heading: FC<HeadingProps> = (properties) => {
@@ -25,7 +25,7 @@ export const Heading: FC<HeadingProps> = (properties) => {
   );
 
   return (
-    <TagType {...getProperties({ ...properties, className })}>
+    <TagType {...getComponentProperties({ ...properties, className })}>
       {properties.children}
     </TagType>
   );

@@ -3,24 +3,20 @@ import {
   getClassNames,
   getTextColorAttribute,
   getBackgroundColorAttribute,
+  getComponentProperties,
   getActionColorAttribute,
-  getProperties,
 } from "@phoenix-ui/attribute-utils";
 
 import type { ButtonAttributes, ButtonProperties } from "./button.types";
+import { getButtonScale, getButtonClassNames } from "./button.utils";
 
 export const Button: FC<ButtonProperties> = (properties) => {
   const className = getClassNames(
     "button",
-    properties.scale ?? "medium",
-    properties.rounded,
-    properties?.colors?.text != null &&
-      getTextColorAttribute(properties.colors.text),
-    properties.colors?.background != null &&
-      getBackgroundColorAttribute(properties.colors.background),
-    getActionColorAttribute(properties.action || "primary"),
+    getButtonScale(properties),
+    getActionColorAttribute(properties),
     properties.isFullWidth ?? false ? "w-full" : "",
-    properties.className,
+    getButtonClassNames(properties),
   );
 
   const attributes: ButtonAttributes = {};
@@ -30,7 +26,10 @@ export const Button: FC<ButtonProperties> = (properties) => {
   }
 
   return (
-    <button {...attributes} {...getProperties({ ...properties, className })}>
+    <button
+      {...attributes}
+      {...getComponentProperties({ ...properties, className })}
+    >
       {properties.children}
     </button>
   );

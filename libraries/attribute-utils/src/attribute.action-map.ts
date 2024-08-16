@@ -1,40 +1,38 @@
-import { type ActionMap } from "@phoenix-ui/types/components";
-
-export const ActionsMap: ActionMap = {
+export const ActionsMap = {
   neutral: {
-    text: { color: "text-white" },
-    background: { color: "bg-slate", weight: "500" },
+    text: { color: "white" },
+    background: { color: "slate", weight: "500" },
   },
   primary: {
-    text: { color: "text-white" },
-    background: { color: "bg-blue", weight: "500" },
+    text: { color: "white" },
+    background: { color: "blue", weight: "500" },
   },
   secondary: {
-    text: { color: "text-white" },
-    background: { color: "bg-neutral", weight: "500" },
+    text: { color: "white" },
+    background: { color: "neutral", weight: "500" },
   },
   success: {
-    text: { color: "text-white" },
-    background: { color: "bg-emerald", weight: "500" },
+    text: { color: "white" },
+    background: { color: "emerald", weight: "500" },
   },
   danger: {
-    text: { color: "text-white" },
-    background: { color: "bg-red", weight: "500" },
+    text: { color: "white" },
+    background: { color: "red", weight: "500" },
   },
   warning: {
-    text: { color: "text-white" },
-    background: { color: "bg-yellow", weight: "500" },
+    text: { color: "white" },
+    background: { color: "yellow", weight: "500" },
   },
   info: {
-    text: { color: "text-white" },
-    background: { color: "bg-teal", weight: "500" },
+    text: { color: "white" },
+    background: { color: "teal", weight: "500" },
   },
   light: {
-    text: { color: "text-black" },
-    background: { color: "bg-white" },
+    text: { color: "black" },
+    background: { color: "white" },
   },
   dark: {
-    text: { color: "text-white" },
+    text: { color: "white" },
     background: { color: "bg-black" },
   },
 };

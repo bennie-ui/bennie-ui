@@ -1,15 +1,15 @@
 import { test, expect } from "bun:test";
-import { getClassByViewPort } from "../src/attribute-utils";
-import type { ClassByResponsiveProps } from "../types";
+import { ComponentProperties } from "@phoenix-ui/types";
+import { TextAlignmentType } from "@phoenix-ui/types/texts";
+import { getClassByViewPort } from "@phoenix-ui/attribute-utils";
 import { variants } from "@phoenix-ui/baseline/tailwind/attributes/align";
 import { resolutions } from "./utils";
-import { TextAlignmentType } from "@phoenix-ui/types/texts";
 
-test("attributes.props.text-align", () => {
-  resolutions.forEach((resolution) => {
-    variants.base.forEach((align) => {
-      const align_value = align.split('-')[1]
-      const properties: ClassByResponsiveProps =
+resolutions.forEach((resolution) => {
+  variants.base.forEach((align) => {
+    test(`attributes.props.text-align:${align}`, () => {
+      const align_value = align.split("-")[1];
+      const properties: ComponentProperties =
         resolution.name === "base"
           ? { align: align_value as TextAlignmentType }
           : {
@@ -20,7 +20,7 @@ test("attributes.props.text-align", () => {
 
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        resolution.name === "base" ? align : `${resolution.value}:${align}`
+        resolution.name === "base" ? align : `${resolution.value}:${align}`,
       );
     });
   });

@@ -19,7 +19,7 @@ import { variants } from '../../../libraries/baseline/tailwind/attributes/align'
     const align_value =  value.split('-')[1]
 
     return <Unstyled key={idx}>
-     <Section width={{value: 'w-full'}} align={align_value}>
+     <Section className="border" width={{value: 'w-full'}} align={align_value}>
         {align_value}
      </Section> 
     </Unstyled>

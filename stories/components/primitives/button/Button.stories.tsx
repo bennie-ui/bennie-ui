@@ -12,9 +12,9 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Example: Story = {
   args: {
     action: "primary",
-    children: "",
+    children: "Content",
   },
 };

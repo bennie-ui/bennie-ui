@@ -1,10 +1,10 @@
 import { describe, test, expect } from "bun:test";
 
 import { resolutions, getProperties } from "./utils";
-import { getClassByViewPort } from "../src/attribute-utils";
+import { getClassByViewPort } from "../src/attributes.classes.utils";
 import { variants } from "@phoenix-ui/baseline/tailwind/attributes/margin";
 import { AllMargins } from "@phoenix-ui/types/attributes/margin.types";
-import type { ClassByResponsiveProps } from "../types";
+import { ComponentProperties } from "@phoenix-ui/types";
 
 describe("attributes.margin", () => {
   ["all", "x", "y", "left", "right", "top", "bottom"].forEach((testCase) => {
@@ -18,9 +18,7 @@ describe("attributes.margin", () => {
             testCase,
             m_value,
           );
-          const result = getClassByViewPort(
-            properties as ClassByResponsiveProps,
-          );
+          const result = getClassByViewPort(properties as ComponentProperties);
 
           expect(result.trim()).toBe(
             res.name === "base" ? m : `${res.value}:${m}`,
@@ -41,7 +39,7 @@ describe("attributes.margin", () => {
         bottom: "4",
       };
 
-      const properties: ClassByResponsiveProps =
+      const properties: ComponentProperties =
         res.name === "base"
           ? { margin }
           : { overrides: { [res.name]: { margin } } };

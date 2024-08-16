@@ -1,3 +1,6 @@
+export * from "./height.types";
+export * from "./width.types";
 export * from "./attribute.types";
 export * from "./flex.types";
-export * from "./flavor.type";
+export * from "./margin.types";
+export * from "./padding.types";

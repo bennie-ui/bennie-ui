@@ -1,19 +1,19 @@
-import React, { FC } from "react";
-import { SectionExtendedProperties } from "./section.types";
+import { FC } from "react";
 import {
   getClassNames,
   getTextColorAttribute,
   getBackgroundColorAttribute,
-  getProperties,
+  getSectionProperties,
 } from "@phoenix-ui/attribute-utils";
-export const Section: FC<SectionExtendedProperties> = ({
+import { SectionProperties } from "./section.types";
+export const Section: FC<SectionProperties> = ({
   children,
   align,
   colors,
   className,
   dataTestId,
   dark,
-  display,
+  //display,
   flex,
   //weight,
   height,
@@ -30,10 +30,9 @@ export const Section: FC<SectionExtendedProperties> = ({
 }) => {
   const TagType = tag || "div";
   const classNames = getClassNames(
-    align,
     colors?.text && getTextColorAttribute(colors.text),
     colors?.background && getBackgroundColorAttribute(colors.background),
-    display,
+    //display,
     //weight,
     flex && "flex",
     size,
@@ -46,7 +45,7 @@ export const Section: FC<SectionExtendedProperties> = ({
   if (dangerouslySetInnerHTML) {
     props = {
       dangerouslySetInnerHTML,
-      ...getProperties({
+      ...getSectionProperties({
         className: classNames,
         dark,
         dataTestId,
@@ -63,7 +62,7 @@ export const Section: FC<SectionExtendedProperties> = ({
   } else {
     props = {
       children,
-      ...getProperties({
+      ...getSectionProperties({
         align,
         dark,
         className: classNames,

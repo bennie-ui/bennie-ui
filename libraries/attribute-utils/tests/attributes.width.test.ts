@@ -1,9 +1,9 @@
 import { describe, test, expect } from "bun:test";
 
 import { resolutions, getProperties } from "./utils";
-import type { ClassByResponsiveProps } from "../types";
-import { getClassByViewPort } from "../src/attribute-utils";
+import { getClassByViewPort } from "../src/attributes.classes.utils";
 import { variants } from "@phoenix-ui/baseline/tailwind/attributes/width";
+import { ComponentProperties } from "@phoenix-ui/types";
 
 describe("attributes.width", () => {
   resolutions.forEach((res) => {
@@ -11,7 +11,7 @@ describe("attributes.width", () => {
       test(` :${w}`, () => {
         const w_value = w.split("-")[1];
         const properties = getProperties(res.name, "width", "value", w_value);
-        const result = getClassByViewPort(properties as ClassByResponsiveProps);
+        const result = getClassByViewPort(properties as ComponentProperties);
 
         expect(result.trim()).toBe(
           res.name === "base" ? w : `${res.value}:${w}`,
@@ -22,7 +22,7 @@ describe("attributes.width", () => {
 
   test(`:combined (left, right, top, bottom)`, () => {
     resolutions.forEach((res) => {
-      const properties: ClassByResponsiveProps = {
+      const properties: ComponentProperties = {
         width: {
           value: "5",
         },
