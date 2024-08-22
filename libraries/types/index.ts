@@ -16,12 +16,12 @@ import {
   TextSizeType,
   TextAlignmentType,
   TextDisplayType,
-} from "packages/phoenix-ui/libraries/types/texts";
+} from "@phoenix-ui/types/texts";
 
 import {
   DarkOverrides,
-  ResponsiveComponentOverrides,
-} from "packages/phoenix-ui/libraries/types/utilities";
+  ResponsiveOverrides,
+} from "@phoenix-ui/types/utilities";
 
 export interface ComponentAttributes {
   id?: string;
@@ -35,27 +35,22 @@ export interface ComponentProperties {
 
   action?: ActionType;
   align?: TextAlignmentType;
-
   children?: ReactNode;
   colors?: ColorType;
   className?: string;
-
   dataTestId?: string;
   dark?: DarkOverrides;
   display?: TextDisplayType;
-
   flex?: FlexType;
-
   height?: AllHeights;
-  width?: AllWidths;
   margin?: AllMargins;
-
-  scale?: ScaleType;
-  size?: TextSizeType;
   opacity?: OpacityType;
-  overrides?: ResponsiveComponentOverrides;
+  overrides?: ResponsiveOverrides;
   padding?: AllPaddings;
   rounding?: RoundingType;
+  scale?: ScaleType;
+  size?: TextSizeType;
+  width?: AllWidths;
 
   onClick?: (event: SyntheticEvent) => void;
 }

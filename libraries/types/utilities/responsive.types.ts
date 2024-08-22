@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { DarkOverrides } from "../utilities/dark.types";
 import { TextSizeType, TextAlignmentType } from "../texts";
 import { AllWidths } from "../attributes/width.types";
@@ -8,34 +9,22 @@ import { OpacityType, FlexType, ColorType, RoundingType } from "../attributes";
 
 export type AllResponsiveBreakpoints = "sm" | "md" | "lg" | "xl" | "2xl";
 
-interface BaseBreakpointProperties {
-  size?: TextSizeType;
-  width?: AllWidths;
-  height?: AllHeights;
-  margin?: AllMargins;
-  padding?: AllPaddings;
-  rounding?: RoundingType;
+interface ResponsiveOverrideProperties {
+  align?: TextAlignmentType;
+  children?: ReactNode;
   colors?: ColorType;
   dark?: DarkOverrides;
-  align?: TextAlignmentType;
-}
-
-interface ResponsiveComponentBreakpointProperties
-  extends BaseBreakpointProperties {
-  opacity?: OpacityType;
-}
-
-interface ResponsiveSectionBreakpointProperties
-  extends BaseBreakpointProperties {
   flex?: FlexType;
+  height?: AllHeights;
+  margin?: AllMargins;
+  opacity?: OpacityType;
+  padding?: AllPaddings;
+  rounding?: RoundingType;
+  size?: TextSizeType;
+  width?: AllWidths;
 }
 
-export interface ResponsiveComponentOverrides {
-  medium?: ResponsiveComponentBreakpointProperties;
-  large?: ResponsiveComponentBreakpointProperties;
-}
-
-export interface ResponsiveSectionOverrides {
-  medium?: ResponsiveSectionBreakpointProperties;
-  large?: ResponsiveSectionBreakpointProperties;
+export interface ResponsiveOverrides {
+  medium?: ResponsiveOverrideProperties;
+  large?: ResponsiveOverrideProperties;
 }

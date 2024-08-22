@@ -1,39 +1,38 @@
-import {
-  type DecimalType,
-  type PercentageType,
-} from "../attributes/attribute.types";
-export type FlexDirectionType =
-  | "flex-row"
-  | "flex-col"
-  | "flex-row-reverse"
-  | "flex-col-reverse";
-export type FlexWrapType = "flex-wrap" | "flex-nowrap" | "flex-wrap-reverse";
-export type FlexShrinkType = "shrink" | "shrink-0";
-export type FlexGrowType = "grow" | "grow-0";
-export type FlexBasisType = "px" | "auto" | "full";
+//import {
+//type DecimalType,
+//type PercentageType,
+//} from "@phoenix-ui/types/attributes";
+export type FlexDirectionType = "row" | "col" | "row-reverse" | "col-reverse";
+export type FlexGrowType = "1" | "0";
+export type FlexShrinkType = "1" | "0"; //"shrink" | "shrink-0";
+//export type FlexBasisType = "px" | "auto" | "full";
+export type FlexWrapType = "wrap" | "nowrap" | "reverse";
 
 export type FlexJustifyContentType =
-  | "justify-normal"
-  | "justify-start"
-  | "justify-end"
-  | "justify-center"
-  | "justify-between"
-  | "justify-around"
-  | "justify-evenly"
-  | "justify-stretch";
+  | "normal"
+  | "start"
+  | "end"
+  | "center"
+  | "between"
+  | "around"
+  | "evenly"
+  | "stretch";
 export type FlexAlignItemsType =
-  | "items-stretch"
-  | "items-center"
-  | "items-start"
-  | "items-end"
-  | "items-baseline";
+  | "stretch"
+  | "center"
+  | "start"
+  | "end"
+  | "baseline";
 
 export interface FlexType {
-  direction?: FlexDirectionType;
-  wrap?: FlexWrapType;
   alignItems?: FlexAlignItemsType;
-  justifyContent?: FlexJustifyContentType;
+
+  direction?: FlexDirectionType;
   grow?: FlexGrowType;
+
+  justifyContent?: FlexJustifyContentType;
+  wrap?: FlexWrapType;
+
   shrink?: FlexShrinkType;
   //basis?: number | DecimalType | PercentageType | FlexBasisType
 }

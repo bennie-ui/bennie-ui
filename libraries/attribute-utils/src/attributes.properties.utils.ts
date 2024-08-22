@@ -4,8 +4,9 @@ import { DATA_TEST_ID } from "@phoenix-ui/types/constants";
 
 export const getComponentProperties = (properties: ComponentProperties) => {
   const attributes: ComponentAttributes = {};
+  const default_class_name = properties.className || "";
 
-  const className = properties.className + getClassByViewPort(properties);
+  const className = default_class_name + getClassByViewPort(properties);
 
   {
     if (properties.onClick) {
@@ -25,8 +26,6 @@ export const getComponentProperties = (properties: ComponentProperties) => {
       attributes[DATA_TEST_ID] = properties.dataTestId;
     }
   }
-
-  //console.log("f: className", className);
 
   return attributes;
 };

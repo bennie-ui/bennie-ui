@@ -1,6 +1,15 @@
-import { ActionType, ColorPropertiesType } from "@phoenix-ui/types/attributes";
+import { ColorPropertiesType } from "@phoenix-ui/types/attributes";
 import { ActionsMap } from "./attribute.action-map";
 import { ComponentProperties } from "@phoenix-ui/types";
+
+const get_class_matching = (className: string, query: string) => {
+  const classes = className.split(" ");
+  const found = classes.filter((it) => it.includes(query));
+  if (found) {
+    return [found];
+  }
+  return undefined;
+};
 
 export const getActionColorAttribute = (
   properties: ComponentProperties,
@@ -11,13 +20,24 @@ export const getActionColorAttribute = (
     return "";
   }
 
+  let text_class,
+    bg_class = undefined;
+  if (className) {
+    text_class = get_class_matching(className, "text-");
+    bg_class = get_class_matching(className, "bg-");
+  }
+
   const defaultAction = ActionsMap[action];
-  const textAttribute = getTextColorAttribute(
-    defaultAction?.text as ColorPropertiesType,
-  );
-  const backgroundAttribute = getBackgroundColorAttribute(
-    defaultAction?.background as ColorPropertiesType,
-  );
+
+  const textAttribute = text_class
+    ? text_class
+    : getTextColorAttribute(defaultAction?.text as ColorPropertiesType);
+
+  const backgroundAttribute = bg_class
+    ? bg_class
+    : getBackgroundColorAttribute(
+        defaultAction?.background as ColorPropertiesType,
+      );
 
   return `${textAttribute} ${backgroundAttribute} `;
 };

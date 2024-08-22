@@ -1,93 +1,111 @@
 import { describe, test, expect } from "bun:test";
 import { getClassByViewPort } from "../src/attributes.classes.utils";
 import { variants } from "@phoenix-ui/baseline/tailwind/display/flex";
-import type { ClassByResponsiveProps } from "../types";
 import { resolutions, getProperties } from "./utils";
+import { ComponentProperties } from "@phoenix-ui/types";
 
-// TODO: Fix this tests
-describe.skip("attributes.flex", () => {
-  test(`:direction`, () => {
-    resolutions.forEach((res) => {
-      variants.base.directions.split(" ").forEach((direction) => {
+describe("attributes.flex", () => {
+  resolutions.forEach((res) => {
+    variants.base.directions.forEach((direction) => {
+      test(`:direction - ${res.value || "sm"}:${direction}`, () => {
+        const direction_value = direction.substr(5, direction.length - 1);
+        //console.log("f: direction_value", direction_value);
         const properties = getProperties(
           res.name,
           "flex",
           "direction",
-          direction,
-        ) as ClassByResponsiveProps;
-        const result = getClassByViewPort(properties);
+          direction_value,
+        );
+        //console.log("f: getProperties", properties);
+        const result = getClassByViewPort(properties as ComponentProperties);
         expect(result.trim()).toBe(
-          res.name === "base" ? direction : `${res.value}:${direction}`,
+          res.name === "base"
+            ? `flex  ${direction}`
+            : `flex  ${res.value}:${direction}`,
         );
       });
     });
   });
 
-  test(`:shrink`, () => {
-    resolutions.forEach((res) => {
-      variants.base.shrink.split(" ").forEach((shrink) => {
-        const properties = getProperties(
-          res.name,
-          "flex",
-          "shrink",
-          shrink,
-        ) as ClassByResponsiveProps;
-        const result = getClassByViewPort(properties);
-        expect(result.trim()).toBe(
-          res.name === "base" ? shrink : `${res.value}:${shrink}`,
-        );
-      });
-    });
-  });
+  resolutions.forEach((res) => {
+    variants.base.alignItems.forEach((alignItems) => {
+      test(`:alignItems - ${res.value || "sm"}:${alignItems}`, () => {
+        const align_value = alignItems.substr(6, alignItems.length - 1);
 
-  test(`:grow`, () => {
-    resolutions.forEach((res) => {
-      variants.base.grow.split(" ").forEach((grow) => {
-        const properties = getProperties(
-          res.name,
-          "flex",
-          "grow",
-          grow,
-        ) as ClassByResponsiveProps;
-        const result = getClassByViewPort(properties);
-        expect(result.trim()).toBe(
-          res.name === "base" ? grow : `${res.value}:${grow}`,
-        );
-      });
-    });
-  });
-
-  test(`:alignItems`, () => {
-    resolutions.forEach((res) => {
-      variants.base.alignItems.split(" ").forEach((alignItems) => {
         const properties = getProperties(
           res.name,
           "flex",
           "alignItems",
-          alignItems,
-        ) as ClassByResponsiveProps;
-        const result = getClassByViewPort(properties);
+          align_value,
+        );
+        const result = getClassByViewPort(properties as ComponentProperties);
         expect(result.trim()).toBe(
-          res.name === "base" ? alignItems : `${res.value}:${alignItems}`,
+          res.name === "base"
+            ? `flex  ${alignItems}`
+            : `flex  ${res.value}:${alignItems}`,
         );
       });
     });
   });
 
-  test(`:justifyContent`, () => {
-    resolutions.forEach((res) => {
-      variants.base.justifyContent.split(" ").forEach((justifyContent) => {
+  resolutions.forEach((res) => {
+    variants.base.justifyContent.forEach((justifyContent) => {
+      test(`:justifyContent - ${res.value || "sm"}:${justifyContent}`, () => {
+        const justify_value = justifyContent.substr(
+          8,
+          justifyContent.length - 1,
+        );
+
         const properties = getProperties(
           res.name,
           "flex",
           "justifyContent",
-          justifyContent,
+          justify_value,
+        );
+        const result = getClassByViewPort(properties as ComponentProperties);
+        expect(result.trim()).toBe(
+          res.name === "base"
+            ? `flex  ${justifyContent}`
+            : `flex  ${res.value}:${justifyContent}`,
+        );
+      });
+    });
+  });
+
+  resolutions.forEach((res) => {
+    variants.base.shrink.forEach((shrink) => {
+      test(`:shrink ${res.value || "sm"}: ${shrink}`, () => {
+        const shrink_value = shrink === "shrink" ? "1" : "0";
+        const properties = getProperties(
+          res.name,
+          "flex",
+          "shrink",
+          shrink_value,
+        );
+        const result = getClassByViewPort(properties as ComponentProperties);
+        expect(result.trim()).toBe(
+          res.name === "base"
+            ? `flex  ${shrink}`
+            : `flex  ${res.value}:${shrink}`,
+        );
+      });
+    });
+  });
+
+  resolutions.forEach((res) => {
+    variants.base.grow.forEach((grow) => {
+      test(`:grow ${res.value || "sm"}: ${grow}`, () => {
+        const grow_value = grow === "grow" ? "1" : "0";
+
+        const properties = getProperties(
+          res.name,
+          "flex",
+          "grow",
+          grow_value,
         ) as ClassByResponsiveProps;
         const result = getClassByViewPort(properties);
         expect(result.trim()).toBe(
-          res.name === "base"
-            ? justifyContent
-            : `${res.value}:${justifyContent}`,
+          res.name === "base" ? `flex  ${grow}` : `flex  ${res.value}:${grow}`,
         );
       });
     });

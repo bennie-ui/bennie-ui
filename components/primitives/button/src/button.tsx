@@ -1,13 +1,10 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import {
   getClassNames,
-  getTextColorAttribute,
-  getBackgroundColorAttribute,
   getComponentProperties,
   getActionColorAttribute,
 } from "@phoenix-ui/attribute-utils";
-
-import type { ButtonAttributes, ButtonProperties } from "./button.types";
+import { ButtonAttributes, ButtonProperties } from "./button.types";
 import { getButtonScale, getButtonClassNames } from "./button.utils";
 
 export const Button: FC<ButtonProperties> = (properties) => {

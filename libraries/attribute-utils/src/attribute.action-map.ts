@@ -33,6 +33,6 @@ export const ActionsMap = {
   },
   dark: {
     text: { color: "white" },
-    background: { color: "bg-black" },
+    background: { color: "black" },
   },
 };

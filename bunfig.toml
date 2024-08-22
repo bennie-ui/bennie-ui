@@ -1,4 +1,4 @@
 
 [test]
 preload = "./happydom.ts"
-coverage = true
+coverage = false

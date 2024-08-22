@@ -1,22 +1,24 @@
 import { SyntheticEvent } from "react";
-import type {
-  TextTagType,
-  TextOverflowType,
-  TextWeightType,
-  TextAlignmentType,
-  TextDisplayType,
-  TextSizeType,
-} from "@phoenix-ui/types/texts";
 import {
   ColorType,
   OpacityType,
-} from "packages/phoenix-ui/libraries/types/attributes";
-import { AllMargins } from "packages/phoenix-ui/libraries/types/attributes/margin.types";
-import { AllPaddings } from "packages/phoenix-ui/libraries/types/attributes/padding.types";
+  AllMargins,
+  AllPaddings,
+} from "@phoenix-ui/types/attributes";
+
 import {
   DarkOverrides,
-  ResponsiveComponentOverrides,
-} from "packages/phoenix-ui/libraries/types/utilities";
+  ResponsiveOverrides,
+} from "@phoenix-ui/types/utilities";
+
+import {
+  TextSizeType,
+  TextAlignmentType,
+  TextDisplayType,
+  TextOverflowType,
+  TextTagType,
+  TextWeightType,
+} from "@phoenix-ui/types/texts";
 
 export type TextAttributes = {
   id?: string;
@@ -39,8 +41,7 @@ export type TextProperties = {
   margin?: AllMargins;
   size?: TextSizeType;
   opacity?: OpacityType;
-  onClick?: (event: SyntheticEvent) => void;
-  overrides?: ResponsiveComponentOverrides;
+  overrides?: ResponsiveOverrides;
   overflow?: TextOverflowType;
   padding?: AllPaddings;
 

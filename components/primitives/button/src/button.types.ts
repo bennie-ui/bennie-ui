@@ -1,3 +1,4 @@
+import { ReactNode, SyntheticEvent } from "react";
 import type {
   ScaleType,
   RoundingType,
@@ -8,13 +9,12 @@ import type {
   AllPaddings,
 } from "@phoenix-ui/types/attributes";
 
-import { DATA_TEST_ID } from "packages/phoenix-ui/libraries/constants/src";
-import { TextSizeType } from "packages/phoenix-ui/libraries/types/texts";
+import { DATA_TEST_ID } from "@phoenix-ui/constants";
+import { TextSizeType } from "@phoenix-ui/types/texts";
 import {
   DarkOverrides,
-  ResponsiveComponentOverrides,
+  ResponsiveOverrides,
 } from "packages/phoenix-ui/libraries/types/utilities";
-import { SyntheticEvent } from "react";
 
 export interface ButtonAttributes {
   className?: string;
@@ -26,22 +26,21 @@ export interface ButtonAttributes {
 
 export interface ButtonProperties {
   id?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   colors?: ColorType;
   className?: string;
   dataTestId?: string;
   dark?: DarkOverrides;
+  disabled?: boolean;
   margin?: AllMargins;
   size?: TextSizeType;
   opacity?: OpacityType;
+  overrides?: ResponsiveOverrides;
   padding?: AllPaddings;
-
   action?: ActionType;
   scale?: ScaleType;
   rounding?: RoundingType;
   isFullWidth?: boolean;
-  disabled?: boolean;
 
   onClick?: (event: SyntheticEvent) => void;
-  overrides?: ResponsiveComponentOverrides;
 }

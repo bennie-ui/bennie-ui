@@ -2,10 +2,7 @@ import {
   getTextColorAttribute,
   getBackgroundColorAttribute,
 } from "../attributes.color.utils";
-import {
-  ComponentProperties,
-  BuilderFunction,
-} from "packages/phoenix-ui/libraries/types";
+import { ComponentProperties, BuilderFunction } from "@phoenix-ui/types";
 
 export const ColorBuilder: BuilderFunction = (
   properties: ComponentProperties,
@@ -26,7 +23,7 @@ export const ColorBuilder: BuilderFunction = (
 export const TextColorBuilder: BuilderFunction = (
   properties: ComponentProperties,
 ): string => {
-  let className = "";
+  const className = "";
 
   if (properties.action != null) {
     return "";

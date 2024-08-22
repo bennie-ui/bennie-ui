@@ -4,7 +4,7 @@ import { get_classname_by_resolution } from "./attribute.resolutions.utils";
 import { get_classname_by_theme } from "./attributes.dark.utils";
 import { ClassBuilder } from "./attribute.builder";
 
-export const getClassNames = (...args: any[]) => {
+export const getClassNames = (...args: string[]) => {
   return args.filter((it) => it ?? "").join(" ");
 };
 
@@ -18,14 +18,22 @@ export const get_class_from_property = (
   let classes = "";
   const class_builder = ClassBuilder();
 
-  let executable =
+  //console.log("f: get_class_from_property", {
+  //parent_name,
+  //property_name,
+  //property_value,
+  //parent_names,
+  //properties,
+  //});
+  const executable =
     class_builder.get(parent_name, property_name) ||
     class_builder.get(property_name, "");
 
+  //console.log("f: exec", executable);
   if (executable) {
     let props: ComponentProperties | undefined;
     const is_responsive = parent_names.includes("overrides");
-    let is_dark = parent_names.includes("dark");
+    const is_dark = parent_names.includes("dark");
     let class_name: string | undefined = "";
 
     if (is_responsive) {
@@ -92,9 +100,11 @@ export const get_class_from_property = (
 
       classes += class_name;
     }
+
+    return ` ${classes.trim()}`;
   }
 
-  return ` ${classes.trim()}`;
+  return "";
 };
 
 export const recusiveClassSearch = (
@@ -104,15 +114,14 @@ export const recusiveClassSearch = (
   parent_names: string[],
   properties: ComponentProperties,
 ): string => {
-  let classes = "";
-
-  //console.log("f: data", {
+  //console.log("f: recursive", {
   //parent_name,
   //property_name,
   //property_value,
   //parent_names,
-  //properties,
   //});
+  let classes = "";
+
   if (property_value === undefined) {
     return "";
   }
@@ -124,6 +133,19 @@ export const recusiveClassSearch = (
       property_value,
       parent_names,
       properties,
+    );
+  }
+
+  if (property_name === "flex") {
+    return (
+      "flex " +
+      get_class_from_property(
+        parent_name,
+        property_name,
+        property_value,
+        parent_names,
+        properties,
+      )
     );
   }
 
@@ -156,16 +178,16 @@ export const recusiveClassSearch = (
 
 export const getClassByViewPort = (properties: ComponentProperties): string => {
   let classes = "";
-
   Object.entries(properties).forEach(([property_name, property_value]) => {
-    classes += recusiveClassSearch(
-      "",
-      property_name,
-      property_value,
-
-      [""],
-      properties,
-    );
+    if (property_name !== "children") {
+      classes += recusiveClassSearch(
+        "",
+        property_name,
+        property_value,
+        [""],
+        properties,
+      );
+    }
   });
 
   return ` ${classes.trim()}`;

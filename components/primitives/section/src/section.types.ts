@@ -1,22 +1,23 @@
-import { DATA_TEST_ID } from "packages/phoenix-ui/libraries/constants/src";
+import { ReactNode } from "react";
 import {
-  ColorType,
-  FlexType,
-  OpacityType,
   RoundingType,
-} from "packages/phoenix-ui/libraries/types/attributes";
-import { AllHeights } from "packages/phoenix-ui/libraries/types/attributes/height.types";
-import { AllMargins } from "packages/phoenix-ui/libraries/types/attributes/margin.types";
-import { AllPaddings } from "packages/phoenix-ui/libraries/types/attributes/padding.types";
-import { AllWidths } from "packages/phoenix-ui/libraries/types/attributes/width.types";
-import {
-  TextAlignmentType,
-  TextSizeType,
-} from "packages/phoenix-ui/libraries/types/texts";
+  ColorType,
+  OpacityType,
+  AllMargins,
+  AllPaddings,
+  FlexType,
+  AllWidths,
+  AllHeights,
+} from "@phoenix-ui/types/attributes";
+
 import {
   DarkOverrides,
-  ResponsiveSectionOverrides,
-} from "packages/phoenix-ui/libraries/types/utilities";
+  ResponsiveOverrides,
+} from "@phoenix-ui/types/utilities";
+
+import { TextSizeType, TextAlignmentType } from "@phoenix-ui/types/texts";
+
+import { DATA_TEST_ID } from "@phoenix-ui/constants";
 
 export interface SectionAttributes {
   className?: string;
@@ -26,25 +27,21 @@ export interface SectionAttributes {
 
 type SectionTagType = "div" | "pre" | "code";
 export interface SectionProperties {
-  flex?: FlexType;
-
-  align?: TextAlignmentType;
-  rounding?: RoundingType;
-  height?: AllHeights;
-  width?: AllWidths;
-  overrides?: ResponsiveSectionOverrides;
-
   id?: string;
-  children?: React.ReactNode;
-  colors?: ColorType;
+  align?: TextAlignmentType;
+  children?: ReactNode;
   className?: string;
+  colors?: ColorType;
   dataTestId?: string;
   dark?: DarkOverrides;
+  flex?: FlexType;
+  height?: AllHeights;
   margin?: AllMargins;
-  size?: TextSizeType;
   opacity?: OpacityType;
+  overrides?: ResponsiveOverrides;
   padding?: AllPaddings;
-
-  dangerouslySetInnerHTML?: { __html: string };
+  rounding?: RoundingType;
+  size?: TextSizeType;
   tag?: SectionTagType;
+  width?: AllWidths;
 }

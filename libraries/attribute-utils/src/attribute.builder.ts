@@ -11,6 +11,7 @@ import {
   MarginAttributeBuilder,
   PaddingAttributeBuilder,
 } from "@phoenix-ui/attribute-utils";
+import { FlexBuilder } from "./builders/builders.flex";
 
 export type ClassBuilderType = {
   keys: () => string[];
@@ -19,16 +20,16 @@ export type ClassBuilderType = {
 
 export const ClassBuilder = (): ClassBuilderType => {
   const builders = {
-    colors: ColorBuilder,
-
-    rounding: RoundingAttributeBuilder,
-    opacity: OpacityAttributeBuilder,
     align: TextAlignAttributeBuilder,
-    size: TextSizeAttributeBuilder,
+    colors: ColorBuilder,
+    flex: FlexBuilder,
     height: HeightAttributeBuilder,
-    width: WidthAttributeBuilder,
     margin: MarginAttributeBuilder,
+    opacity: OpacityAttributeBuilder,
     padding: PaddingAttributeBuilder,
+    rounding: RoundingAttributeBuilder,
+    width: WidthAttributeBuilder,
+    size: TextSizeAttributeBuilder,
   };
 
   return {

@@ -1,27 +1,8 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { LinkAttributes, LinkProperties } from "./link.types";
-import {
-  getClassNames,
-  getTextColorAttribute,
-  getBackgroundColorAttribute,
-  getComponentProperties,
-} from "@phoenix-ui/attribute-utils";
+import { getComponentProperties } from "@phoenix-ui/attribute-utils";
 
 const Link: FC<LinkProperties> = (properties) => {
-  const className = getClassNames(
-    properties.size,
-    properties?.colors?.text
-      ? getTextColorAttribute(properties.colors.text)
-      : "text-blue-400",
-    properties.colors?.background &&
-      getBackgroundColorAttribute(properties.colors.background),
-    properties.opacity,
-    properties.align,
-    properties.display,
-    properties.weight,
-    properties.className,
-  );
-
   const attributes: LinkAttributes = {
     href: properties.href || "#",
     target: properties.target || "_self",
@@ -32,10 +13,7 @@ const Link: FC<LinkProperties> = (properties) => {
   }
 
   return (
-    <a
-      {...attributes}
-      {...getComponentProperties({ ...properties, className })}
-    >
+    <a {...attributes} {...getComponentProperties({ ...properties })}>
       {properties.children}
     </a>
   );
