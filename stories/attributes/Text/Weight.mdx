@@ -1,0 +1,28 @@
+import { Unstyled } from "@storybook/blocks";
+import { Text } from '@phoenix-ui/text'
+import { Section } from '@phoenix-ui/section'
+import { variants } from '@phoenix-ui/baseline/tailwind/attributes/text'
+
+
+## Example
+```
+<Text weight_value="normal">My Text</Text>
+```
+
+### Text Sizes
+
+{
+  variants.base.weight.map((value, idx) => {
+  
+    const weight_value = value.split('-')[1]
+
+    return <Unstyled key={idx}>
+      <Section className="w-full border">
+         <Text weight={weight_value}>
+          {value}
+         </Text> 
+       </Section>
+    </Unstyled>
+  })
+}
+

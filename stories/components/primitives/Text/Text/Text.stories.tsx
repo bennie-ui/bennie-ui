@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Text } from "../../../../components/primitives/text";
+import { Text } from "@phoenix-ui/text";
 
 const meta: Meta<typeof Text> = {
-  title: "Components/Primitives/Texts/Text",
+  title: "Components/Primitives/Text/Text",
   component: Text,
   tags: ["autodocs"],
   parameters: {},

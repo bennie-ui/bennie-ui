@@ -1,0 +1,25 @@
+import { Unstyled } from "@storybook/blocks";
+import { Text } from '@phoenix-ui/text'
+import { Section } from '@phoenix-ui/section'
+import { variants } from '@phoenix-ui/baseline/tailwind/attributes/text'
+
+
+## Example
+```
+<Text size="xs">My Link</Text>
+```
+
+### Text Sizes
+
+{
+  variants.base.size.map((value, idx) => {
+    const text_value =  value.split('-')[1]
+
+    return <Unstyled key={idx}>
+     <Text className="border" size={text_value}>
+        {text_value}
+     </Text> 
+    </Unstyled>
+  })
+}
+

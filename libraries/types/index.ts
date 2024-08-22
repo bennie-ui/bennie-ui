@@ -16,6 +16,7 @@ import {
   TextSizeType,
   TextAlignmentType,
   TextDisplayType,
+  TextWeightType,
 } from "@phoenix-ui/types/texts";
 
 import {
@@ -50,6 +51,7 @@ export interface ComponentProperties {
   rounding?: RoundingType;
   scale?: ScaleType;
   size?: TextSizeType;
+  weight?: TextWeightType;
   width?: AllWidths;
 
   onClick?: (event: SyntheticEvent) => void;

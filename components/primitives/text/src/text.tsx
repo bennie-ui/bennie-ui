@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { getComponentProperties } from "@phoenix-ui/attribute-utils";
 import { TextAttributes, TextProperties } from "./text.types.js";
 

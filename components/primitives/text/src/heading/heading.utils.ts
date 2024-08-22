@@ -3,20 +3,19 @@ import type { HeadingTagType } from "@phoenix-ui/types/texts";
 export const getTagSize = (tag: HeadingTagType) => {
   switch (tag) {
     case "h1":
-      return "font-3xl";
+      return "text-3xl";
     case "h2":
-      return "font-2xl";
+      return "text-3xl";
     case "h3":
-      return "font-2xl";
+      return "text-2xl";
     case "h4":
-      return "font-xl";
+      return "text-2xl";
     case "h5":
-      return "font-xl";
+      return "text-xl";
     case "h6":
-      return "font-lg";
-
-    default:
-      return "font-lg";
+      return "text-xl";
+    case "h7":
+      return "text-lg";
   }
 };
 
@@ -25,17 +24,19 @@ export const getTagWeight = (tag: HeadingTagType) => {
     case "h1":
       return "font-semibold";
     case "h2":
-      return "font-semibold";
+      return "font-medium";
+
     case "h3":
-      return "font-medium";
-    case "h4":
       return "font-semibold";
-    case "h5":
+    case "h4":
       return "font-medium";
+
+    case "h5":
+      return "font-semibold";
     case "h6":
       return "font-medium";
 
     default:
-      return "font-medium";
+      return "font-semibold";
   }
 };

@@ -1,4 +1,4 @@
-import { BuilderFunction, ComponentProperties } from "@phoenix-ui/types";
+import { BuilderFunction } from "@phoenix-ui/types";
 
 import {
   ColorBuilder,
@@ -10,6 +10,7 @@ import {
   WidthAttributeBuilder,
   MarginAttributeBuilder,
   PaddingAttributeBuilder,
+  TextWeightAttributeBuilder,
 } from "@phoenix-ui/attribute-utils";
 import { FlexBuilder } from "./builders/builders.flex";
 
@@ -29,13 +30,15 @@ export const ClassBuilder = (): ClassBuilderType => {
     padding: PaddingAttributeBuilder,
     rounding: RoundingAttributeBuilder,
     width: WidthAttributeBuilder,
+    weight: TextWeightAttributeBuilder,
     size: TextSizeAttributeBuilder,
   };
 
   return {
     keys: () => Object.keys(builders),
     get: (property: string, child: string): BuilderFunction | undefined => {
-      // @ts-ignore
+      // TODO: try to refactor this.
+      // @ts-expect-error: not sure how to type this.
       const { [property]: propery_builder } = builders;
 
       if (propery_builder && propery_builder[child]) {

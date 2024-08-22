@@ -17,3 +17,12 @@ export const TextSizeAttributeBuilder = (
   }
   return "";
 };
+
+export const TextWeightAttributeBuilder = (
+  properties: ComponentProperties,
+): string => {
+  if (properties.weight) {
+    return `font-${properties.weight}`;
+  }
+  return "";
+};

@@ -1,16 +1,22 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { getTagSize, getTagWeight } from "./heading.utils";
 import { HeadingProps } from "./heading.types";
 
-import { getComponentProperties } from "@phoenix-ui/attribute-utils";
+import {
+  getClassNames,
+  getComponentProperties,
+} from "@phoenix-ui/attribute-utils";
 
 export const Heading: FC<HeadingProps> = (properties) => {
   const TagType = properties?.tag || "h1";
-  const TagSize = getTagSize(TagType);
-  const TagWeight = getTagWeight(TagType);
+  const className = getClassNames(
+    getTagSize(TagType),
+    getTagWeight(TagType),
+    properties.className || "",
+  );
 
   return (
-    <TagType {...getComponentProperties({ ...properties })}>
+    <TagType {...getComponentProperties({ ...properties, className })}>
       {properties.children}
     </TagType>
   );

@@ -9,7 +9,6 @@ export const ColorBuilder: BuilderFunction = (
 ) => {
   let classes = "";
 
-  //console.log("f: properties", properties);
   if (properties.colors?.text) {
     classes += TextColorBuilder(properties);
   }
@@ -23,16 +22,24 @@ export const ColorBuilder: BuilderFunction = (
 export const TextColorBuilder: BuilderFunction = (
   properties: ComponentProperties,
 ): string => {
-  const className = "";
-
   if (properties.action != null) {
     return "";
   }
 
-  if (
-    properties.className?.indexOf &&
-    properties.className?.indexOf("text-") > -1
-  ) {
+  const text_color_classes = properties.className?.split(" ").filter((it) => {
+    if (
+      it.includes("text-") &&
+      !it.includes("xs") &&
+      !it.includes("sm") &&
+      !it.includes("base") &&
+      !it.includes("xl")
+    ) {
+      return true;
+    }
+    return false;
+  });
+
+  if (text_color_classes && text_color_classes?.length > 0) {
     return "";
   }
 

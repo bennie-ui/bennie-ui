@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { LinkAttributes, LinkProperties } from "./link.types";
 import { getComponentProperties } from "@phoenix-ui/attribute-utils";
 
