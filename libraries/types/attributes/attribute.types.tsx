@@ -131,7 +131,6 @@ export type ColorWeight =
   | "950";
 
 export type ColorPropertiesType = { color?: ColorValue; weight?: ColorWeight };
-
 export type ColorType = {
   text?: ColorPropertiesType;
   background?: ColorPropertiesType;

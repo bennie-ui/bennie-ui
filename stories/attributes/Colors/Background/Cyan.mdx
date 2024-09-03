@@ -1,28 +1,25 @@
 import { Unstyled } from "@storybook/blocks";
-import { Section } from '../../../../components/primitives/section'
-import { Text } from '../../../../components/primitives/text'
-import { variants } from '../../../../libraries/baseline/tailwind/colors/background/sm'
+import { Section } from '@phoenix-ui/section'
+import { Text } from '@phoenix-ui/text'
+import { variants } from '@phoenix-ui/baseline/tailwind/colors/background/sm'
 
 # Demo of supported text-cyan-* values
 
 ## Example
 ```
-<Text colors={{ text: { color: 'cyan', weight: 400 } }}>Content</Text>
+<Text colors={{ background: { color: 'cyan', weight: 400 } }}>Content</Text>
 ```
 ## Types
 [See Margin Values](https://github.com/bolanosdev/phoenix-ui/blob/main/libraries/types/sizing/width.types.ts)
 
 
-# Neutral tests
+# Cyan tests
 {
   variants.base.cyan.map((value, idx) => {
     const [_, color, weight] =  value.split('-')
-
     return <Unstyled key={idx}>
-      <Section className="w-full">
-         <Text colors={{ background: {color, weight}, text: { color: 'slate' } }}>
+      <Section className="w-full" colors={{ background: {color, weight}, text: { color: 'slate' } }}>
           {value}
-       </Text> 
       </Section>
     </Unstyled>
   })

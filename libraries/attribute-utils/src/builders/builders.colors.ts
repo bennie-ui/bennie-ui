@@ -1,6 +1,7 @@
 import {
   getTextColorAttribute,
   getBackgroundColorAttribute,
+  getBorderColorAttribute,
 } from "../attributes.color.utils";
 import { ComponentProperties, BuilderFunction } from "@phoenix-ui/types";
 
@@ -10,11 +11,15 @@ export const ColorBuilder: BuilderFunction = (
   let classes = "";
 
   if (properties.colors?.text) {
-    classes += TextColorBuilder(properties);
+    classes += " " + TextColorBuilder(properties);
   }
 
   if (properties.colors?.background) {
     classes += " " + BackgroundColorBuilder(properties);
+  }
+
+  if (properties.colors?.border) {
+    classes += " " + BorderColorBuilder(properties);
   }
 
   return classes;
@@ -66,6 +71,16 @@ export const BackgroundColorBuilder: BuilderFunction = (
 
   if (properties.colors?.background) {
     return getBackgroundColorAttribute(properties.colors?.background);
+  }
+
+  return " ";
+};
+
+export const BorderColorBuilder: BuilderFunction = (
+  properties: ComponentProperties,
+): string => {
+  if (properties.colors?.border) {
+    return getBorderColorAttribute(properties.colors?.border);
   }
 
   return " ";

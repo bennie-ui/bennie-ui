@@ -15,5 +15,6 @@ type Story = StoryObj<typeof Text>;
 export const Primary: Story = {
   args: {
     children: "I am a text",
+    colors: { text: { color: "gray" } },
   },
 };

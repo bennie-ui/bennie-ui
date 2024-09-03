@@ -4,3 +4,4 @@ export * from "./attribute.types";
 export * from "./flex.types";
 export * from "./margin.types";
 export * from "./padding.types";
+export * from "./border.types";

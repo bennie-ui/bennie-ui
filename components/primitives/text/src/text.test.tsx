@@ -13,8 +13,8 @@ describe("should test react-text component", () => {
   test(":size", () => {
     const text = (
       <Text
-        size="text-sm"
-        overrides={{ medium: { size: "text-lg" }, large: { size: "text-3xl" } }}
+        size="sm"
+        overrides={{ medium: { size: "lg" }, large: { size: "3xl" } }}
       >
         Hello World
       </Text>

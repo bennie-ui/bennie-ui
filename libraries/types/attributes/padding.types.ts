@@ -1,5 +1,5 @@
-import { DecimalType, NumericMinRangeType } from './attribute.types'
-export type PaddingValues = DecimalType | NumericMinRangeType
+import { DecimalType, NumericMinRangeType } from "./attribute.types";
+export type PaddingValues =  DecimalType | NumericMinRangeType;
 
 export interface AllPaddings {
   all?: PaddingValues;
@@ -10,5 +10,3 @@ export interface AllPaddings {
   right?: PaddingValues;
   bottom?: PaddingValues;
 }
-
- 

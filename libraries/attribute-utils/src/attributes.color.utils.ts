@@ -56,6 +56,13 @@ export const getBackgroundColorAttribute = (
   return `bg-${color}-${weight}`;
 };
 
+export const getBorderColorAttribute = (value: ColorPropertiesType): string => {
+  const { color = "slate", weight = "500" } = value;
+  if (color === "white" || color === "black") return `border-${color}`;
+
+  return `border-${color}-${weight}`;
+};
+
 export const getDarkClassName = (
   parentNames: string[],
   propertyName: string,

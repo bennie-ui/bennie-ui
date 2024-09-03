@@ -14,7 +14,10 @@
     "components/primitives/*"
   ],
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
+    "@loadable/component": "^5.16.4",
     "@remix-run/react": "^2.8.1",
+    "install": "^0.13.0",
     "react": "^18.2.0"
   },
   "devDependencies": {

@@ -1,0 +1,26 @@
+import { Unstyled } from "@storybook/blocks";
+import { Icon } from '@phoenix-ui/icons';
+import { Text } from '@phoenix-ui/text';
+import { Section } from '@phoenix-ui/section'
+import { icons } from '@phoenix-ui/baseline/tailwind/icons';
+
+
+# Icons
+{
+    icons.map(figure => {
+        return <Unstyled>
+          <Section flex={{direction: 'row'}}>
+           <Icon
+            type="solid"
+            figure={figure}
+            colors={{ text: { color: "blue" } }}
+          />
+
+          <Text colors={{ text: { color: "blue" } }} margin={{left: '3'}}>
+            {figure}
+          </Text>
+                   </Section>
+          
+          </Unstyled>
+    })
+  }

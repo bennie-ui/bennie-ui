@@ -7,7 +7,7 @@ import { AllMargins } from "@phoenix-ui/types/attributes/margin.types";
 import { ComponentProperties } from "@phoenix-ui/types";
 
 describe("attributes.margin", () => {
-  ["all", "x", "y", "left", "right", "top", "bottom"].forEach((testCase) => {
+  [ "all", "x", "y", "left", "right", "top", "bottom"].forEach((testCase) => {
     test(`:${testCase}`, () => {
       resolutions.forEach((res) => {
         variants.base[testCase].forEach((m) => {

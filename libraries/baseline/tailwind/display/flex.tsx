@@ -1,6 +1,7 @@
 export const variants = {
+  flex: "flex",
+
   base: {
-    flex: "flex",
     directions: [
       "flex-row",
       "flex-col",

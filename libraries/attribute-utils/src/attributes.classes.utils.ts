@@ -18,13 +18,6 @@ export const get_class_from_property = (
   let classes = "";
   const class_builder = ClassBuilder();
 
-  //console.log("f: get_class_from_property", {
-  //parent_name,
-  //property_name,
-  //property_value,
-  //parent_names,
-  //properties,
-  //});
   const executable =
     class_builder.get(parent_name, property_name) ||
     class_builder.get(property_name, "");
@@ -126,27 +119,19 @@ export const recusiveClassSearch = (
     return "";
   }
 
-  if (property_name === "colors" || property_name === "margin") {
-    return get_class_from_property(
+  if (property_name === "colors" || property_name === "flex") {
+    let class_name = get_class_from_property(
       parent_name,
       property_name,
       property_value,
       parent_names,
       properties,
     );
-  }
 
-  if (property_name === "flex") {
-    return (
-      "flex " +
-      get_class_from_property(
-        parent_name,
-        property_name,
-        property_value,
-        parent_names,
-        properties,
-      )
-    );
+    if (property_name === "colors" && properties.colors?.border) {
+      class_name = " border" + class_name;
+    }
+    return class_name;
   }
 
   const property_type = typeof property_value;

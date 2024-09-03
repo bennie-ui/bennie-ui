@@ -13,7 +13,9 @@ export const PaddingAttributeBuilder = (
       const is_auto = property_value.includes("auto");
       const prefix = getPrefix("p", property_name);
 
-      classes += is_auto ? property_value : ` ${prefix}-${property_value}`;
+      classes += is_auto
+        ? `p-${property_value}`
+        : ` ${prefix}-${property_value}`;
     });
   }
   return classes;

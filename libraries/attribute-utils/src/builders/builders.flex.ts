@@ -7,6 +7,7 @@ export const FlexBuilder: BuilderFunction = (
   let classes = "";
 
   if (properties.flex) {
+    classes += " flex";
     classes += FlexJustifyContentBuilder(properties);
     classes += FlexAlignItemsBuilder(properties);
     classes += FlexDirectionBuilder(properties);
@@ -36,7 +37,7 @@ export const FlexAlignItemsBuilder: BuilderFunction = (
   let classes = "";
 
   if (properties.flex?.alignItems) {
-    classes += `items-${properties.flex.alignItems}`;
+    classes += ` items-${properties.flex.alignItems}`;
   }
 
   return classes;
@@ -50,15 +51,15 @@ export const FlexWrapBuilder: BuilderFunction = (
   if (properties.flex?.wrap) {
     switch (properties.flex.wrap) {
       case "nowrap":
-        classes += "flex-nowrap";
+        classes += " flex-nowrap";
         break;
 
       case "reverse":
-        classes += "flex-wrap-reverse";
+        classes += " flex-wrap-reverse";
         break;
 
       default:
-        classes += "flex-wrap";
+        classes += " flex-wrap";
     }
   }
 
@@ -71,7 +72,7 @@ export const FlexDirectionBuilder: BuilderFunction = (
   let classes = "";
 
   if (properties.flex?.direction) {
-    classes += `flex-${properties.flex.direction}`;
+    classes += ` flex-${properties.flex.direction}`;
   }
   return classes;
 };
@@ -83,9 +84,9 @@ export const FlexGrowBuilder: BuilderFunction = (
 
   if (properties.flex?.grow) {
     if (properties.flex.grow === "1") {
-      return "grow";
+      return " grow";
     } else {
-      return "grow-0";
+      return " grow-0";
     }
   }
   return classes;
@@ -98,9 +99,9 @@ export const FlexShrinkBuilder: BuilderFunction = (
 
   if (properties.flex?.shrink) {
     if (properties.flex.shrink === "1") {
-      return "shrink";
+      return " shrink";
     } else {
-      return "shrink-0";
+      return " shrink-0";
     }
   }
   return classes;
