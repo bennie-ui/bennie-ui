@@ -1,4 +1,4 @@
-import type { ColorType } from "@phoenix-ui/types/attributes";
+import type { ColorType } from "@bennie-ui/types/attributes";
 export interface DarkOverrides {
   colors?: ColorType;
 }

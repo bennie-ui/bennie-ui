@@ -40,7 +40,7 @@ jobs:
       - name: deploy
         uses: cloudflare/pages-action@v1
         with:
-          projectName: "phoenix-ui"
+          projectName: "bennie-ui-sb"
           directory: "./storybook-static"
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

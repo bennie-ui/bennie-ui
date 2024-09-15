@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Text } from "@phoenix-ui/text";
+import { Text } from "@bennie-ui/text";
 
 const meta: Meta<typeof Text> = {
   title: "Components/Primitives/Text/Text",

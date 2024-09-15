@@ -1,6 +1,6 @@
-import { ColorPropertiesType } from "@phoenix-ui/types/attributes";
+import { ColorPropertiesType } from "@bennie-ui/types/attributes";
+import { ComponentProperties } from "@bennie-ui/types";
 import { ActionsMap } from "./attribute.action-map";
-import { ComponentProperties } from "@phoenix-ui/types";
 
 const get_class_matching = (className: string, query: string) => {
   const classes = className.split(" ");

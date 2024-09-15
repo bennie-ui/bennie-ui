@@ -1,5 +1,5 @@
 {
-  "name": "@phoenix-ui/text",
+  "name": "@bennie-ui/text",
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {

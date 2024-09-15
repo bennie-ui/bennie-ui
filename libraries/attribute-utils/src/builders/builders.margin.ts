@@ -1,11 +1,10 @@
-import { ComponentProperties } from "@phoenix-ui/types";
+import { ComponentProperties } from "@bennie-ui/types";
 import { getPrefix } from "./builders.utils";
 
 export const MarginAttributeBuilder = (
   properties: ComponentProperties,
 ): string => {
   let classes = "";
-
 
   if (properties.margin) {
     const entries = Object.entries(properties.margin);
@@ -14,9 +13,7 @@ export const MarginAttributeBuilder = (
       const is_auto = property_value.includes("-");
       const prefix = getPrefix("m", property_name);
 
-      classes += is_auto
-        ? `${property_value}`
-        : ` ${prefix}-${property_value}`;
+      classes += is_auto ? `${property_value}` : ` ${prefix}-${property_value}`;
     });
   }
   return classes;

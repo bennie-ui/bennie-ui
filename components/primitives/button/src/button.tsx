@@ -3,7 +3,7 @@ import {
   getClassNames,
   getComponentProperties,
   getActionColorAttribute,
-} from "@phoenix-ui/attribute-utils";
+} from "@bennie-ui/attribute-utils";
 import { ButtonAttributes, ButtonProperties } from "./button.types";
 import { getButtonScale, getButtonClassNames } from "./button.utils";
 
@@ -12,7 +12,7 @@ export const Button: FC<ButtonProperties> = (properties) => {
     "button",
     getButtonScale(properties),
     getActionColorAttribute(properties),
-    properties.isFullWidth ?? false ? "w-full" : "",
+    (properties.isFullWidth ?? false) ? "w-full" : "",
     getButtonClassNames(properties),
   );
 

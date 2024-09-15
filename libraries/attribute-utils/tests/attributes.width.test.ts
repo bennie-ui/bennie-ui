@@ -2,8 +2,8 @@ import { describe, test, expect } from "bun:test";
 
 import { resolutions, getProperties } from "./utils";
 import { getClassByViewPort } from "../src/attributes.classes.utils";
-import { variants } from "@phoenix-ui/baseline/tailwind/attributes/width";
-import { ComponentProperties } from "@phoenix-ui/types";
+import { variants } from "@bennie-ui/baseline/tailwind/attributes/width";
+import { ComponentProperties } from "@bennie-ui/types";
 
 describe("attributes.width", () => {
   resolutions.forEach((res) => {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Heading } from "@phoenix-ui/text";
+import { Heading } from "@bennie-ui/text";
 
 const meta: Meta<typeof Text> = {
   title: "Components/Primitives/Text/Heading",

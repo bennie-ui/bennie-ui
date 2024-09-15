@@ -1,5 +1,4 @@
-import { ComponentProperties } from "@phoenix-ui/types";
-import { getPrefix } from "./builders.utils";
+import { ComponentProperties } from "@bennie-ui/types";
 
 export const WidthAttributeBuilder = (
   properties: ComponentProperties,

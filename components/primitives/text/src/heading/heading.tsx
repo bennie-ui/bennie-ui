@@ -5,7 +5,7 @@ import { HeadingProps } from "./heading.types";
 import {
   getClassNames,
   getComponentProperties,
-} from "@phoenix-ui/attribute-utils";
+} from "@bennie-ui/attribute-utils";
 
 export const Heading: FC<HeadingProps> = (properties) => {
   const TagType = properties?.tag || "h1";

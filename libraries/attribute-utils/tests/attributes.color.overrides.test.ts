@@ -1,9 +1,8 @@
 import { describe, test, expect } from "bun:test";
-import { ColorValue } from "@phoenix-ui/types/attributes";
+import { ColorValue } from "@bennie-ui/types/attributes";
+import { ComponentProperties } from "@bennie-ui/types";
 import { getClassByViewPort } from "../src/attributes.classes.utils";
-
 import { ColorStubs } from "../stubs/colors.stubs";
-import { ComponentProperties } from "@phoenix-ui/types";
 
 describe("react-base-component.props.overrides:color", () => {
   describe(":TextColorType", () => {

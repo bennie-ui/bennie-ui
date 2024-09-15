@@ -1,4 +1,4 @@
-import { NumericType, ColorPropertiesType } from "@phoenix-ui/types/attributes";
+import { NumericType, ColorPropertiesType } from "@bennie-ui/types/attributes";
 import { IconFigure } from "./icon-figure.type";
 export type IconType = "solid" | "outline";
 

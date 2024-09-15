@@ -1,7 +1,7 @@
 import { describe, test, expect } from "bun:test";
-import { ColorValue, ColorWeight } from "@phoenix-ui/types/attributes";
+import { ColorValue, ColorWeight } from "@bennie-ui/types/attributes";
 import { getClassByViewPort } from "../../src/attributes.classes.utils";
-import { ClassByResponsiveProps } from "../../types";
+import { ComponentProperties } from "@bennie-ui/types";
 
 // TODO: this test needs more work
 describe("dark properties", () => {
@@ -9,7 +9,7 @@ describe("dark properties", () => {
     test(`:dark:text-\${$color-value} default weight`, () => {
       const color: ColorValue = "blue";
       const dark_color: ColorValue = "cyan";
-      const properties: ClassByResponsiveProps = {
+      const properties: ComponentProperties = {
         colors: { text: { color } },
         dark: {
           colors: { text: { color: dark_color } },
@@ -25,7 +25,7 @@ describe("dark properties", () => {
       const color: ColorValue = "blue";
       const dark_color: ColorValue = "cyan";
       const weight: ColorWeight = "200";
-      const properties: ClassByResponsiveProps = {
+      const properties: ComponentProperties = {
         colors: {
           text: { color, weight },
         },
@@ -42,7 +42,7 @@ describe("dark properties", () => {
     test(`:dark:bg-\${$color-value} default weight`, () => {
       const color: ColorValue = "blue";
       const dark_color: ColorValue = "cyan";
-      const properties: ClassByResponsiveProps = {
+      const properties: ComponentProperties = {
         colors: {
           background: { color },
         },
@@ -60,7 +60,7 @@ describe("dark properties", () => {
       const color: ColorValue = "blue";
       const weight: ColorWeight = "200";
       const dark_color: ColorValue = "cyan";
-      const properties: ClassByResponsiveProps = {
+      const properties: ComponentProperties = {
         colors: {
           background: { color, weight },
         },

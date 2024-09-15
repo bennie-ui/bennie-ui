@@ -10,19 +10,16 @@ import type {
   FlexType,
   AllWidths,
   AllHeights,
-} from "@phoenix-ui/types/attributes";
+} from "@bennie-ui/types/attributes";
 
 import {
   TextSizeType,
   TextAlignmentType,
   TextDisplayType,
   TextWeightType,
-} from "@phoenix-ui/types/texts";
+} from "@bennie-ui/types/texts";
 
-import {
-  DarkOverrides,
-  ResponsiveOverrides,
-} from "@phoenix-ui/types/utilities";
+import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
 
 export interface ComponentAttributes {
   id?: string;

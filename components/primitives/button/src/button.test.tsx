@@ -2,7 +2,7 @@ import { describe, test, expect, mock } from "bun:test";
 import { render, fireEvent } from "@testing-library/react";
 
 import { Button } from "./button";
-import { ColorStubs } from "@phoenix-ui/attribute-utils/stubs";
+import { ColorStubs } from "@bennie-ui/attribute-utils/stubs";
 import { type ButtonProperties } from "./button.types";
 
 describe("Button", () => {
@@ -67,7 +67,6 @@ describe("Button", () => {
       "button p-2 text-white bg-blue-500",
     );
   });
-
 
   // TODO: Fix this test
   test.skip(":classname should override :colors", () => {

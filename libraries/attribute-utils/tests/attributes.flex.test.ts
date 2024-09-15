@@ -1,8 +1,8 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../src/attributes.classes.utils";
-import { variants } from "@phoenix-ui/baseline/tailwind/display/flex";
+import { ComponentProperties } from "@bennie-ui/types";
+import { variants } from "@bennie-ui/baseline/tailwind/display/flex";
 import { resolutions, getProperties } from "./utils";
-import { ComponentProperties } from "@phoenix-ui/types";
+import { getClassByViewPort } from "../src/attributes.classes.utils";
 
 describe("attributes.flex", () => {
   resolutions.forEach((res) => {

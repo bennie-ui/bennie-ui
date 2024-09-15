@@ -2,9 +2,9 @@ import { describe, test, expect } from "bun:test";
 
 import { resolutions, getProperties } from "./utils";
 import { getClassByViewPort } from "../src/attributes.classes.utils";
-import { variants } from "@phoenix-ui/baseline/tailwind/attributes/padding";
-import { AllPaddings } from "@phoenix-ui/types/attributes/padding.types";
-import { ComponentProperties } from "@phoenix-ui/types";
+import { variants } from "@bennie-ui/baseline/tailwind/attributes/padding";
+import { AllPaddings } from "@bennie-ui/types/attributes/padding.types";
+import { ComponentProperties } from "@bennie-ui/types";
 
 describe("attributes.padding", () => {
   ["all", "x", "y", "top", "bottom", "left", "right"].forEach((testCase) => {

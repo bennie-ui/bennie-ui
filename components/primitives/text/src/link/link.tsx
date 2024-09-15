@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { LinkAttributes, LinkProperties } from "./link.types";
-import { getComponentProperties } from "@phoenix-ui/attribute-utils";
+import { getComponentProperties } from "@bennie-ui/attribute-utils";
 
 const Link: FC<LinkProperties> = (properties) => {
   const attributes: LinkAttributes = {

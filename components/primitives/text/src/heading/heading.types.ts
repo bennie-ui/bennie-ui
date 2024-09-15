@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { ColorType } from "@phoenix-ui/types/attributes";
-import { HeadingTagType, TextAlignmentType } from "@phoenix-ui/types/texts";
+import { ColorType } from "@bennie-ui/types/attributes";
+import { HeadingTagType, TextAlignmentType } from "@bennie-ui/types/texts";
 
 export interface HeadingProps {
   children: ReactNode;

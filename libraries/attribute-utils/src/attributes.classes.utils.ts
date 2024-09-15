@@ -1,4 +1,4 @@
-import { ComponentProperties } from "@phoenix-ui/types";
+import { ComponentProperties } from "@bennie-ui/types";
 
 import { get_classname_by_resolution } from "./attribute.resolutions.utils";
 import { get_classname_by_theme } from "./attributes.dark.utils";

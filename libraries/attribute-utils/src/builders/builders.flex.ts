@@ -1,5 +1,4 @@
-import { ComponentProperties, BuilderFunction } from "@phoenix-ui/types";
-import { getProperties } from "../../tests/utils";
+import { ComponentProperties, BuilderFunction } from "@bennie-ui/types";
 
 export const FlexBuilder: BuilderFunction = (
   properties: ComponentProperties,

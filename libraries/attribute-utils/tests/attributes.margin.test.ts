@@ -2,12 +2,12 @@ import { describe, test, expect } from "bun:test";
 
 import { resolutions, getProperties } from "./utils";
 import { getClassByViewPort } from "../src/attributes.classes.utils";
-import { variants } from "@phoenix-ui/baseline/tailwind/attributes/margin";
-import { AllMargins } from "@phoenix-ui/types/attributes/margin.types";
-import { ComponentProperties } from "@phoenix-ui/types";
+import { variants } from "@bennie-ui/baseline/tailwind/attributes/margin";
+import { AllMargins } from "@bennie-ui/types/attributes/margin.types";
+import { ComponentProperties } from "@bennie-ui/types";
 
 describe("attributes.margin", () => {
-  [ "all", "x", "y", "left", "right", "top", "bottom"].forEach((testCase) => {
+  ["all", "x", "y", "left", "right", "top", "bottom"].forEach((testCase) => {
     test(`:${testCase}`, () => {
       resolutions.forEach((res) => {
         variants.base[testCase].forEach((m) => {

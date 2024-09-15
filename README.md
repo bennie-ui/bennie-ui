@@ -1,4 +1,4 @@
-# phoenix-ui
+# bennie-ui
 
 To install dependencies:
 

@@ -1,4 +1,4 @@
-import { ComponentProperties } from "@phoenix-ui/types";
+import { ComponentProperties } from "@bennie-ui/types";
 
 export const RoundingAttributeBuilder = (
   properties: ComponentProperties,

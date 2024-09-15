@@ -1,6 +1,6 @@
 import { getClassByViewPort } from "./attributes.classes.utils";
-import { ComponentAttributes, ComponentProperties } from "@phoenix-ui/types";
-import { DATA_TEST_ID } from "@phoenix-ui/types/constants";
+import { ComponentAttributes, ComponentProperties } from "@bennie-ui/types";
+import { DATA_TEST_ID } from "@bennie-ui/types/constants";
 
 export const getComponentProperties = (properties: ComponentProperties) => {
   const attributes: ComponentAttributes = {};

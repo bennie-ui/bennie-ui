@@ -3,7 +3,7 @@ import {
   getBackgroundColorAttribute,
   getBorderColorAttribute,
 } from "../attributes.color.utils";
-import { ComponentProperties, BuilderFunction } from "@phoenix-ui/types";
+import { ComponentProperties, BuilderFunction } from "@bennie-ui/types";
 
 export const ColorBuilder: BuilderFunction = (
   properties: ComponentProperties,

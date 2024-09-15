@@ -1,8 +1,8 @@
 import { describe, test, expect } from "bun:test";
 import { getClassByViewPort } from "../src/attributes.classes.utils";
 import type { ClassByResponsiveProps } from "../types";
-import { variants } from "@phoenix-ui/baseline/tailwind/attributes/rounding";
-import { RoundingType } from "@phoenix-ui/types/attributes";
+import { variants } from "@bennie-ui/baseline/tailwind/attributes/rounding";
+import { RoundingType } from "@bennie-ui/types/attributes";
 
 describe("attributes.rounding", () => {
   variants.base.forEach((rounding) => {

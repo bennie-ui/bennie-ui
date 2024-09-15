@@ -3,14 +3,14 @@ import {
   TopMarginType,
   BottomMarginType,
   LeftMarginType,
-} from "@phoenix-ui/types/spacing/margin.types";
+} from "@bennie-ui/types/spacing/margin.types";
 import {
   AllPaddings,
   AllPaddingType,
   RightPaddingType,
   VerticalPaddingType,
-} from "@phoenix-ui/types/spacing/padding.types";
-import { ResponsiveOverrides } from "@phoenix-ui/types/utilities";
+} from "@bennie-ui/types/spacing/padding.types";
+import { ResponsiveOverrides } from "@bennie-ui/types/utilities";
 
 const all_padding: AllPaddingType = "p-1";
 const top_margin: TopMarginType = "mt-2";

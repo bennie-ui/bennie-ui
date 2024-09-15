@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { getComponentProperties } from "@phoenix-ui/attribute-utils";
+import { getComponentProperties } from "@bennie-ui/attribute-utils";
 import { SectionProperties } from "./section.types";
 
 export const Section: FC<SectionProperties> = (properties) => {

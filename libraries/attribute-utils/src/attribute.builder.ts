@@ -1,4 +1,4 @@
-import { BuilderFunction } from "@phoenix-ui/types";
+import { BuilderFunction } from "@bennie-ui/types";
 
 import {
   ColorBuilder,
@@ -11,7 +11,7 @@ import {
   MarginAttributeBuilder,
   PaddingAttributeBuilder,
   TextWeightAttributeBuilder,
-} from "@phoenix-ui/attribute-utils";
+} from "@bennie-ui/attribute-utils";
 import { FlexBuilder } from "./builders/builders.flex";
 
 export type ClassBuilderType = {

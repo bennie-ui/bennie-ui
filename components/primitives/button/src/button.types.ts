@@ -7,14 +7,14 @@ import type {
   OpacityType,
   AllMargins,
   AllPaddings,
-} from "@phoenix-ui/types/attributes";
+} from "@bennie-ui/types/attributes";
 
-import { DATA_TEST_ID } from "@phoenix-ui/constants";
-import { TextSizeType } from "@phoenix-ui/types/texts";
+import { DATA_TEST_ID } from "@bennie-ui/constants";
+import { TextSizeType } from "@bennie-ui/types/texts";
 import {
   DarkOverrides,
   ResponsiveOverrides,
-} from "packages/phoenix-ui/libraries/types/utilities";
+} from "@bennie-ui/libraries/types/utilities";
 
 export interface ButtonAttributes {
   className?: string;

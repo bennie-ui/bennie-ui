@@ -1,11 +1,11 @@
 {
-  "name": "@phoenix-ui/button",
+  "name": "@bennie-ui/button",
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {},
   "dependencies": {
     "react": "^18.2.0",
-    "@phoenix-ui/attribute-utils": "workspace:*"
+    "@bennie-ui/attribute-utils": "workspace:*"
   },
   "devDependencies": {}
 }

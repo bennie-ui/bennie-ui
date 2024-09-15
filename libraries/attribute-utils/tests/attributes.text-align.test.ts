@@ -1,8 +1,8 @@
 import { test, expect } from "bun:test";
-import { ComponentProperties } from "@phoenix-ui/types";
-import { TextAlignmentType } from "@phoenix-ui/types/texts";
-import { getClassByViewPort } from "@phoenix-ui/attribute-utils";
-import { variants } from "@phoenix-ui/baseline/tailwind/attributes/align";
+import { ComponentProperties } from "@bennie-ui/types";
+import { TextAlignmentType } from "@bennie-ui/types/texts";
+import { getClassByViewPort } from "@bennie-ui/attribute-utils";
+import { variants } from "@bennie-ui/baseline/tailwind/attributes/align";
 import { resolutions } from "./utils";
 
 resolutions.forEach((resolution) => {

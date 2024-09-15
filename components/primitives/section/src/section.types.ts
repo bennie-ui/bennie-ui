@@ -8,16 +8,13 @@ import {
   FlexType,
   AllWidths,
   AllHeights,
-} from "@phoenix-ui/types/attributes";
+} from "@bennie-ui/types/attributes";
 
-import {
-  DarkOverrides,
-  ResponsiveOverrides,
-} from "@phoenix-ui/types/utilities";
+import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
 
-import { TextSizeType, TextAlignmentType } from "@phoenix-ui/types/texts";
+import { TextSizeType, TextAlignmentType } from "@bennie-ui/types/texts";
 
-import { DATA_TEST_ID } from "@phoenix-ui/constants";
+import { DATA_TEST_ID } from "@bennie-ui/constants";
 
 export interface SectionAttributes {
   className?: string;

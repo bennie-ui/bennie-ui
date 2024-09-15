@@ -1,8 +1,7 @@
 import React, { FC } from "react";
-import { getClassByViewPort } from "@phoenix-ui/attribute-utils";
-import { ColorType, AllHeights, AllWidths } from "@phoenix-ui/types/attributes";
+import { getClassByViewPort } from "@bennie-ui/attribute-utils";
+import { ColorType, AllHeights, AllWidths } from "@bennie-ui/types/attributes";
 import { SolidIcon } from "./solid/solid-icon";
-
 import { IconProps } from "./types/icon.types";
 
 const Icon: FC<IconProps> = (props) => {

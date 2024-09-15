@@ -4,8 +4,8 @@ import {
   getBackgroundColorAttribute,
   getClassByViewPort,
   getComponentProperties,
-} from "@phoenix-ui/attribute-utils";
-import { ComponentProperties } from "@phoenix-ui/types";
+} from "@bennie-ui/attribute-utils";
+import { ComponentProperties } from "@bennie-ui/types";
 
 describe("base-attribute", () => {
   describe(":getTextColorAttribute", () => {

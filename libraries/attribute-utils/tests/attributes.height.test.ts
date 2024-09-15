@@ -2,12 +2,12 @@ import { describe, test, expect } from "bun:test";
 
 import { resolutions, getProperties } from "./utils";
 import { getClassByViewPort } from "../src/attributes.classes.utils";
-import { variants } from "@phoenix-ui/baseline/tailwind/attributes/height";
-import { ComponentProperties } from "@phoenix-ui/types";
+import { variants } from "@bennie-ui/baseline/tailwind/attributes/height";
+import { ComponentProperties } from "@bennie-ui/types";
 
 describe("attributes.height", () => {
   resolutions.forEach((res) => {
-    variants.base.forEach((h) => {
+    variants.base.forEach((h: string) => {
       test.only(` :${h}`, () => {
         const h_value = h.split("-")[1];
         const properties = getProperties(res.name, "height", "value", h_value);
@@ -22,7 +22,7 @@ describe("attributes.height", () => {
 
   test.skip(`:combined (left, right, top, bottom)`, () => {
     resolutions.forEach((res) => {
-      const properties: ClassByResponsiveProps = {
+      const properties: ComponentProperties = {
         height: {
           value: "5",
         },

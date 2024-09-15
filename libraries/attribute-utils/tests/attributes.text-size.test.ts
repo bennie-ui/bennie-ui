@@ -1,9 +1,9 @@
 import { test, expect } from "bun:test";
-import { TextSizeType } from "@phoenix-ui/types/texts";
-import { getClassByViewPort } from "@phoenix-ui/attribute-utils";
-import { variants } from "@phoenix-ui/baseline/tailwind/attributes/text";
+import { TextSizeType } from "@bennie-ui/types/texts";
+import { getClassByViewPort } from "@bennie-ui/attribute-utils";
+import { variants } from "@bennie-ui/baseline/tailwind/attributes/text";
 import { resolutions } from "./utils";
-import { ComponentProperties } from "@phoenix-ui/types";
+import { ComponentProperties } from "@bennie-ui/types";
 
 resolutions.forEach((resolution) => {
   variants.base.size.forEach((size) => {

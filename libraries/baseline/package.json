@@ -1,5 +1,5 @@
 {
-  "name": "@phoenix-ui/baseline",
+  "name": "@bennie-ui/baseline",
   "version": "1.0.0",
   "scripts": {
     "tw:dev:sm": "tailwindcss -i ./styles/baseline.css -o ./compiled/baseline.css --watch",

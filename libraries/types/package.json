@@ -1,10 +1,10 @@
 {
-  "name": "@phoenix-ui/types",
+  "name": "@bennie-ui/types",
   "version": "1.0.0",
   "main": "index.ts",
-  "scripts": {},  
+  "scripts": {},
   "dependencies": {
-    "@phoenix-ui/constants": "workspace:*"
+    "@bennie-ui/constants": "workspace:*"
   },
   "devDependencies": {}
 }

@@ -1,8 +1,8 @@
 import { describe, test, expect } from "bun:test";
 
 import { getClassByViewPort } from "../src/attributes.classes.utils";
-import { ColorValue, ColorWeight } from "@phoenix-ui/types/attributes";
-import { ComponentProperties } from "@phoenix-ui/types";
+import { ColorValue, ColorWeight } from "@bennie-ui/types/attributes";
+import { ComponentProperties } from "@bennie-ui/types";
 
 describe("attributes.color", () => {
   test(`:text-color default weight`, () => {

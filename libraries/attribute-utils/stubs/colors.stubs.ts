@@ -1,4 +1,4 @@
-import { ColorValue } from "@phoenix-ui/types/attributes";
+import { ColorValue } from "@bennie-ui/types/attributes";
 const text_color: ColorValue = "blue";
 const bg_color: ColorValue = "amber";
 const dark_text_color: ColorValue = "cyan";

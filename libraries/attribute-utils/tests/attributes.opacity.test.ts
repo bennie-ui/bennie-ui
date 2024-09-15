@@ -1,8 +1,8 @@
 import { describe, test, expect } from "bun:test";
 import { getClassByViewPort } from "../src/attributes.classes.utils";
-import { variants } from "@phoenix-ui/baseline/tailwind/attributes/opacity";
-import { OpacityType } from "@phoenix-ui/types/attributes";
-import { ComponentProperties } from "@phoenix-ui/types";
+import { variants } from "@bennie-ui/baseline/tailwind/attributes/opacity";
+import { OpacityType } from "@bennie-ui/types/attributes";
+import { ComponentProperties } from "@bennie-ui/types";
 
 describe("attributes.opacity", () => {
   variants.base.forEach((opacity) => {

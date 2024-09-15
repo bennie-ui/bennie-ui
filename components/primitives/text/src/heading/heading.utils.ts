@@ -1,4 +1,4 @@
-import type { HeadingTagType } from "@phoenix-ui/types/texts";
+import type { HeadingTagType } from "@bennie-ui/types/texts";
 
 export const getTagSize = (tag: HeadingTagType) => {
   switch (tag) {

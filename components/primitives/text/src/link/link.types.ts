@@ -5,12 +5,9 @@ import {
   AllMargins,
   AllPaddings,
   TargetType,
-} from "@phoenix-ui/types/attributes";
+} from "@bennie-ui/types/attributes";
 
-import {
-  DarkOverrides,
-  ResponsiveOverrides,
-} from "@phoenix-ui/types/utilities";
+import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
 
 import {
   TextSizeType,
@@ -19,7 +16,7 @@ import {
   TextOverflowType,
   TextTagType,
   TextWeightType,
-} from "@phoenix-ui/types/texts";
+} from "@bennie-ui/types/texts";
 
 export interface LinkAttributes {
   target?: string;

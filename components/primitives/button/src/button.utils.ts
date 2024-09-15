@@ -1,4 +1,4 @@
-import { ComponentProperties } from "packages/phoenix-ui/libraries/types";
+import { ComponentProperties } from "@bennie-ui/types";
 import { ButtonProperties } from "./button.types";
 
 export const getButtonScale = ({
