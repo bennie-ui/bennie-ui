@@ -16,8 +16,8 @@ export type PercentageTwelveType =
   | "10/12"
   | "11/12";
 
+export type NumericZeroType = '0'
 export type NumericMinRangeType =
-  | "0"
   | "1"
   | "2"
   | "3"
@@ -30,6 +30,8 @@ export type NumericMinRangeType =
   | "10"
   | "11"
   | "12"
+ 
+export type NumericMediumnRangeType =
   | "14"
   | "16"
   | "20"
@@ -38,6 +40,7 @@ export type NumericMinRangeType =
   | "32"
   | "36"
   | "40";
+
 export type NumericMaxRangeType =
   | "44"
   | "48"
@@ -49,7 +52,7 @@ export type NumericMaxRangeType =
   | "80"
   | "96";
 
-export type NumericType = NumericMinRangeType | NumericMaxRangeType;
+export type NumericType = NumericZeroType | NumericMinRangeType | NumericMediumnRangeType | NumericMaxRangeType;
 
 export type DecimalType = "0" | "0.5" | "1.5" | "2.5" | "3.5";
 export type PercentageType =

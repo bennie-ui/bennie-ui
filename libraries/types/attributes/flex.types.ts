@@ -1,13 +1,9 @@
-//import {
-//type DecimalType,
-//type PercentageType,
-//} from "@phoenix-ui/types/attributes";
+import { NumericMinRangeType } from "./attribute.types";
+
 export type FlexDirectionType = "row" | "col" | "row-reverse" | "col-reverse";
 export type FlexGrowType = "1" | "0";
 export type FlexShrinkType = "1" | "0"; //"shrink" | "shrink-0";
-//export type FlexBasisType = "px" | "auto" | "full";
 export type FlexWrapType = "wrap" | "nowrap" | "reverse";
-
 export type FlexJustifyContentType =
   | "normal"
   | "start"
@@ -26,13 +22,10 @@ export type FlexAlignItemsType =
 
 export interface FlexType {
   alignItems?: FlexAlignItemsType;
-
   direction?: FlexDirectionType;
   grow?: FlexGrowType;
-
   justifyContent?: FlexJustifyContentType;
   wrap?: FlexWrapType;
-
+  order?: NumericMinRangeType;
   shrink?: FlexShrinkType;
-  //basis?: number | DecimalType | PercentageType | FlexBasisType
 }
