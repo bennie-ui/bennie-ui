@@ -75,7 +75,7 @@ export type ActionType =
   | "light"
   | "dark";
 
-export type RoundingType = "none" | "md" | "lg" | "full";
+export type RoundingType = "none" | "md" | "lg" | "2xl" | "3xl" | "full";
 
 export type OpacityType =
   | "100"
