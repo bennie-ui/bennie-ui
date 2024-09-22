@@ -11,10 +11,7 @@ import type {
 
 import { DATA_TEST_ID } from "@bennie-ui/constants";
 import { TextSizeType } from "@bennie-ui/types/texts";
-import {
-  DarkOverrides,
-  ResponsiveOverrides,
-} from "@bennie-ui/libraries/types/utilities";
+import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
 
 export interface ButtonAttributes {
   className?: string;

@@ -2,6 +2,28 @@ export const variants = {
   grid: "grid",
 
   base: {
+    gap: [
+      ["gap-px", "gap-x-px", "gap-y-px"], 
+      [
+        ...['gap-0', 'gap-0.5', 'gap-1.5','gap-1.5', 'gap-2.5', 'gap-3.5'],
+        ...["gap-0", "gap-1", "gap-2", "gap-3", "gap-4", "gap-5", "gap-6", "gap-7", "gap-8", "gap-9", "gap-10"],
+        ...["gap-11", "gap-12", "gap-14", "gap-16", "gap-20", "gap-24", "gap-28", "gap-32", "gap-36", "gap-40"],
+        ...["gap-44", "gap-48", "gap-52", "gap-56", "gap-60", "gap-64", "gap-72", "gap-80", "gap-96"],
+      ], 
+      [
+        ...['gap-x-0', 'gap-x-0.5', 'gap-x-1.5','gap-x-1.5', 'gap-x-2.5', 'gap-x-3.5'],
+        ...["gap-x-0", "gap-x-1", "gap-x-2", "gap-x-3", "gap-x-4", "gap-x-5", "gap-x-6", "gap-x-7", "gap-x-8", "gap-x-9", "gap-x-10"],
+        ...["gap-x-11", "gap-x-12", "gap-x-14", "gap-x-16", "gap-x-20", "gap-x-24", "gap-x-28", "gap-x-32", "gap-x-36", "gap-x-40"],
+        ...["gap-x-44", "gap-x-48", "gap-x-52", "gap-x-56", "gap-x-60", "gap-x-64", "gap-x-72", "gap-x-80", "gap-x-96"],
+
+      ], 
+      [
+        ...['gap-y-0', 'gap-y-0.5', 'gap-y-1.5','gap-y-1.5', 'gap-y-2.5', 'gap-y-3.5'],
+        ...["gap-y-0", "gap-y-1", "gap-y-2", "gap-y-3", "gap-y-4", "gap-y-5", "gap-y-6", "gap-y-7", "gap-y-8", "gap-y-9", "gap-y-10"],
+        ...["gap-y-11", "gap-y-12", "gap-y-14", "gap-y-16", "gap-y-20", "gap-y-24", "gap-y-28", "gap-y-32", "gap-y-36", "gap-y-40"],
+        ...["gap-y-44", "gap-y-48", "gap-y-52", "gap-y-56", "gap-y-60", "gap-y-64", "gap-y-72", "gap-y-80", "gap-y-96"],
+      ]
+    ],
     templates: {
       cols: [
         "grid-cols-none",
@@ -37,7 +59,7 @@ export const variants = {
       ],
     },
     col: {
-      span: [
+      span: [ -
         "col-auto",
         "col-span-full",
         "col-span-1",
@@ -153,6 +175,27 @@ export const variants = {
     ],
   },
   medium: {
+    gap: [
+      ...["md:gap-px", "md:gap-x-px", "md:gap-y-px"], 
+      ...[
+          ...['md:gap-0', 'md:gap-0.5', 'md:gap-1.5','md:gap-1.5', 'md:gap-2.5', 'md:gap-3.5'],
+          ...["md:gap-0", "md:gap-1", "md:gap-2", "md:gap-3", "md:gap-4", "md:gap-5", "md:gap-6", "md:gap-7", "md:gap-8", "md:gap-9", "md:gap-10"],
+          ...["md:gap-11", "md:gap-12", "md:gap-14", "md:gap-16", "md:gap-20", "md:gap-24", "md:gap-28", "md:gap-32", "md:gap-36", "md:gap-40"],
+          ...["md:gap-44", "md:gap-48", "md:gap-52", "md:gap-56", "md:gap-60", "md:gap-64", "md:gap-72", "md:gap-80", "md:gap-96"],
+      ], 
+      ...[
+          ...['md:gap-x-0', 'md:gap-x-0.5', 'md:gap-x-1.5','md:gap-x-1.5', 'md:gap-x-2.5', 'md:gap-x-3.5'],
+          ...["md:gap-x-0", "md:gap-x-1", "md:gap-x-2", "md:gap-x-3", "md:gap-x-4", "md:gap-x-5", "md:gap-x-6", "md:gap-x-7", "md:gap-x-8", "md:gap-x-9", "md:gap-x-10"],
+          ...["md:gap-x-11", "md:gap-x-12", "md:gap-x-14", "md:gap-x-16", "md:gap-x-20", "md:gap-x-24", "md:gap-x-28", "md:gap-x-32", "md:gap-x-36", "md:gap-x-40"],
+          ...["md:gap-x-44", "md:gap-x-48", "md:gap-x-52", "md:gap-x-56", "md:gap-x-60", "md:gap-x-64", "md:gap-x-72", "md:gap-x-80", "md:gap-x-96"],
+      ], 
+      ...[
+          ...['md:gap-y-0', 'md:gap-y-0.5', 'md:gap-y-1.5','md:gap-y-1.5', 'md:gap-y-2.5', 'md:gap-y-3.5'],
+          ...["md:gap-y-0", "md:gap-y-1", "md:gap-y-2", "md:gap-y-3", "md:gap-y-4", "md:gap-y-5", "md:gap-y-6", "md:gap-y-7", "md:gap-y-8", "md:gap-y-9", "md:gap-y-10"],
+          ...["md:gap-y-11", "md:gap-y-12", "md:gap-y-14", "md:gap-y-16", "md:gap-y-20", "md:gap-y-24", "md:gap-y-28", "md:gap-y-32", "md:gap-y-36", "md:gap-y-40"],
+          ...["md:gap-y-44", "md:gap-y-48", "md:gap-y-52", "md:gap-y-56", "md:gap-y-60", "md:gap-y-64", "md:gap-y-72", "md:gap-y-80", "md:gap-y-96"],
+      ]
+    ],
     templates: {
       cols: [
         "md:grid-cols-none",
@@ -297,6 +340,27 @@ export const variants = {
     },
   },
   large: {
+    gap: [
+      ...["lg:gap-px", "lg:gap-x-px", "lg:gap-y-px"], 
+      ...[
+          ...['lg:gap-0', 'lg:gap-0.5', 'lg:gap-1.5','lg:gap-1.5', 'lg:gap-2.5', 'lg:gap-3.5'],
+          ...["lg:gap-0", "lg:gap-1", "lg:gap-2", "lg:gap-3", "lg:gap-4", "lg:gap-5", "lg:gap-6", "lg:gap-7", "lg:gap-8", "lg:gap-9", "lg:gap-10"],
+          ...["lg:gap-11", "lg:gap-12", "lg:gap-14", "lg:gap-16", "lg:gap-20", "lg:gap-24", "lg:gap-28", "lg:gap-32", "lg:gap-36", "lg:gap-40"],
+          ...["lg:gap-44", "lg:gap-48", "lg:gap-52", "lg:gap-56", "lg:gap-60", "lg:gap-64", "lg:gap-72", "lg:gap-80", "lg:gap-96"],
+      ], 
+      ...[
+          ...['lg:gap-x-0', 'lg:gap-x-0.5', 'lg:gap-x-1.5','lg:gap-x-1.5', 'lg:gap-x-2.5', 'lg:gap-x-3.5'],
+          ...["lg:gap-x-0", "lg:gap-x-1", "lg:gap-x-2", "lg:gap-x-3", "lg:gap-x-4", "lg:gap-x-5", "lg:gap-x-6", "lg:gap-x-7", "lg:gap-x-8", "lg:gap-x-9", "lg:gap-x-10"],
+          ...["lg:gap-x-11", "lg:gap-x-12", "lg:gap-x-14", "lg:gap-x-16", "lg:gap-x-20", "lg:gap-x-24", "lg:gap-x-28", "lg:gap-x-32", "lg:gap-x-36", "lg:gap-x-40"],
+          ...["lg:gap-x-44", "lg:gap-x-48", "lg:gap-x-52", "lg:gap-x-56", "lg:gap-x-60", "lg:gap-x-64", "lg:gap-x-72", "lg:gap-x-80", "lg:gap-x-96"],
+      ], 
+      ...[
+          ...['lg:gap-y-0', 'lg:gap-y-0.5', 'lg:gap-y-1.5','lg:gap-y-1.5', 'lg:gap-y-2.5', 'lg:gap-y-3.5'],
+          ...["lg:gap-y-0", "lg:gap-y-1", "lg:gap-y-2", "lg:gap-y-3", "lg:gap-y-4", "lg:gap-y-5", "lg:gap-y-6", "lg:gap-y-7", "lg:gap-y-8", "lg:gap-y-9", "lg:gap-y-10"],
+          ...["lg:gap-y-11", "lg:gap-y-12", "lg:gap-y-14", "lg:gap-y-16", "lg:gap-y-20", "lg:gap-y-24", "lg:gap-y-28", "lg:gap-y-32", "lg:gap-y-36", "lg:gap-y-40"],
+          ...["lg:gap-y-44", "lg:gap-y-48", "lg:gap-y-52", "lg:gap-y-56", "lg:gap-y-60", "lg:gap-y-64", "lg:gap-y-72", "lg:gap-y-80", "lg:gap-y-96"],
+      ]
+    ],
     templates: {
       cols: [
         "lg:grid-cols-none",

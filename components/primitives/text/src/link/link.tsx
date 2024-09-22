@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { LinkAttributes, LinkProperties } from "./link.types";
 import { getComponentProperties } from "@bennie-ui/attribute-utils";
 

@@ -9,6 +9,7 @@ export const FlexBuilder: BuilderFunction = (
     classes += " flex";
     classes += FlexJustifyContentBuilder(properties);
     classes += FlexAlignItemsBuilder(properties);
+    classes += FlexAlignSelfBuilder(properties);
     classes += FlexDirectionBuilder(properties);
     classes += FlexWrapBuilder(properties);
     classes += FlexGrowBuilder(properties);
@@ -37,6 +38,18 @@ export const FlexAlignItemsBuilder: BuilderFunction = (
 
   if (properties.flex?.alignItems) {
     classes += ` items-${properties.flex.alignItems}`;
+  }
+
+  return classes;
+};
+
+export const FlexAlignSelfBuilder: BuilderFunction = (
+  properties: ComponentProperties,
+) => {
+  let classes = "";
+
+  if (properties.flex?.alignSelf) {
+    classes += ` self-${properties.flex.alignSelf}`;
   }
 
   return classes;

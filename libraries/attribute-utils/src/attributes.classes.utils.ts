@@ -11,7 +11,6 @@ export const getClassNames = (...args: string[]) => {
 export const get_class_from_property = (
   parent_name: string,
   property_name: string,
-  property_value: string | object,
   parent_names: string[],
   properties: ComponentProperties,
 ) => {
@@ -22,7 +21,6 @@ export const get_class_from_property = (
     class_builder.get(parent_name, property_name) ||
     class_builder.get(property_name, "");
 
-  //console.log("f: exec", executable);
   if (executable) {
     let props: ComponentProperties | undefined;
     const is_responsive = parent_names.includes("overrides");
@@ -107,23 +105,20 @@ export const recusiveClassSearch = (
   parent_names: string[],
   properties: ComponentProperties,
 ): string => {
-  //console.log("f: recursive", {
-  //parent_name,
-  //property_name,
-  //property_value,
-  //parent_names,
-  //});
   let classes = "";
 
   if (property_value === undefined) {
     return "";
   }
 
-  if (property_name === "colors" || property_name === "flex") {
+  if (
+    property_name === "colors" ||
+    property_name === "flex" ||
+    property_name === "grid"
+  ) {
     let class_name = get_class_from_property(
       parent_name,
       property_name,
-      property_value,
       parent_names,
       properties,
     );
@@ -140,7 +135,6 @@ export const recusiveClassSearch = (
     return get_class_from_property(
       parent_name,
       property_name,
-      property_value,
       parent_names,
       properties,
     );

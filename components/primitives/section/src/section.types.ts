@@ -6,6 +6,7 @@ import {
   AllMargins,
   AllPaddings,
   FlexType,
+  GridType,
   AllWidths,
   AllHeights,
 } from "@bennie-ui/types/attributes";
@@ -32,6 +33,7 @@ export interface SectionProperties {
   dataTestId?: string;
   dark?: DarkOverrides;
   flex?: FlexType;
+  grid?: GridType;
   height?: AllHeights;
   margin?: AllMargins;
   opacity?: OpacityType;

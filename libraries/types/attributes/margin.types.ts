@@ -1,6 +1,6 @@
 import { DecimalType, NumericMinRangeType } from './attribute.types'
 type MarginAutoType = 'auto' | 's-auto' | 'e-auto'
-export type MarginValues = MarginAutoType | DecimalType | NumericMinRangeType
+export type MarginValues = MarginAutoType | DecimalType | NumericMinRangeType | NumericMediumnRangeType
 
 export interface AllMargins {
   all?: MarginValues

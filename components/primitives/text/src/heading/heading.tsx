@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { getTagSize, getTagWeight } from "./heading.utils";
 import { HeadingProps } from "./heading.types";
 
@@ -14,12 +14,9 @@ export const Heading: FC<HeadingProps> = (properties) => {
     getTagWeight(TagType),
     properties.className || "",
   );
-
-  return (
-    <TagType {...getComponentProperties({ ...properties, className })}>
-      {properties.children}
-    </TagType>
-  );
+  const props = getComponentProperties({ ...properties, className });
+  // @ts-expect-error:
+  return <TagType {...props}>{properties.children}</TagType>;
 };
 
 Heading.displayName = "Text";

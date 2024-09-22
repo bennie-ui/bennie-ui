@@ -8,6 +8,7 @@ import type {
   AllMargins,
   AllPaddings,
   FlexType,
+  GridType,
   AllWidths,
   AllHeights,
 } from "@bennie-ui/types/attributes";
@@ -40,6 +41,7 @@ export interface ComponentProperties {
   dark?: DarkOverrides;
   display?: TextDisplayType;
   flex?: FlexType;
+  grid?: GridType;
   height?: AllHeights;
   margin?: AllMargins;
   opacity?: OpacityType;

@@ -1,4 +1,4 @@
-import { NumericMinRangeType } from "../attributes";
+import { DecimalType, NumericMediumnRangeType, NumericMinRangeType, NumericZeroType } from "../attributes";
 
 type GridTemplate = "none" | "subgrid";
 type StartEndType = {
@@ -6,13 +6,24 @@ type StartEndType = {
   start?: "auto" | NumericMinRangeType;
   end?: "auto" | NumericMinRangeType;
 };
-
-export type GridTypes = {
+type GridGap = DecimalType | NumericZeroType | NumericMinRangeType | NumericMediumnRangeType;
+type GridFlow = "row" | "col" | "dense" | "row-dense" | "col-dense";
+type GridSpan = 'auto' | 'full' | NumericMinRangeType 
+export type GridType = {
   order?: NumericMinRangeType;
-  templates?: {
-    columns?: GridTemplate | NumericMinRangeType;
-    rows?: GridTemplate | NumericMinRangeType;
+  gap?: GridGap;
+  flow?: GridFlow;
+  span?: {
+    rows?: GridSpan,
+    columns?: GridSpan,
   };
-  col?: StartEndType;
-  row?: StartEndType;
+  start?: {
+    rows?: StartEndType;
+    columns?: StartEndType;
+  },
+  templates?: {
+    rows?: GridTemplate | NumericMinRangeType;
+    columns?: GridTemplate | NumericMinRangeType;
+  };
+ 
 };

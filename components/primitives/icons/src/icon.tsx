@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { getClassByViewPort } from "@bennie-ui/attribute-utils";
 import { ColorType, AllHeights, AllWidths } from "@bennie-ui/types/attributes";
 import { SolidIcon } from "./solid/solid-icon";

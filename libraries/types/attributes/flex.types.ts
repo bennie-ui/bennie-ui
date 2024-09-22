@@ -20,8 +20,18 @@ export type FlexAlignItemsType =
   | "end"
   | "baseline";
 
+export type FlexAlignSelfType =
+  | "auto"
+  | "stretch"
+  | "center"
+  | "start"
+  | "end"
+  | "baseline";
+
 export interface FlexType {
   alignItems?: FlexAlignItemsType;
+  alignSelf?: FlexAlignSelfType;
+  alignContent?: FlexAlignItemsType;
   direction?: FlexDirectionType;
   grow?: FlexGrowType;
   justifyContent?: FlexJustifyContentType;

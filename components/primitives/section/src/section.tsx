@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { getComponentProperties } from "@bennie-ui/attribute-utils";
 import { SectionProperties } from "./section.types";
 

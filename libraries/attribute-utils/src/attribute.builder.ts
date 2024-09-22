@@ -11,8 +11,9 @@ import {
   MarginAttributeBuilder,
   PaddingAttributeBuilder,
   TextWeightAttributeBuilder,
+  FlexBuilder,
+  GridBuilder,
 } from "@bennie-ui/attribute-utils";
-import { FlexBuilder } from "./builders/builders.flex";
 
 export type ClassBuilderType = {
   keys: () => string[];
@@ -24,6 +25,7 @@ export const ClassBuilder = (): ClassBuilderType => {
     align: TextAlignAttributeBuilder,
     colors: ColorBuilder,
     flex: FlexBuilder,
+    grid: GridBuilder,
     height: HeightAttributeBuilder,
     margin: MarginAttributeBuilder,
     opacity: OpacityAttributeBuilder,

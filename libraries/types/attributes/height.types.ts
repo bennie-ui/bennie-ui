@@ -20,7 +20,12 @@ export type HeightType =
   | "dvh"
   | "svh";
 
-export type HeightPercentageType = PercentageHalvesType | PercentageThirdsType | PercentageFourthsType | PercentageFifthsType | PercentageSixtsType ;
+export type HeightPercentageType =
+  | PercentageHalvesType
+  | PercentageThirdsType
+  | PercentageFourthsType
+  | PercentageFifthsType
+  | PercentageSixtsType;
 
 export type HeightPropertyType =
   | NumericType
@@ -29,12 +34,12 @@ export type HeightPropertyType =
   | HeightType;
 
 export type HeightMinPropertyType =
-  | "min-h-0"
-  | "min-h-full"
-  | "min-h-screen"
-  | "min-h-min"
-  | "min-h-max"
-  | "min-h-fit";
+  | "0"
+  | "full"
+  | "screen"
+  | "min"
+  | "max"
+  | "fit";
 
 export type HeightMaxPropertyType = NumericType | DecimalType | HeightType;
 export interface AllHeights {

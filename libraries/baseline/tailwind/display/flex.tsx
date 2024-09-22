@@ -1,5 +1,5 @@
 export const variants = {
-  flex: "flex",
+  flex: "flex flex-1",
   base: {
     directions: [
       "flex-row",
@@ -18,6 +18,9 @@ export const variants = {
       "justify-end",
       "justify-center",
       "justify-between",
+      "justify-around",
+      "justify-evenly",
+      "justify-stretch",
     ],
     alignItems: [
       "items-stretch",
@@ -26,6 +29,15 @@ export const variants = {
       "items-end",
       "items-baseline",
     ],
+    alignSelf: [
+      "self-auto",
+      "self-start",
+      "self-end",
+      "self-center",
+      "self-stretch",
+      "self-baseline",
+    ],
+    wrap: ["flex-wrap", "flex-wrap-reverse", "flex-nowrap"],
   },
   medium: {
     directions: [
@@ -45,6 +57,9 @@ export const variants = {
       "md:justify-end",
       "md:justify-center",
       "md:justify-between",
+      "md:justify-around",
+      "md:justify-evenly",
+      "md:justify-stretch",
     ],
     alignItems: [
       "md:items-stretch",
@@ -53,6 +68,15 @@ export const variants = {
       "md:items-end",
       "md:items-baseline",
     ],
+    alignSelf: [
+      "md:self-auto",
+      "md:self-start",
+      "md:self-end",
+      "md:self-center",
+      "md:self-stretch",
+      "md:self-baseline",
+    ],
+    wrap: ["md:flex-wrap", "md:flex-wrap-reverse", "md:flex-nowrap"],
   },
   large: {
     directions: [
@@ -72,6 +96,9 @@ export const variants = {
       "lg:justify-end",
       "lg:justify-center",
       "lg:justify-between",
+      "lg:justify-around",
+      "lg:justify-evenly",
+      "lg:justify-stretch",
     ],
     alignItems: [
       "lg:items-stretch",
@@ -80,5 +107,14 @@ export const variants = {
       "lg:items-end",
       "lg:items-baseline",
     ],
+    alignSelf: [
+      "lg:self-auto",
+      "lg:self-start",
+      "lg:self-end",
+      "lg:self-center",
+      "lg:self-stretch",
+      "lg:self-baseline",
+    ],
+    wrap: ["lg:flex-wrap", "lg:flex-wrap-reverse", "lg:flex-nowrap"],
   },
 };
