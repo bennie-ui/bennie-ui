@@ -23,6 +23,7 @@ export const variants = {
       "font-extrabold",
       "font-black",
     ],
+    wrap: ["text-wrap", "text-nowrap", "text-balance", "text-pretty"],
   },
   medium: {
     size: [
@@ -37,6 +38,23 @@ export const variants = {
       "md:text-5xl",
       "md:text-6xl",
     ],
+    weight: [
+      "md:font-thin",
+      "md:font-extralight",
+      "md:font-light",
+      "md:font-normal",
+      "md:font-medium",
+      "md:font-semibold",
+      "md:font-bold",
+      "md:font-extrabold",
+      "md:font-black",
+    ],
+    wrap: [
+      "md:text-wrap",
+      "md:text-nowrap",
+      "md:text-balance",
+      "md:text-pretty",
+    ],
   },
   large: {
     size: [
@@ -50,6 +68,23 @@ export const variants = {
       "lg:text-4xl",
       "lg:text-5xl",
       "lg:text-6xl",
+    ],
+    weight: [
+      "lg:font-thin",
+      "lg:font-extralight",
+      "lg:font-light",
+      "lg:font-normal",
+      "lg:font-medium",
+      "lg:font-semibold",
+      "lg:font-bold",
+      "lg:font-extrabold",
+      "lg:font-black",
+    ],
+    wrap: [
+      "lg:text-wrap",
+      "lg:text-nowrap",
+      "lg:text-balance",
+      "lg:text-pretty",
     ],
   },
 };

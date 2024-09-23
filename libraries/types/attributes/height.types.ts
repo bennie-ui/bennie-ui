@@ -25,7 +25,7 @@ export type HeightPercentageType =
   | PercentageThirdsType
   | PercentageFourthsType
   | PercentageFifthsType
-  | PercentageSixtsType;
+  | PercentageSixtsType
 
 export type HeightPropertyType =
   | NumericType

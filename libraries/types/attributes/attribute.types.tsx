@@ -16,7 +16,7 @@ export type PercentageTwelveType =
   | "10/12"
   | "11/12";
 
-export type NumericZeroType = '0'
+export type NumericZeroType = "0";
 export type NumericMinRangeType =
   | "1"
   | "2"
@@ -29,8 +29,8 @@ export type NumericMinRangeType =
   | "9"
   | "10"
   | "11"
-  | "12"
- 
+  | "12";
+
 export type NumericMediumnRangeType =
   | "14"
   | "16"
@@ -52,7 +52,11 @@ export type NumericMaxRangeType =
   | "80"
   | "96";
 
-export type NumericType = NumericZeroType | NumericMinRangeType | NumericMediumnRangeType | NumericMaxRangeType;
+export type NumericType =
+  | NumericZeroType
+  | NumericMinRangeType
+  | NumericMediumnRangeType
+  | NumericMaxRangeType;
 
 export type DecimalType = "0" | "0.5" | "1.5" | "2.5" | "3.5";
 export type PercentageType =
@@ -75,7 +79,42 @@ export type ActionType =
   | "light"
   | "dark";
 
-export type RoundingType = "none" | "md" | "lg" | "2xl" | "3xl" | "full";
+export type BorderStyle = "solid" | "dashed" | "dotted" | "bubble" | "none";
+export type BorderWidth = "0" | "1" | "2" | "4" | "8";
+
+export type BorderTypes = {
+  style?: BorderStyle;
+  width?: {
+    all?: BorderWidth;
+    x?: BorderWidth;
+    y?: BorderWidth;
+    s?: BorderWidth;
+    e?: BorderWidth;
+    t?: BorderWidth;
+    r?: BorderWidth;
+    b?: BorderWidth;
+    l?: BorderWidth;
+  };
+};
+
+export type RoundingValues = "none" | "md" | "lg" | "2xl" | "3xl" | "full";
+export type RoundingType = {
+  all?: RoundingValues;
+  s?: RoundingValues;
+  e?: RoundingValues;
+  t?: RoundingValues;
+  r?: RoundingValues;
+  b?: RoundingValues;
+  l?: RoundingValues;
+  ss?: RoundingValues;
+  se?: RoundingValues;
+  ee?: RoundingValues;
+  es?: RoundingValues;
+  tl?: RoundingValues;
+  tr?: RoundingValues;
+  br?: RoundingValues;
+  bl?: RoundingValues;
+};
 
 export type OpacityType =
   | "100"

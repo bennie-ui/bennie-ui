@@ -1,4 +1,5 @@
 export * from "./builders.colors";
+export * from "./builders.border";
 export * from "./builders.rounding";
 export * from "./builders.opacity";
 export * from "./builders.text";

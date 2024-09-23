@@ -26,3 +26,12 @@ export const TextWeightAttributeBuilder = (
   }
   return "";
 };
+
+export const TextWrapAttributeBuilder = (
+  properties: ComponentProperties,
+): string => {
+  if (properties.wrap) {
+    return `text-${properties.wrap}`;
+  }
+  return "";
+};

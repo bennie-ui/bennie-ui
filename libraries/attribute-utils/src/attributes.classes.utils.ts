@@ -111,11 +111,9 @@ export const recusiveClassSearch = (
     return "";
   }
 
-  if (
-    property_name === "colors" ||
-    property_name === "flex" ||
-    property_name === "grid"
-  ) {
+  const class_builder = ClassBuilder();
+
+  if (class_builder.keys().includes(property_name)) {
     let class_name = get_class_from_property(
       parent_name,
       property_name,
@@ -123,9 +121,6 @@ export const recusiveClassSearch = (
       properties,
     );
 
-    if (property_name === "colors" && properties.colors?.border) {
-      class_name = " border" + class_name;
-    }
     return class_name;
   }
 

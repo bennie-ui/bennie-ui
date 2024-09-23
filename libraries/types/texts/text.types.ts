@@ -34,8 +34,18 @@ export type TextTagType =
   | "small"
   | "i"
   | "mark"
+  | "pre"
   | "strong"
   | "q"
   | "sub"
   | "sup";
 export type HeadingTagType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "h7";
+export type TextWrapType = "wrap" | "nowrap" | "balance" | "pretty";
+
+export type TextTypes = {
+  size?: TextSizeType;
+  weight?: TextWeightType;
+  align?: TextAlignmentType;
+  display?: TextDisplayType;
+  wrap?: TextWrapType;
+};

@@ -1,3 +1,5 @@
+import * as React from "react";
+
 /** @type { import('@storybook/react').Preview } */
 import { themes } from "@storybook/theming";
 import "../libraries/baseline/compiled/baseline.css";

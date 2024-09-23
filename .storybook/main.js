@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { join, dirname } from "path";
 
 /**
@@ -7,8 +7,6 @@ import { join, dirname } from "path";
  */
 const getAbsolutePath = (value) =>
   dirname(require.resolve(join(value, "package.json")));
-
-const isCSSRule = (rule) => rule.test.toString() === "/\\.css$/";
 
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {

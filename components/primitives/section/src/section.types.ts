@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode, SyntheticEvent } from "react";
 import {
+  BorderTypes,
   RoundingType,
   ColorType,
   OpacityType,
@@ -27,6 +28,7 @@ type SectionTagType = "div" | "pre" | "code";
 export interface SectionProperties {
   id?: string;
   align?: TextAlignmentType;
+  border?: BorderTypes;
   children?: ReactNode;
   className?: string;
   colors?: ColorType;
@@ -43,4 +45,6 @@ export interface SectionProperties {
   size?: TextSizeType;
   tag?: SectionTagType;
   width?: AllWidths;
+
+  onClick?: (event: SyntheticEvent) => void;
 }

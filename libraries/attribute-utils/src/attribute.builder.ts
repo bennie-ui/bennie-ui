@@ -2,15 +2,17 @@ import { BuilderFunction } from "@bennie-ui/types";
 
 import {
   ColorBuilder,
+  BorderAttributeBuilder,
   RoundingAttributeBuilder,
   OpacityAttributeBuilder,
   TextAlignAttributeBuilder,
   TextSizeAttributeBuilder,
+  TextWeightAttributeBuilder,
+  TextWrapAttributeBuilder,
   HeightAttributeBuilder,
   WidthAttributeBuilder,
   MarginAttributeBuilder,
   PaddingAttributeBuilder,
-  TextWeightAttributeBuilder,
   FlexBuilder,
   GridBuilder,
 } from "@bennie-ui/attribute-utils";
@@ -23,6 +25,7 @@ export type ClassBuilderType = {
 export const ClassBuilder = (): ClassBuilderType => {
   const builders = {
     align: TextAlignAttributeBuilder,
+    border: BorderAttributeBuilder,
     colors: ColorBuilder,
     flex: FlexBuilder,
     grid: GridBuilder,
@@ -34,6 +37,7 @@ export const ClassBuilder = (): ClassBuilderType => {
     width: WidthAttributeBuilder,
     weight: TextWeightAttributeBuilder,
     size: TextSizeAttributeBuilder,
+    wrap: TextWrapAttributeBuilder,
   };
 
   return {

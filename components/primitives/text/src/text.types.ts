@@ -15,6 +15,7 @@ import {
   TextOverflowType,
   TextTagType,
   TextWeightType,
+  TextWrapType,
 } from "@bennie-ui/types/texts";
 
 export type TextAttributes = {
@@ -44,4 +45,5 @@ export type TextProperties = {
 
   tag?: TextTagType;
   weight?: TextWeightType;
+  wrap?: TextWrapType;
 };
