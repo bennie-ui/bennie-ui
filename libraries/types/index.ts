@@ -3,6 +3,7 @@ import type {
   ScaleType,
   RoundingType,
   ActionType,
+  BorderTypes,
   ColorType,
   OpacityType,
   AllMargins,
@@ -13,12 +14,7 @@ import type {
   AllHeights,
 } from "@bennie-ui/types/attributes";
 
-import {
-  TextSizeType,
-  TextAlignmentType,
-  TextDisplayType,
-  TextWeightType,
-} from "@bennie-ui/types/texts";
+import { TextTypes } from "@bennie-ui/types/texts";
 
 import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
 
@@ -33,13 +29,12 @@ export interface ComponentProperties {
   id?: string;
 
   action?: ActionType;
-  align?: TextAlignmentType;
+  border?: BorderTypes;
   children?: ReactNode;
   colors?: ColorType;
   className?: string;
   dataTestId?: string;
   dark?: DarkOverrides;
-  display?: TextDisplayType;
   flex?: FlexType;
   grid?: GridType;
   height?: AllHeights;
@@ -49,8 +44,7 @@ export interface ComponentProperties {
   padding?: AllPaddings;
   rounding?: RoundingType;
   scale?: ScaleType;
-  size?: TextSizeType;
-  weight?: TextWeightType;
+  text?: TextTypes;
   width?: AllWidths;
 
   onClick?: (event: SyntheticEvent) => void;

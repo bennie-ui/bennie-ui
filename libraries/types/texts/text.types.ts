@@ -39,3 +39,10 @@ export type TextTagType =
   | "sub"
   | "sup";
 export type HeadingTagType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "h7";
+
+export type TextTypes = {
+  size?: TextSizeType;
+  weight?: TextWeightType;
+  align?: TextAlignmentType;
+  display?: TextDisplayType;
+};

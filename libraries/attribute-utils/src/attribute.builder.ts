@@ -2,6 +2,7 @@ import { BuilderFunction } from "@bennie-ui/types";
 
 import {
   ColorBuilder,
+  BorderAttributeBuilder,
   RoundingAttributeBuilder,
   OpacityAttributeBuilder,
   TextAlignAttributeBuilder,
@@ -23,6 +24,7 @@ export type ClassBuilderType = {
 export const ClassBuilder = (): ClassBuilderType => {
   const builders = {
     align: TextAlignAttributeBuilder,
+    border: BorderAttributeBuilder,
     colors: ColorBuilder,
     flex: FlexBuilder,
     grid: GridBuilder,

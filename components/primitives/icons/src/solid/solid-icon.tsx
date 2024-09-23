@@ -4,7 +4,6 @@ import * as Icons from "@heroicons/react/24/solid";
 import { BasicIconProps } from "../types/icon.types";
 
 const SolidIcon: FC<BasicIconProps> = ({ className, figure }) => {
-  console.log("f: icon", { className, figure });
   // @ts-expect-error: ignore
   const Icon: JSX.Element = Icons[figure];
   if (Icon) {

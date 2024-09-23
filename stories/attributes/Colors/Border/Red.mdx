@@ -25,9 +25,9 @@ import { variants } from '@bennie-ui/baseline/tailwind/colors/border/sm'
     const border_weight = border_values[2]
 
     return <Unstyled key={idx}>
-     <Section colors={{
-          border: { color: border_color, weight: border_weight }
-        }}>
+     <Section 
+        border={{ width: { all: '1' } }}
+        colors={{ border: { color: border_color, weight: border_weight } }}>
         {value}
      </Section> 
     </Unstyled>
