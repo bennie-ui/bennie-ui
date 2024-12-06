@@ -1,4 +1,5 @@
 
 [test]
 preload = "./happydom.ts"
-coverage = false
+coverage = true
+coverageReporter = "lcov"
