@@ -13,9 +13,10 @@ export const getButtonScale = ({
     return "";
   }
 
-  if (padding) {
-    return `p-${padding}`;
-  }
+  // TODO: review this again test cases
+  //if (padding) {
+  //return `p-${padding.all}`;
+  //}
 
   switch (scale) {
     case "medium":

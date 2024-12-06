@@ -12,15 +12,13 @@ import type {
   GridType,
   AllWidths,
   AllHeights,
+  AllPositions
 } from "@bennie-ui/types/attributes";
 
 import { TextTypes } from "@bennie-ui/types/texts";
 import {
   TextSizeType,
   TextAlignmentType,
-  TextDisplayType,
-  TextOverflowType,
-  TextTagType,
   TextWeightType,
   TextWrapType,
 } from "@bennie-ui/types/texts";
@@ -52,6 +50,7 @@ export interface ComponentProperties {
   opacity?: OpacityType;
   overrides?: ResponsiveOverrides;
   padding?: AllPaddings;
+  position?: AllPositions;
   rounding?: RoundingType;
   size?: TextSizeType;
 

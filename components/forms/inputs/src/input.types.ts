@@ -1,4 +1,4 @@
-import { ReactNode, SyntheticEvent } from "react";
+import { ChangeEvent, ReactNode, SyntheticEvent } from "react";
 import type {
   ScaleType,
   RoundingType,
@@ -7,14 +7,13 @@ import type {
   OpacityType,
   AllMargins,
   AllPaddings,
-  AllPositions,
 } from "@bennie-ui/types/attributes";
 
 import { DATA_TEST_ID } from "@bennie-ui/constants";
 import { TextSizeType } from "@bennie-ui/types/texts";
 import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
 
-export interface ButtonAttributes {
+export interface InputAttributes {
   className?: string;
   id?: string;
   [DATA_TEST_ID]?: string;
@@ -22,8 +21,9 @@ export interface ButtonAttributes {
   disabled?: boolean;
 }
 
-export interface ButtonProperties {
+export type InputProperties = {
   id?: string;
+  name: string;
   children?: ReactNode;
   colors?: ColorType;
   className?: string;
@@ -35,11 +35,12 @@ export interface ButtonProperties {
   opacity?: OpacityType;
   overrides?: ResponsiveOverrides;
   padding?: AllPaddings;
-  position?: AllPositions;
   action?: ActionType;
   scale?: ScaleType;
   rounding?: RoundingType;
-  isFullWidth?: boolean;
 
-  onClick?: (event: SyntheticEvent) => void;
-}
+  isFullWidth?: boolean;
+  withClearMark?: boolean;
+
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+};

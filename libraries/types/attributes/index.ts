@@ -5,3 +5,4 @@ export * from "./flex.types";
 export * from "./grid.types";
 export * from "./margin.types";
 export * from "./padding.types";
+export * from './position.types';

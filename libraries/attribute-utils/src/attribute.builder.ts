@@ -13,6 +13,7 @@ import {
   WidthAttributeBuilder,
   MarginAttributeBuilder,
   PaddingAttributeBuilder,
+  PositionAttributeBuilder,
   FlexBuilder,
   GridBuilder,
 } from "@bennie-ui/attribute-utils";
@@ -33,6 +34,7 @@ export const ClassBuilder = (): ClassBuilderType => {
     margin: MarginAttributeBuilder,
     opacity: OpacityAttributeBuilder,
     padding: PaddingAttributeBuilder,
+    position: PositionAttributeBuilder,
     rounding: RoundingAttributeBuilder,
     width: WidthAttributeBuilder,
     weight: TextWeightAttributeBuilder,

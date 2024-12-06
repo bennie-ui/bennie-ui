@@ -25,7 +25,13 @@ const Icon: FC<IconProps> = (props) => {
     overrides: props.overrides || undefined,
   });
 
-  return <SolidIcon className={className} figure={props.figure} />;
+  return (
+    <SolidIcon
+      className={className}
+      figure={props.figure}
+      onClick={props.onClick}
+    />
+  );
 };
 
 Icon.displayName = "Icon";

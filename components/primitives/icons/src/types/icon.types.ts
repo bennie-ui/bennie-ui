@@ -5,7 +5,9 @@ export type IconType = "solid" | "outline";
 export type BasicIconProps = {
   className: string;
   figure: IconFigure;
+  onClick?: () => void | undefined;
 };
+
 export type IconProperties = {
   height?: NumericType;
   width?: NumericType;
@@ -22,4 +24,5 @@ export type IconProps = IconProperties & {
     medium?: IconProperties;
     large?: IconProperties;
   };
+  onClick?: () => void | undefined;
 };
