@@ -1,4 +1,3 @@
-import React from "react";
 import { join, dirname } from "path";
 
 /**
@@ -28,4 +27,6 @@ const config = {
     autodocs: "tag",
   },
 };
+
+//window.React = React;
 export default config;
