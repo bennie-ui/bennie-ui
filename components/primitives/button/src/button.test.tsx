@@ -110,10 +110,10 @@ describe("Button", () => {
     );
   });
 
-  test(":isFullWidth", () => {
+  test(":full_width", () => {
     const props: ButtonProperties = {
       children: "Hello World",
-      isFullWidth: true,
+      full_width: true,
     };
     const button = <Button {...props} />;
     const { container } = render(button);

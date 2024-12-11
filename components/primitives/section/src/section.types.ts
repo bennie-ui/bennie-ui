@@ -10,6 +10,7 @@ import {
   GridType,
   AllWidths,
   AllHeights,
+  AllPositions,
 } from "@bennie-ui/types/attributes";
 
 import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
@@ -41,8 +42,10 @@ export interface SectionProperties {
   opacity?: OpacityType;
   overrides?: ResponsiveOverrides;
   padding?: AllPaddings;
+  position?: AllPositions;
   rounding?: RoundingType;
   size?: TextSizeType;
+  style?: unknown;
   tag?: SectionTagType;
   width?: AllWidths;
 

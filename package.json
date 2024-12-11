@@ -12,7 +12,9 @@
   "workspaces": [
     "libraries/*",
     "components/primitives/*",
-    "components/forms/*"
+    "components/composites/*",
+    "components/composites/forms/*",
+    "components/composites/feedback/*"
   ],
   "dependencies": {
     "@heroicons/react": "^2.1.5",

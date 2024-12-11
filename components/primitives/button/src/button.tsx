@@ -12,7 +12,7 @@ export const Button: FC<ButtonProperties> = (properties) => {
     "button",
     getButtonScale(properties),
     getActionColorAttribute(properties),
-    (properties.isFullWidth ?? false) ? "w-full" : "",
+    (properties.full_width ?? false) ? "w-full" : "",
     getButtonClassNames(properties),
   );
 

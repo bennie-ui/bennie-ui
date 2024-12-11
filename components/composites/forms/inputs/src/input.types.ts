@@ -39,7 +39,7 @@ export type InputProperties = {
   scale?: ScaleType;
   rounding?: RoundingType;
 
-  isFullWidth?: boolean;
+  full_width?: boolean;
   withClearMark?: boolean;
 
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;

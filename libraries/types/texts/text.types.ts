@@ -8,7 +8,10 @@ export type TextSizeType =
   | "3xl"
   | "4xl"
   | "5xl"
-  | "6xl";
+  | "6xl"
+  | "7xl"
+  | "8xl"
+  | "9xl";
 export type TextDisplayType = "inline" | "block" | "inline-block";
 export type TextWeightType =
   | "light"

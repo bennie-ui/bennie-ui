@@ -5,7 +5,10 @@ import { SectionProperties } from "./section.types";
 export const Section: FC<SectionProperties> = (properties) => {
   const TagType = properties.tag || "div";
   return (
-    <TagType {...getComponentProperties(properties)}>
+    <TagType
+      {...getComponentProperties(properties)}
+      style={{ ...properties.style }}
+    >
       {properties.children}
     </TagType>
   );

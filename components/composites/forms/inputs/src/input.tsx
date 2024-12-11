@@ -20,7 +20,7 @@ export const Input: FC<InputProperties> = (properties: InputProperties) => {
   };
 
   return (
-    <Section className="relative">
+    <Section position={{ style: "relative" }}>
       <input
         name={name}
         onChange={handleOnChange}
@@ -28,11 +28,10 @@ export const Input: FC<InputProperties> = (properties: InputProperties) => {
         {...getComponentProperties({ ...properties })}
         value={state}
       />
-      { state != '' && withClearMark && (
+      {state != "" && withClearMark && (
         <Button
-          className="absolute"
           padding={{ all: "0" }}
-          position={{ right: '0' }}
+          position={{ style: "absolute", right: "0" }}
           onClick={() => {
             setState("");
           }}

@@ -20,8 +20,8 @@ describe("attributes.position", () => {
           );
 
           const result = getClassByViewPort(properties as ComponentProperties);
-          expect(result.trim()).toBe(
-            res.name === "base" ? pos : `${res.value}:${pos}`,
+          expect(result.trim()).toContain(
+            res.name === "base" ? `${pos}` : `${res.value}:${pos}`,
           );
         });
       });

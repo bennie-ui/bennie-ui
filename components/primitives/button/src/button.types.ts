@@ -39,7 +39,7 @@ export interface ButtonProperties {
   action?: ActionType;
   scale?: ScaleType;
   rounding?: RoundingType;
-  isFullWidth?: boolean;
+  full_width?: boolean;
 
   onClick?: (event: SyntheticEvent) => void;
 }

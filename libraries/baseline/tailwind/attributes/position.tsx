@@ -1,6 +1,7 @@
 export const variants = {
   base: {
     position: ["static", "fixed", "absolute", "relative", "sticky"],
+    index: ["z-0", 'z-10', 'z-20', 'z-30', 'z-40', 'z-50', 'z-auto'],
     inset: {
       all: [
         ...['inset-px', 'inset-auto', 'inset-full'],

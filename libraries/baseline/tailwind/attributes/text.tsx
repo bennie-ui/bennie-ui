@@ -1,4 +1,5 @@
 export const variants = {
+  utils: "select-none",
   base: {
     size: [
       "text-xs",
@@ -11,6 +12,9 @@ export const variants = {
       "text-4xl",
       "text-5xl",
       "text-6xl",
+      "text-7xl",
+      "text-8xl",
+      "text-9xl",
     ],
     weight: [
       "font-thin",
@@ -37,6 +41,9 @@ export const variants = {
       "md:text-4xl",
       "md:text-5xl",
       "md:text-6xl",
+      "md:text-7xl",
+      "md:text-8xl",
+      "md:text-9xl",
     ],
     weight: [
       "md:font-thin",
@@ -68,6 +75,9 @@ export const variants = {
       "lg:text-4xl",
       "lg:text-5xl",
       "lg:text-6xl",
+      "md:text-7xl",
+      "md:text-8xl",
+      "md:text-9xl",
     ],
     weight: [
       "lg:font-thin",
