@@ -1,0 +1,38 @@
+import { Unstyled } from "@storybook/blocks";
+import { Section } from '@bennie-ui/section'
+import { Button } from '@bennie-ui/button'
+import { variants } from '@bennie-ui/baseline/tailwind/attributes/actions'
+
+## Properties 
+Button scale values are (small|medium|large) refer to <a target="_blank" href="https://github.com/bennie-ui/bennie-ui/blob/main/libraries/types/attributes/attribute.types.tsx#L133">attribute.types.ts </a>
+
+## Examples
+```
+<Button action='primary'>No-scale</Button>
+<Button action='primary' scale="small">small</Button>
+<Button action='primary' scale="medium" >medium</Button>
+<Button action='primary' scale="large" >large</Button>
+```
+
+{
+  <Unstyled>
+    <Button action='primary'>no-scale</Button><br/>
+    <Button action='primary' scale="small">small</Button><br/>
+    <Button action='primary' scale="medium">medium</Button><br/>
+    <Button action='primary' scale="large">large</Button>
+  </Unstyled>
+}
+
+
+## Complex Examples
+
+When passing padding properties, they should combine and override default button.scale values
+```
+<Button action='primary' scale="large" padding={{all: '2'}} >with padding</Button>
+<Button action='primary' scale="large" padding={{all: '2'}} className="p-8">with padding and className (TODO)</Button>
+```
+
+<Unstyled>
+  <Button action='primary' scale="large" padding={{all: '2'}} >with padding</Button> <br/>
+  { /* <Button action='primary' scale="large" padding={{all: '2'}} className="p-8">with padding and className (TODO)</Button> */ }
+</Unstyled>

@@ -1,0 +1,30 @@
+import { Unstyled } from "@storybook/blocks";
+import { Section } from '@bennie-ui/section'
+import { Button } from '@bennie-ui/button'
+import { variants } from '@bennie-ui/baseline/tailwind/attributes/actions'
+
+## Properties
+To see button avialable properties refer to <a target="_blank" href="https://github.com/bennie-ui/bennie-ui/blob/main/components/primitives/button/src/button.types.ts">button.types.ts </a>
+
+## Examples
+```
+<Button action='neutral'>neutral</Button>
+<Button action='primary'>primary</Button>
+<Button action='secondary'>secondary</Button>
+<Button action='success'>success</Button>
+<Button action='danger'>danger</Button>
+<Button action='info'>info</Button>
+<Button action='dark'>dark</Button>
+<Button action='light'>light</Button>
+```
+
+{
+  variants.base.map((action, idx) => {
+    return <Unstyled key={idx}>
+      <Button action={action}>
+        {action}
+      </Button>
+    </Unstyled>
+  })
+}
+

@@ -4,16 +4,33 @@ import { Section } from '@bennie-ui/section'
 import { variants } from '@bennie-ui/baseline/tailwind/attributes/text'
 
 
-## Example
-```
-<Text>My Link</Text>
-```
 
 
-### Compiled examples 
+## Properties
+To see all text avialable properties refer to <a target="_blank" href="https://github.com/bennie-ui/bennie-ui/blob/main/components/primitives/text/src/text.types.ts">text.types.ts</a>. <br/>
+To see all the colors variants visit the attributes.colors.text section, <a target="_blank" href="https://storybook.bennie-ui.com/?path=/docs/attributes-colors-text-blue--docs">Example</a>.<br/>
+To see all the weight variants visit the attributes.text.size  <a target="_blank" href="https://storybook.bennie-ui.com/?path=/docs/attributes-text-size--docs">section</a>.<br/>
+To see all the weight variants visit the attributes.text.weight  <a target="_blank" href="https://storybook.bennie-ui.com/?path=/docs/attributes-text-weight--docs">section</a>.<br/>
+To see all the align variants visit the attributes.text.align  <a target="_blank" href="https://storybook.bennie-ui.com/?path=/docs/attributes-text-align--docs">section</a>.
+
+## Examples
+```
+<Text>Text</Text>
+<Text colors={{text: { color: 'blue'}}}>With color</Text>
+<Text colors={{text: { color: 'blue', weight: '300'}}}>With color and weight</Text>
+```
 
 <Unstyled>
- <Text>Text</Text>
+ <Text>Blank</Text>
 </Unstyled>
+
+<Unstyled>
+ <Text colors={{text: { color: 'blue'}}}>With color</Text>
+</Unstyled>
+
+<Unstyled>
+ <Text colors={{text: { color: 'blue', weight: '300'}}}>With color and weight</Text>
+</Unstyled>
+
 
 
