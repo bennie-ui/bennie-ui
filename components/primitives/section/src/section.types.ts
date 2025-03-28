@@ -45,7 +45,6 @@ export interface SectionProperties {
   position?: AllPositions;
   rounding?: RoundingType;
   size?: TextSizeType;
-  style?: unknown;
   tag?: SectionTagType;
   width?: AllWidths;
 

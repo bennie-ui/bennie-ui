@@ -24,6 +24,9 @@ export interface InputAttributes {
 export type InputProperties = {
   id?: string;
   name: string;
+  label?: string;
+  placeholder?: string;
+  value: string;
   children?: ReactNode;
   colors?: ColorType;
   className?: string;
@@ -35,6 +38,7 @@ export type InputProperties = {
   opacity?: OpacityType;
   overrides?: ResponsiveOverrides;
   padding?: AllPaddings;
+
   action?: ActionType;
   scale?: ScaleType;
   rounding?: RoundingType;
@@ -43,4 +47,11 @@ export type InputProperties = {
   withClearMark?: boolean;
 
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type InputOption = {
+  name: string;
+  label?: string;
+  value: string;
+  selected: boolean;
 };

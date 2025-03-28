@@ -4,6 +4,7 @@ import {
   OpacityType,
   AllMargins,
   AllPaddings,
+  AllPositions,
 } from "@bennie-ui/types/attributes";
 
 import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
@@ -42,6 +43,8 @@ export type TextProperties = {
   overrides?: ResponsiveOverrides;
   overflow?: TextOverflowType;
   padding?: AllPaddings;
+
+  position?: AllPositions;
 
   tag?: TextTagType;
   weight?: TextWeightType;

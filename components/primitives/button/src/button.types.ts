@@ -8,6 +8,7 @@ import type {
   AllMargins,
   AllPaddings,
   AllPositions,
+  BorderTypes,
 } from "@bennie-ui/types/attributes";
 
 import { DATA_TEST_ID } from "@bennie-ui/constants";
@@ -24,6 +25,8 @@ export interface ButtonAttributes {
 
 export interface ButtonProperties {
   id?: string;
+
+  border?: BorderTypes;
   children?: ReactNode;
   colors?: ColorType;
   className?: string;
