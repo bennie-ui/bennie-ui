@@ -42,7 +42,7 @@ export const Input: FC<InputProperties> = (properties: InputProperties) => {
           ...properties,
           className: "w-full rounded-md",
         })}
-        value={state}
+        value={properties.value}
       />
       {state != "" && withClearMark && (
         <Button
