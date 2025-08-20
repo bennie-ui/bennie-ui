@@ -27,13 +27,20 @@ export const Toast: FC<ToastProps> = (properties) => {
     getActionColorAttribute(properties),
   );
 
+  const handleDismiss = () => {
+    if (properties.dismissable) {
+      set_is_visible(false);
+      properties.onDismiss && properties.onDismiss()
+    }
+  }
+
   useEffect(() => {
     if (dismissable === true && duration && duration > 0) {
       const default_duration = duration * 1000;
 
       let timeOutId: ReturnType<typeof setTimeout>;
       timeOutId = setTimeout(() => {
-        set_is_visible(false);
+        handleDismiss();
       }, default_duration);
       return () => {
         clearTimeout(timeOutId);
@@ -44,28 +51,32 @@ export const Toast: FC<ToastProps> = (properties) => {
   return (
     is_visible && (
       <Section
+
+        cursor={properties.dismissable ? "pointer" : "default"}
+        rounding={properties.rounded ? { all: "lg" } : undefined}
         flex={{ direction: "row", justifyContent: "between" }}
         {...getComponentProperties({ ...properties, className })}
+        onClick={handleDismiss}
       >
         {properties.children}
-        {dismissable && (
-          <Button
-            padding={{ all: "0" }}
-            onClick={() => {
-              set_is_visible(false);
-            }}
-          >
-            <Icon
-              figure="XMarkIcon"
-              colors={{
-                text: {
-                  color: action && action === "light" ? "black" : "white",
-                },
-              }}
-            />
-          </Button>
-        )}
-      </Section>
+        {
+          dismissable && (
+            <Button
+              padding={{ all: "0" }}
+              onClick={handleDismiss}
+            >
+              <Icon
+                figure="XMarkIcon"
+                colors={{
+                  text: {
+                    color: action && action === "light" ? "black" : "white",
+                  },
+                }}
+              />
+            </Button>
+          )
+        }
+      </Section >
     )
   );
 };

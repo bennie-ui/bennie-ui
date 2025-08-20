@@ -1,14 +1,7 @@
-import React, { FC, ReactNode, SyntheticEvent } from "react";
-import { Section } from "@bennie-ui/section";
+import { ReactNode, SyntheticEvent } from "react";
 import type {
   ScaleType,
-  RoundingType,
   ActionType,
-  ColorType,
-  OpacityType,
-  AllMargins,
-  AllPaddings,
-  AllPositions,
 } from "@bennie-ui/types/attributes";
 
 export type ToastProps = {
@@ -16,7 +9,9 @@ export type ToastProps = {
   scale?: ScaleType;
 
   dismissable?: boolean;
+  rounded?: boolean;
   duration?: number;
   children: ReactNode;
   onClick?: (event: SyntheticEvent) => void;
+  onDismiss?: () => void;
 };
