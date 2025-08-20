@@ -11,6 +11,7 @@ import {
   AllWidths,
   AllHeights,
   AllPositions,
+  CursorType,
 } from "@bennie-ui/types/attributes";
 
 import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
@@ -33,6 +34,7 @@ export interface SectionProperties {
   children?: ReactNode;
   className?: string;
   colors?: ColorType;
+  cursor?: CursorType;
   dataTestId?: string;
   dark?: DarkOverrides;
   flex?: FlexType;

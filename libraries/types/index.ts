@@ -5,6 +5,7 @@ import type {
   ActionType,
   BorderTypes,
   ColorType,
+  CursorType,
   OpacityType,
   AllMargins,
   AllPaddings,
@@ -41,6 +42,7 @@ export interface ComponentProperties {
   children?: ReactNode;
   colors?: ColorType;
   className?: string;
+  cursor?: CursorType;
   dataTestId?: string;
   dark?: DarkOverrides;
   flex?: FlexType;

@@ -1,0 +1,42 @@
+import { Unstyled } from "@storybook/blocks";
+import { Section } from '@bennie-ui/section'
+import { Text } from '@bennie-ui/text'
+import { variants } from '@bennie-ui/baseline/tailwind/attributes/cursor'
+
+Cursor
+## Example
+```
+<Section cursor='pointer'>Pointer Cursor</Section>
+```
+## Types
+[See Cursor values](https://github.com/bolanosdev/bennie-ui/blob/main/libraries/types/sizing/opacity.types.ts)
+
+
+# Compiled tests
+<Section cursor='pointer'>Pointer Cursor</Section>
+
+<Section grid={{ gap: '1', templates: { columns: '3'} }}>
+{
+  variants.base.map((value, idx) => {
+    const cursor_values = value.split('-')
+
+    const cursor_value = cursor_values.length > 2 ? 
+      `${cursor_values[1]}-${cursor_values[2]}` : 
+      cursor_values[1]
+
+    return <Unstyled key={idx}>
+     <Section 
+          cursor={cursor_value} 
+          border={{ width: { all: '1' } }}
+          colors={{ 
+            background: { color: 'white'}, 
+            border: { color: 'blue'}
+          }}         
+      >
+        cursor: {cursor_value}
+     </Section> 
+    </Unstyled>
+  })
+}
+</Section>
+
