@@ -41,6 +41,7 @@ export interface ButtonProperties {
   position?: AllPositions;
   action?: ActionType;
   scale?: ScaleType;
+  type?: "button" | "submit" | "reset";
   rounding?: RoundingType;
   full_width?: boolean;
 

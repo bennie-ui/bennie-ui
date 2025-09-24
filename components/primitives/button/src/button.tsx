@@ -23,7 +23,7 @@ export const Button: FC<ButtonProperties> = (properties) => {
   }
 
   return (
-    <button
+    <button type={properties.type ?? "button"}
       {...attributes}
       {...getComponentProperties({ ...properties, className })}
     >

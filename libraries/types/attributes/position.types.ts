@@ -33,11 +33,22 @@ export type PositionIndex = '0' | '10' | '20' | '30' | '40' | '50' | 'auto'
 export interface AllPositions {
   style?: PositionType;
   index?: PositionIndex;
-  all?: PositionValues;
-  x?: PositionValues;
-  y?: PositionValues;
-  top?: PositionValues;
-  left?: PositionValues;
-  right?: PositionValues;
-  bottom?: PositionValues;
+  positive?: {
+    all?: PositionValues;
+    x?: PositionValues;
+    y?: PositionValues;
+    top?: PositionValues;
+    left?: PositionValues;
+    right?: PositionValues;
+    bottom?: PositionValues;
+  }
+  inverse?: {
+    all?: PositionValues;
+    x?: PositionValues;
+    y?: PositionValues;
+    top?: PositionValues;
+    left?: PositionValues;
+    right?: PositionValues;
+    bottom?: PositionValues;
+  }
 }

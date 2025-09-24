@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Input } from "@bennie-ui/inputs";
+import { TextInput } from "@bennie-ui/inputs";
 
-const meta: Meta<typeof Input> = {
+const meta: Meta<typeof TextInput> = {
   title: "Components/Composites/Forms/Input",
-  component: Input,
+  component: TextInput,
   tags: ["autodocs"],
   parameters: {},
   argTypes: {},
 };
 
 export default meta;
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof TextInput>;
 
 export const Primary: Story = {
   args: {

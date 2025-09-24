@@ -1,0 +1,38 @@
+import { Unstyled } from "@storybook/blocks";
+import { Section } from '@bennie-ui/section'
+import { TextInput, PasswordInput } from '@bennie-ui/inputs'
+
+## Example
+```
+<TextInput name="name" />
+```
+## Types
+[See Button values](https://github.com/bolanosdev/bennie-ui/blob/main/libraries/types/sizing/opacity.types.ts)
+
+# Compiled examples 
+  <Unstyled>
+    <TextInput name="name" label="TextLabel" /> 
+    <TextInput name="name" label={{ text: "Top Label", position: "top" }} /> 
+    <TextInput name="name" label={{ text: "Top label",position: "left" }}  /> 
+    <TextInput name="name" label={{ text: "Embedded", position: "embedded" }} /> 
+    <TextInput name="name" label={{ text: "Disabled", position: "embedded" }} disabled /> 
+    <TextInput name="name" label={{ text: "Clearable", position: "embedded" }} value="foobar"   /> 
+  </Unstyled>
+
+# Inline examples 
+  <Unstyled>
+    <Section flex={{ direction:"row"}} >
+      <TextInput name="name" label="name" /> 
+      <PasswordInput name="password" label="password"  /> 
+    </Section>
+  </Unstyled>
+
+
+# Full Width compiled examples
+  <Unstyled>
+    <TextInput name="name" label={{ text: "Top Label", position: "top" }} full_width/> 
+    <TextInput name="name" label={{ text: "Top label",position: "left" }}  full_width /> 
+    <TextInput name="name" label={{ text: "Embedded", position: "embedded" }} full_width /> 
+    <TextInput name="name" label={{ text: "Disabled", position: "embedded" }} disabled full_width /> 
+    <TextInput name="name" label={{ text: "Clearable", position: "embedded" }} value="foobar"  full_width  /> 
+  </Unstyled>

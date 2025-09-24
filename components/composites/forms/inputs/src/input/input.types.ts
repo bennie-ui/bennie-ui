@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode, SyntheticEvent } from "react";
+import { ChangeEvent, HTMLInputAutoCompleteAttribute, HTMLInputTypeAttribute, ReactNode, SyntheticEvent } from "react";
 import type {
   ScaleType,
   RoundingType,
@@ -21,12 +21,17 @@ export interface InputAttributes {
   disabled?: boolean;
 }
 
+export type InputLabelPosition = 'top' | 'left' | 'embedded'
+export type InputLabelProps = {
+  text: string
+  position?: InputLabelPosition
+}
 export type InputProperties = {
   id?: string;
+  autocomplete?: HTMLInputAutoCompleteAttribute;
   name: string;
-  label?: string;
-  placeholder?: string;
-  value: string;
+  label?: string | InputLabelProps;
+  value?: string;
   children?: ReactNode;
   colors?: ColorType;
   className?: string;
@@ -41,10 +46,12 @@ export type InputProperties = {
 
   action?: ActionType;
   scale?: ScaleType;
+  required?: boolean;
   rounding?: RoundingType;
 
+  increment?: number;
   full_width?: boolean;
-  withClearMark?: boolean;
+  with_clear_mark?: boolean;
 
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };

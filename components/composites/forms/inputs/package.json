@@ -5,7 +5,8 @@
   "scripts": {},
   "dependencies": {
     "react": "^18.2.0",
-    "@bennie-ui/attribute-utils": "workspace:*"
+    "@bennie-ui/attribute-utils": "workspace:*",
+    "@bennie-ui/component-utils": "workspace:*"
   },
   "devDependencies": {}
 }

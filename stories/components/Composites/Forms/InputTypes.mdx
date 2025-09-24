@@ -1,0 +1,27 @@
+import { Unstyled } from "@storybook/blocks";
+import { Section } from '@bennie-ui/section'
+import { TextInput, EmailInput, PasswordInput, NumberInput } from '@bennie-ui/inputs'
+import { Button } from '@bennie-ui/button'
+
+## Example
+```
+<Input name="name" />
+```
+## Types
+[See Button values](https://github.com/bolanosdev/bennie-ui/blob/main/libraries/types/sizing/opacity.types.ts)
+
+# Required
+
+<Unstyled>
+  <form onSubmit={(e) => {
+    e.preventDefault()
+    alert('submited')
+  }}>
+    <TextInput name="name" label="Name" required/> 
+    <EmailInput name="email" label="Email" required />
+    <PasswordInput name="password" label="Password" required />
+    <NumberInput name="name" label="Number" required />
+    <Button action="primary" type="submit" margin={{top: '4'}}>Submit</Button>
+  </form>
+</Unstyled>
+
