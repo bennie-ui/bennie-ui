@@ -1,13 +1,12 @@
-import { ReactNode } from "react";
-import { ColorType } from "@bennie-ui/types/attributes";
-import { HeadingTagType, TextAlignmentType } from "@bennie-ui/types/texts";
+import { ReactNode, SyntheticEvent } from "react";
+import { SystemStyleObject } from 'styled-system/types';
+import { HeadingTagType } from "@bennie-ui/types/texts";
 
 export interface HeadingProperties {
   children: ReactNode;
   className?: string;
-  align?: TextAlignmentType;
   tag?: HeadingTagType;
-  colors?: ColorType;
   id?: string;
   dataTestId?: string;
+  onClick?: (event: SyntheticEvent) => void;
 }

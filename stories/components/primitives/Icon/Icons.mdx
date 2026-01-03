@@ -1,24 +1,47 @@
 import { Unstyled } from "@storybook/blocks";
-import { Icon } from '@bennie-ui/icons';
+import { Icon, iconList } from '@bennie-ui/icons';
 import { Text } from '@bennie-ui/text';
-import { Section } from '@bennie-ui/section'
-import { icons } from '@bennie-ui/baseline/tailwind/icons';
+import { Section } from '@bennie-ui/section';
+import { css } from 'styled-system/css';
 
 
 # Icons
-{
-    icons.map(figure => {
-        return <Unstyled>
-          <Section flex={{direction: 'row'}}>
-           <Icon
-            type="solid"
-            figure={figure}
-            colors={{ text: { color: "blue" } }}
-          />
-          <Text colors={{ text: { color: "blue" } }} margin={{left: '3'}}>
-            {figure}
-          </Text>
-          </Section>
-      </Unstyled>
-    })
-  }
+
+<Unstyled>
+  <Section className={css({
+    display: 'grid',
+    width: 'fill',
+    gridTemplateColumns: 'repeat(10, 1fr)',
+    gap: '1',
+    padding: '1'
+  })}>
+    {iconList.map((figure, index) => (
+      <div key={index} className={css({
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '2',
+        padding: '2'
+      })}>
+        <Icon
+          type="solid"
+          figure={figure}
+          className={css({
+            color: 'blue.500',
+            height: '10',
+            width: '10'
+          })}
+        />
+        <Text css={{
+          color: 'blue.500',
+          fontWeight: '200',
+          fontSize: 'xs',
+          textAlign: 'center',
+          wordBreak: 'break-word'
+        }}>
+          {figure}
+        </Text>
+      </div>
+    ))}
+  </Section>
+</Unstyled>

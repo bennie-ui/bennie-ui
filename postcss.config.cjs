@@ -1,8 +1,11 @@
 module.exports = {
   plugins: {
     "postcss-import": {},
-    "tailwindcss/nesting": "postcss-nesting",
-    tailwindcss: {},
-    autoprefixer: {},
+    "@pandacss/dev/postcss": {},
+    autoprefixer: {
+      overrideBrowserslist: ['defaults'],
+      // Suppress fill->stretch warnings
+      ignoreUnknownVersions: true,
+    },
   },
 };

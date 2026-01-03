@@ -3,14 +3,19 @@ import { Icon } from "@bennie-ui/icons";
 import { Button } from "@bennie-ui/button";
 import { Section } from "@bennie-ui/section";
 import { InputAttributes, InputProperties } from "./input.types";
-import { getComponentProperties } from "@bennie-ui/attribute-utils";
+import { css, cx } from 'styled-system/css';
+import { inputBase, inputWrapperBase, inputLabelBase, clearButtonBase } from "./input.styles";
 
 export const Input: FC<InputProperties> = (properties: InputProperties) => {
-  const { label, name, withClearMark, placeholder } = properties;
+  const { label, name, withClearMark, placeholder, id, dataTestId, disabled } = properties;
   const attributes: InputAttributes = {};
   const [state, setState] = useState<string>(properties.value);
 
-  if (properties.disabled ?? false) {
+  if (id) {
+    attributes.id = id;
+  }
+
+  if (disabled ?? false) {
     attributes.disabled = true;
   }
 
@@ -19,17 +24,17 @@ export const Input: FC<InputProperties> = (properties: InputProperties) => {
     properties.onChange && properties.onChange(event);
   };
 
+  // Build input className
+  const inputClassName = cx(
+    inputBase,
+    properties.css && css(properties.css),
+    properties.className
+  );
+
   return (
-    <Section
-      position={{ style: "relative" }}
-      colors={{ text: { color: "black" } }}
-    >
+    <Section className={inputWrapperBase}>
       {label && (
-        <Section
-          size="xs"
-          colors={{ text: { color: "white" } }}
-          margin={{ bottom: "2" }}
-        >
+        <Section className={inputLabelBase}>
           {label}
         </Section>
       )}
@@ -37,22 +42,21 @@ export const Input: FC<InputProperties> = (properties: InputProperties) => {
         name={name}
         placeholder={placeholder}
         onChange={handleOnChange}
-        {...attributes}
-        {...getComponentProperties({
-          ...properties,
-          className: "w-full rounded-md",
-        })}
+        className={inputClassName}
         value={properties.value}
+        {...attributes}
       />
       {state != "" && withClearMark && (
         <Button
-          padding={{ all: "0" }}
-          position={{ style: "absolute", right: "2", top: "8" }}
+          className={clearButtonBase}
           onClick={() => {
             setState("");
           }}
         >
-          <Icon figure="XMarkIcon" colors={{ text: { color: "black" } }} />
+          <Icon 
+            figure="XMarkIcon"
+            className={css({ color: "black" })}
+          />
         </Button>
       )}
     </Section>

@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Icon } from "@bennie-ui/icons";
+import { css } from "styled-system/css";
+
 
 const meta: Meta<typeof Icon> = {
   title: "Components/Primitives/Icon/Icon",
@@ -15,8 +17,7 @@ type Story = StoryObj<typeof Icon>;
 
 export const Primary: Story = {
   args: {
-    type: "solid",
     figure: "BeakerIcon",
-    colors: { text: { color: "gray" } },
+    className: css({ height: 10, width: 10, color: 'blue', fontWeight: 200 }),
   },
 };

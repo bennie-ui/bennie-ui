@@ -1,6 +1,6 @@
 import { FC } from "react";
+import { css } from 'styled-system/css';
 import { LinkAttributes, LinkProperties } from "./link.types";
-import { getComponentProperties } from "@bennie-ui/attribute-utils";
 
 const Link: FC<LinkProperties> = (properties) => {
   const attributes: LinkAttributes = {
@@ -12,11 +12,31 @@ const Link: FC<LinkProperties> = (properties) => {
     attributes.rel = "noreferrer noopener";
   }
 
-  return (
-    <a {...attributes} {...getComponentProperties({ ...properties })}>
-      {properties.children}
-    </a>
-  );
+  if (properties.id) {
+    attributes.id = properties.id;
+  }
+
+  if (properties.dataTestId) {
+    attributes.dataTestId = properties.dataTestId;
+  }
+
+  if (properties.onClick) {
+    attributes.onClick = properties.onClick;
+  }
+
+  // Combine custom className with Panda CSS styles
+  const className = [
+    properties.className,
+    properties.css ? css(properties.css) : undefined,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  if (className) {
+    attributes.className = className;
+  }
+
+  return <a {...attributes}>{properties.children}</a>;
 };
 
 Link.displayName = "Link";

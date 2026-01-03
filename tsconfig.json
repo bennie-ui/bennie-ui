@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "styled-system/*": ["./styled-system/*"],
+      "@bennie-ui/button": ["./components/primitives/button/src"],
+      "@bennie-ui/section": ["./components/primitives/section/src"],
+      "@bennie-ui/text": ["./components/primitives/text/src"],
+      "@bennie-ui/icons": ["./components/primitives/icons/src"],
+      "@bennie-ui/inputs": ["./components/composites/forms/inputs/src"],
+      "@bennie-ui/toast": ["./components/composites/feedback/toast/src"],
+      "@bennie-ui/constants": ["./libraries/constants/src"],
+      "@bennie-ui/types": ["./libraries/types/src"]
+    }
+  },
+  "include": [
+    "components/**/*",
+    "libraries/**/*",
+    "stories/**/*",
+    "styled-system/**/*"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

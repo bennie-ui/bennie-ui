@@ -1,6 +1,8 @@
 import { Unstyled } from "@storybook/blocks";
 import { Section } from '@bennie-ui/section'
 import { Button } from '@bennie-ui/button'
+import { css } from "styled-system/css";
+
 
 ## Example
 
@@ -8,16 +10,20 @@ import { Button } from '@bennie-ui/button'
 <Button action='primary'>content</Button>
 ```
 
-## Types
-[See Button Rounding values](https://github.com/bolanosdev/bennie-ui/blob/main/libraries/types/sizing/opacity.types.ts)
 
 # Compiled examples 
-{
-  <Unstyled>
-       <Button action='primary' rounding={{all: 'md'}}>All MD rounded</Button>
+<Unstyled>
+  <Button action='primary' className={css({ rounded: 'md' })}>
+     MD rounded
+  </Button>
+</Unstyled>
+<br/>
+<Unstyled>
+  <Button action='primary' className={css({ rounded: 'sm' })}>
+     SM rounded
+  </Button>
+</Unstyled>
 
-  </Unstyled>
-}
 
 
 
