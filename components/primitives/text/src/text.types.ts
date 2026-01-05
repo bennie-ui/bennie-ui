@@ -1,52 +1,21 @@
 import { SyntheticEvent } from "react";
-import {
-  ColorType,
-  OpacityType,
-  AllMargins,
-  AllPaddings,
-  AllPositions,
-} from "@bennie-ui/types/attributes";
-
-import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
-
-import {
-  TextSizeType,
-  TextAlignmentType,
-  TextDisplayType,
-  TextOverflowType,
-  TextTagType,
-  TextWeightType,
-  TextWrapType,
-} from "@bennie-ui/types/texts";
+import { SystemStyleObject } from "styled-system/types";
+import { TextTagType } from "@bennie-ui/types/texts";
+import { DATA_TEST_ID } from "@bennie-ui/constants";
 
 export type TextAttributes = {
   id?: string;
-  dataTestId?: string;
+  [DATA_TEST_ID]?: string;
   className?: string;
   onClick?: (event: SyntheticEvent) => void;
 };
 
 export type TextProperties = {
   id?: string;
-
-  align?: TextAlignmentType;
   children?: React.ReactNode;
-  colors?: ColorType;
   className?: string;
   dataTestId?: string;
-  dark?: DarkOverrides;
-  display?: TextDisplayType;
-
-  margin?: AllMargins;
-  size?: TextSizeType;
-  opacity?: OpacityType;
-  overrides?: ResponsiveOverrides;
-  overflow?: TextOverflowType;
-  padding?: AllPaddings;
-
-  position?: AllPositions;
-
   tag?: TextTagType;
-  weight?: TextWeightType;
-  wrap?: TextWrapType;
+  onClick?: (event: SyntheticEvent) => void;
+  css?: SystemStyleObject;
 };

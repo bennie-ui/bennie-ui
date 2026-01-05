@@ -1,9 +1,10 @@
-import React, { FC, ChangeEvent, useState, useEffect } from "react";
+import React, { FC, ChangeEvent } from "react";
 
 import { Text } from "@bennie-ui/text";
 import { Section } from "@bennie-ui/section";
 import { InputOption } from "../input.types";
 import { DATA_TEST_ID } from "@bennie-ui/constants";
+import { radioItemBase, radioInputBase, radioLabelBase } from "./radio-group.styles";
 
 export interface RadioGroupAttributes {
   className?: string;
@@ -35,18 +36,18 @@ export const Radio: FC<RadioProperties> = (properties) => {
   return (
     <Section
       key={item.name}
-      flex={{ direction: "row", alignItems: "center" }}
+      className={radioItemBase}
       onClick={handleOnChange}
     >
       <input
         type="radio"
         {...attributes}
-        className="w-5 h-5"
+        className={radioInputBase}
         name={item.name}
         checked={item.selected}
         onChange={handleOnChange}
       />
-      <Text margin={{ left: "2" }}>{item.label}</Text>
+      <Text className={radioLabelBase}>{item.label}</Text>
     </Section>
   );
 };

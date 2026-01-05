@@ -1,17 +1,6 @@
 import { ChangeEvent, ReactNode, SyntheticEvent } from "react";
-import type {
-  ScaleType,
-  RoundingType,
-  ActionType,
-  ColorType,
-  OpacityType,
-  AllMargins,
-  AllPaddings,
-} from "@bennie-ui/types/attributes";
-
 import { DATA_TEST_ID } from "@bennie-ui/constants";
-import { TextSizeType } from "@bennie-ui/types/texts";
-import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
+import { SystemStyleObject } from 'styled-system/types';
 
 export interface InputAttributes {
   className?: string;
@@ -28,20 +17,10 @@ export type InputProperties = {
   placeholder?: string;
   value: string;
   children?: ReactNode;
-  colors?: ColorType;
   className?: string;
+  css?: SystemStyleObject;
   dataTestId?: string;
-  dark?: DarkOverrides;
   disabled?: boolean;
-  margin?: AllMargins;
-  size?: TextSizeType;
-  opacity?: OpacityType;
-  overrides?: ResponsiveOverrides;
-  padding?: AllPaddings;
-
-  action?: ActionType;
-  scale?: ScaleType;
-  rounding?: RoundingType;
 
   full_width?: boolean;
   withClearMark?: boolean;

@@ -17,6 +17,7 @@ jobs:
           submodules: true
       - uses: oven-sh/setup-bun@v1
       - run: bun i
+      - run: bun run codegen
       - run: bun test
 
   deploy:
@@ -30,6 +31,8 @@ jobs:
       - uses: oven-sh/setup-bun@v1
 
       - run: bun i
+
+      - run: bun run codegen
 
       - run: bun run build
 

@@ -1,19 +1,18 @@
 import { ReactNode, SyntheticEvent } from "react";
-import type {
-  ScaleType,
-  RoundingType,
-  ActionType,
-  ColorType,
-  OpacityType,
-  AllMargins,
-  AllPaddings,
-  AllPositions,
-  BorderTypes,
-} from "@bennie-ui/types/attributes";
-
 import { DATA_TEST_ID } from "@bennie-ui/constants";
-import { TextSizeType } from "@bennie-ui/types/texts";
-import { DarkOverrides, ResponsiveOverrides } from "@bennie-ui/types/utilities";
+
+export type ButtonVariant =
+  | "neutral"
+  | "primary"
+  | "secondary"
+  | "success"
+  | "danger"
+  | "warning"
+  | "info"
+  | "light"
+  | "dark";
+
+export type ButtonSize = "small" | "medium" | "large";
 
 export interface ButtonAttributes {
   className?: string;
@@ -25,24 +24,12 @@ export interface ButtonAttributes {
 
 export interface ButtonProperties {
   id?: string;
-
-  border?: BorderTypes;
   children?: ReactNode;
-  colors?: ColorType;
   className?: string;
   dataTestId?: string;
-  dark?: DarkOverrides;
   disabled?: boolean;
-  margin?: AllMargins;
-  size?: TextSizeType;
-  opacity?: OpacityType;
-  overrides?: ResponsiveOverrides;
-  padding?: AllPaddings;
-  position?: AllPositions;
-  action?: ActionType;
-  scale?: ScaleType;
-  rounding?: RoundingType;
-  full_width?: boolean;
-
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  fullWidth?: boolean;
   onClick?: (event: SyntheticEvent) => void;
 }

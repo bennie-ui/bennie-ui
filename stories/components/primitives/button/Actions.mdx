@@ -1,24 +1,37 @@
 import { Unstyled } from "@storybook/blocks";
 import { Section } from '@bennie-ui/section'
 import { Button } from '@bennie-ui/button'
-import { variants } from '@bennie-ui/baseline/tailwind/attributes/actions'
+import { css } from "styled-system/css";
+
+
+export const variants = [
+  "neutral",
+  "primary",
+  "secondary",
+  "success",
+  "danger",
+  "warning",
+  "info",
+  "light",
+  "dark"
+]
 
 ## Example
 ```
-<Button action='primary'>content</Button>
+<Button variant='primary'>content</Button>
 ```
-## Types
-[See Button values](https://github.com/bolanosdev/bennie-ui/blob/main/libraries/types/sizing/opacity.types.ts)
 
 # Compiled examples 
 
-{
-  variants.base.map((action, idx) => {
-    return <Unstyled key={idx}>
-      <Button action={action}>
-        {action}
+<Unstyled>
+  <Section className={css({ display: 'flex', gap: '1rem', flexDirection: 'column', width: '10rem' })}>
+    {variants.map((variant) => (
+      <Button key={variant} variant={variant}>
+        {variant.charAt(0).toUpperCase() + variant.slice(1)}
       </Button>
-    </Unstyled>
-  })
-}
+    ))}
+  </Section>
+</Unstyled>
+
+
 

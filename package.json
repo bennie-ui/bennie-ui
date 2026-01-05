@@ -3,11 +3,11 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "tw": "cd libraries/baseline && bun run dev",
-    "build": "storybook build",
+    "build": "panda cssgen --outfile=.storybook/panda-generated.css && storybook build",
+    "codegen": "panda codegen",
     "deploy": "wrangler pages deploy ./storybook-static",
     "start": "wrangler pages dev ./storybook-static",
-    "dev": "storybook dev -p 6006"
+    "dev": "panda cssgen --outfile=.storybook/panda-generated.css && storybook dev -p 6006"
   },
   "workspaces": [
     "libraries/*",
@@ -22,10 +22,12 @@
     "@remix-run/react": "^2.8.1",
     "@vitejs/plugin-react": "^4.3.4",
     "install": "^0.13.0",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "tsconfck": "^3.1.6"
   },
   "devDependencies": {
     "@happy-dom/global-registrator": "^13.6.2",
+    "@pandacss/dev": "^1.8.0",
     "@storybook/addon-essentials": "^8.0.4",
     "@storybook/addon-interactions": "^8.0.4",
     "@storybook/addon-links": "^8.0.4",

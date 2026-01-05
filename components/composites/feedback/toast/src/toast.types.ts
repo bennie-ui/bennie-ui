@@ -3,6 +3,7 @@ import type {
   ScaleType,
   ActionType,
 } from "@bennie-ui/types/attributes";
+import { SystemStyleObject } from 'styled-system/types';
 
 export type ToastProps = {
   action?: ActionType;
@@ -12,6 +13,8 @@ export type ToastProps = {
   rounded?: boolean;
   duration?: number;
   children: ReactNode;
+  className?: string;
+  css?: SystemStyleObject;
   onClick?: (event: SyntheticEvent) => void;
   onDismiss?: () => void;
 };

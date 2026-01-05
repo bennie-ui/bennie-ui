@@ -1,42 +1,23 @@
 import type { HeadingTagType } from "@bennie-ui/types/texts";
+import type { SystemStyleObject } from 'styled-system/types';
 
-export const getTagSize = (tag: HeadingTagType) => {
+export const getTagStyles = (tag: HeadingTagType): SystemStyleObject => {
   switch (tag) {
     case "h1":
-      return "text-3xl";
+      return { fontSize: "3xl", fontWeight: "semibold" };
     case "h2":
-      return "text-3xl";
+      return { fontSize: "3xl", fontWeight: "medium" };
     case "h3":
-      return "text-2xl";
+      return { fontSize: "2xl", fontWeight: "semibold" };
     case "h4":
-      return "text-2xl";
+      return { fontSize: "2xl", fontWeight: "medium" };
     case "h5":
-      return "text-xl";
+      return { fontSize: "xl", fontWeight: "semibold" };
     case "h6":
-      return "text-xl";
+      return { fontSize: "xl", fontWeight: "medium" };
     case "h7":
-      return "text-lg";
-  }
-};
-
-export const getTagWeight = (tag: HeadingTagType) => {
-  switch (tag) {
-    case "h1":
-      return "font-semibold";
-    case "h2":
-      return "font-medium";
-
-    case "h3":
-      return "font-semibold";
-    case "h4":
-      return "font-medium";
-
-    case "h5":
-      return "font-semibold";
-    case "h6":
-      return "font-medium";
-
+      return { fontSize: "lg", fontWeight: "semibold" };
     default:
-      return "font-semibold";
+      return { fontSize: "3xl", fontWeight: "semibold" };
   }
 };
