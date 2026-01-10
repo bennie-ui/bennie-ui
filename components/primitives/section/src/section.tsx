@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { css } from "styled-system/css";
 import { SectionProperties, SectionAttributes } from "./section.types";
 import { DATA_TEST_ID } from "@bennie-ui/constants";
 
@@ -19,16 +18,12 @@ export const Section: FC<SectionProperties> = (properties) => {
     attributes.onClick = properties.onClick;
   }
 
-  // Combine custom className with Panda CSS styles
-  const className = [
-    properties.className,
-    properties.css ? css(properties.css) : undefined,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  if (properties.style) {
+    attributes.style = properties.style;
+  }
 
-  if (className) {
-    attributes.className = className;
+  if (properties.className) {
+    attributes.className = properties.className;
   }
 
   return <TagType {...attributes}>{properties.children}</TagType>;
