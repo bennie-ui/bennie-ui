@@ -2,6 +2,13 @@
   "name": "@bennie-ui/ds",
   "version": "1.0.0",
   "main": "index.ts",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./lists/Stack": "./lists/Stack.ts",
+    "./lists/Queue": "./lists/Queue.ts",
+    "./lists/LinkedList": "./lists/LinkedList.ts"
+  },
   "scripts": {},
   "dependencies": {
     "@bennie-ui/constants": "workspace:*"
