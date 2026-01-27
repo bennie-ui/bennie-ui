@@ -4,7 +4,10 @@
   "main": "src/index.ts",
   "scripts": {},
   "dependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "@bennie-ui/constants": "workspace:*",
+    "@bennie-ui/section": "workspace:*"
+
   },
   "devDependencies": {}
 }

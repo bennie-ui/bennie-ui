@@ -64,6 +64,19 @@ export const buttonSizes = {
   }),
 };
 
+// Define all button rounded styles statically
+export const buttonRounded = {
+  sm: css({
+    rounded: "sm",
+  }),
+  md: css({
+    rounded: "md",
+  }),
+  lg: css({
+    rounded: "lg",
+  }),
+};
+
 // Base button styles - reset baseline.css button styles
 export const buttonBase = css({
   cursor: "pointer",

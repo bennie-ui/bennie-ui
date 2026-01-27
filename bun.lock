@@ -54,6 +54,8 @@
       "name": "@bennie-ui/button",
       "version": "1.0.0",
       "dependencies": {
+        "@bennie-ui/constants": "workspace:*",
+        "@bennie-ui/section": "workspace:*",
         "react": "^18.2.0",
       },
     },
@@ -88,6 +90,13 @@
     "libraries/constants": {
       "name": "@bennie-ui/constants",
       "version": "1.0.0",
+    },
+    "libraries/data-structures": {
+      "name": "@bennie-ui/ds",
+      "version": "1.0.0",
+      "dependencies": {
+        "@bennie-ui/constants": "workspace:*",
+      },
     },
     "libraries/types": {
       "name": "@bennie-ui/types",
@@ -145,6 +154,8 @@
     "@bennie-ui/button": ["@bennie-ui/button@workspace:components/primitives/button"],
 
     "@bennie-ui/constants": ["@bennie-ui/constants@workspace:libraries/constants"],
+
+    "@bennie-ui/ds": ["@bennie-ui/ds@workspace:libraries/data-structures"],
 
     "@bennie-ui/icons": ["@bennie-ui/icons@workspace:components/primitives/icons"],
 

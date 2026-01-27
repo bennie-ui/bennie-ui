@@ -24,7 +24,6 @@ export const Input: FC<InputProperties> = (properties: InputProperties) => {
     properties.onChange && properties.onChange(event);
   };
 
-  // Build input className
   const inputClassName = cx(
     inputBase,
     properties.css && css(properties.css),
@@ -43,7 +42,7 @@ export const Input: FC<InputProperties> = (properties: InputProperties) => {
         placeholder={placeholder}
         onChange={handleOnChange}
         className={inputClassName}
-        value={properties.value}
+        value={state}
         {...attributes}
       />
       {state != "" && withClearMark && (
@@ -53,7 +52,7 @@ export const Input: FC<InputProperties> = (properties: InputProperties) => {
             setState("");
           }}
         >
-          <Icon 
+          <Icon
             figure="XMarkIcon"
             className={css({ color: "black" })}
           />

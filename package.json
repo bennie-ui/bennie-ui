@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "panda cssgen --outfile=.storybook/panda-generated.css && storybook build",
-    "codegen": "panda codegen",
+    "codegen": "panda codegen --watch",
     "deploy": "wrangler pages deploy ./storybook-static",
     "start": "wrangler pages dev ./storybook-static",
     "dev": "panda cssgen --outfile=.storybook/panda-generated.css && storybook dev -p 6006"

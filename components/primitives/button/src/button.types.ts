@@ -14,6 +14,8 @@ export type ButtonVariant =
 
 export type ButtonSize = "small" | "medium" | "large";
 
+export type ButtonRounded = "sm" | "md" | "lg";
+
 export interface ButtonAttributes {
   className?: string;
   id?: string;
@@ -30,6 +32,7 @@ export interface ButtonProperties {
   disabled?: boolean;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  rounded?: ButtonRounded | boolean;
   fullWidth?: boolean;
   onClick?: (event: SyntheticEvent) => void;
 }

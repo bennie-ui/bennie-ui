@@ -696,6 +696,10 @@
 
 @layer utilities{
 
+  .bd_1px {
+    border: 1px;
+}
+
   .p_2 {
     padding: var(--spacing-2);
 }
@@ -728,8 +732,28 @@
     background: linear-gradient(to right, blue.400, purple.600);
 }
 
+  .py_4 {
+    padding-block: var(--spacing-4);
+}
+
   .px_4 {
     padding-inline: var(--spacing-4);
+}
+
+  .border-style_solid {
+    border-style: solid;
+}
+
+  .bd-c_gray\.400 {
+    border-color: var(--colors-gray-400);
+}
+
+  .bdr_md {
+    border-radius: var(--radii-md);
+}
+
+  .bd-b_1px {
+    border-bottom: 1px;
 }
 
   .py_2 {
@@ -744,20 +768,20 @@
     padding-block: var(--spacing-3);
 }
 
-  .ring_none {
-    outline: var(--borders-none);
+  .bdr_sm {
+    border-radius: var(--radii-sm);
 }
 
   .bdr_lg {
     border-radius: var(--radii-lg);
 }
 
-  .px_3 {
-    padding-inline: var(--spacing-3);
+  .ring_none {
+    outline: var(--borders-none);
 }
 
-  .bdr_md {
-    border-radius: var(--radii-md);
+  .px_3 {
+    padding-inline: var(--spacing-3);
 }
 
   .bd-c_gray\.300 {
@@ -784,10 +808,6 @@
     gap: 1rem;
 }
 
-  .bdr_sm {
-    border-radius: var(--radii-sm);
-}
-
   .bd-b_2px_solid {
     border-bottom: 2px solid;
 }
@@ -806,6 +826,22 @@
 
   .td_none {
     text-decoration: none;
+}
+
+  .ta_left {
+    text-align: left;
+}
+
+  .d_flex {
+    display: flex;
+}
+
+  .flex-d_row {
+    flex-direction: row;
+}
+
+  .jc_space-between {
+    justify-content: space-between;
 }
 
   .c_white {
@@ -891,18 +927,6 @@
 
   .fs_lg {
     font-size: var(--font-sizes-lg);
-}
-
-  .d_flex {
-    display: flex;
-}
-
-  .flex-d_row {
-    flex-direction: row;
-}
-
-  .jc_space-between {
-    justify-content: space-between;
 }
 
   .pos_relative {
@@ -1055,6 +1079,10 @@
     color: red;
 }
 
+  .w_fit-content {
+    width: fit-content;
+}
+
   .w_full {
     width: var(--sizes-full);
 }
@@ -1109,6 +1137,10 @@
 
   .pb_2 {
     padding-bottom: var(--spacing-2);
+}
+
+  .\[\&_td\,_\&_th\]\:p_2 td,.\[\&_td\,_\&_th\]\:p_2 th {
+    padding: var(--spacing-2);
 }
 
   .disabled\:bg-c_gray\.100:is(:disabled, [disabled], [data-disabled], [aria-disabled=true]) {

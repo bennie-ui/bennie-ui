@@ -3,29 +3,30 @@ import { Section } from '@bennie-ui/section'
 import { Button } from '@bennie-ui/button'
 import { css } from "styled-system/css";
 
-
 ## Example
 
 ```
-<Button action='primary'>content</Button>
+<Button variant='primary'>content</Button>
 ```
-
 
 # Compiled examples 
 <Unstyled>
-  <Button action='primary' className={css({ rounded: 'md' })}>
+  <Button variant='primary' rounded="lg">
+     LG rounded
+  </Button>
+</Unstyled>
+<br/>
+
+<Unstyled>
+  <Button variant='primary' rounded="md">
      MD rounded
   </Button>
 </Unstyled>
 <br/>
+
 <Unstyled>
-  <Button action='primary' className={css({ rounded: 'sm' })}>
+  <Button variant='primary' rounded="sm">
      SM rounded
   </Button>
 </Unstyled>
-
-
-
-
-
 
