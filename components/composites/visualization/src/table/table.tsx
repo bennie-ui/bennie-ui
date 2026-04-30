@@ -1,29 +1,31 @@
-import { FC, ReactElement } from "react";
-import { Section } from '@bennie-ui/section'
-import { TableStyles } from './table.styles'
-import { TableHeader } from './table.header'
-import { TableBody } from './table.body'
-import { getChildrenByDisplayName } from './table.utils'
-import { TableProperties, TableCellProps, TableToolbarProps } from './table.types'
+import { FC, ReactElement, ReactNode } from "react";
+import { TableProvider } from "./context";
+import { TableStyles } from "./table.styles";
+import { TableHeader } from "./table.header";
+import { TableBody } from "./table.body";
+import { getChildrenByDisplayName } from "./table.utils";
+import { TableCellProps } from "./table.types";
 
+export const TableCell: FC<TableCellProps> = () => null;
+TableCell.displayName = "TableCell";
 
-export const TableCell: FC<TableCellProps> = () => <></>
-TableCell.displayName = "TableCell"
-
-export const Table: FC<TableProperties> = ({ children }) => {
-  const TableToolbar = getChildrenByDisplayName(children, "TableToolbar");
-  const TableCells = getChildrenByDisplayName(children, "TableCell") as ReactElement<TableCellProps>[];
-
-  return <Section className={TableStyles.main_container}>
-    {TableToolbar}
+// Internal — renders the table markup, reads data from context
+export const TableInner: FC<{ children: ReactNode }> = ({ children }) => {
+  const cells = getChildrenByDisplayName(children, "TableCell") as ReactElement<TableCellProps>[];
+  return (
     <table className={TableStyles.table}>
-      <TableHeader cells={TableCells} />
-      <TableBody cells={TableCells} />
-      <tfoot>
-      </tfoot>
+      <TableHeader cells={cells} />
+      <TableBody cells={cells} />
     </table>
-  </Section>
+  );
+};
+
+// Public — standalone usage with an explicit data prop
+export function Table<T extends Record<string, unknown>>({ data, children }: { data: T[]; children: ReactNode }) {
+  return (
+    <TableProvider data={data}>
+      <TableInner>{children}</TableInner>
+    </TableProvider>
+  );
 }
-Table.displayName = "Table"
-
-
+Table.displayName = "Table";

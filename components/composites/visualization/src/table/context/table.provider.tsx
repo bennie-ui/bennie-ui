@@ -1,37 +1,28 @@
-import { ReactNode, useReducer, useEffect } from 'react'
-import { TableContext } from './table.context'
-import reducer from './table.reducer'
+import { ReactNode, useReducer, useEffect } from "react";
+import { TableContext } from "./table.context";
+import reducer from "./table.reducer";
 
 type TableProviderProps = {
-  data: any[]
-  children: ReactNode
-}
+  data: any[];
+  children: ReactNode;
+};
 
-const initialState = {
-  results: [],
-  search: '',
-  filtered_results: []
-}
+const init = (data: any[]) => ({
+  results: data,
+  search: "",
+  filtered_results: data,
+});
 
 export const TableProvider = ({ children, data }: TableProviderProps) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
-
-  const { filtered_results } = state
-
-  const filter = (search: string) => {
-    dispatch({ type: 'filter', payload: { search, field: 'first_name' } })
-  }
+  const [state, dispatch] = useReducer(reducer, data, init);
 
   useEffect(() => {
-    dispatch({ type: 'init', payload: data })
-  }, [data])
+    dispatch({ type: "init", payload: data });
+  }, [data]);
 
   return (
-    <TableContext.Provider value={{
-      results: filtered_results,
-      filter
-    }}>
+    <TableContext.Provider value={{ results: state.filtered_results, filter: (search) => dispatch({ type: "filter", payload: { search, field: "" } }) }}>
       {children}
     </TableContext.Provider>
-  )
-}
+  );
+};

@@ -1,23 +1,20 @@
 import { FC, isValidElement } from "react";
-import { css } from 'styled-system/css';
-import { TableHeaderProps, TableCellProps } from './table.types'
+import { TableHeaderProps, TableCellProps } from "./table.types";
+import { TableStyles } from "./table.styles";
 
-export const TableHeader: FC<TableHeaderProps> = ({ cells }) => {
-  return <thead>
+export const TableHeader: FC<TableHeaderProps> = ({ cells }) => (
+  <thead>
     <tr>
-      {
-        cells.map((cell, idx) => {
-          if (isValidElement<TableCellProps>(cell)) {
-            const { name, header } = cell.props
-            return <th key={idx}
-              className={css({ textAlign: "left" })}>
-              {header || name}
-            </th>
-          }
-          return null
-        })
-      }
+      {cells.map((cell) => {
+        if (!isValidElement<TableCellProps>(cell)) return null;
+        const { name, header } = cell.props;
+        return (
+          <th key={name} className={TableStyles.th}>
+            {header ?? name}
+          </th>
+        );
+      })}
     </tr>
   </thead>
-}
-TableHeader.displayName = "TableHeader"
+);
+TableHeader.displayName = "TableHeader";

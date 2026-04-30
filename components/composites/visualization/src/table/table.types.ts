@@ -1,21 +1,19 @@
 import { ReactElement, ReactNode } from "react";
 
-export type TableConfig = {}
-
 export type TableProperties = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export type TableHeaderProps = {
-  cells: ReactElement<TableCellProps>[]
-}
-
-export type TableToolbarProps = {
-}
+  cells: ReactElement<TableCellProps>[];
+};
 
 export type TableBodyProps = {
-  cells: ReactNode[]
-}
+  cells: ReactElement<TableCellProps>[];
+};
 
-export type TableCellProps = { name: string, header?: string }
-
+export type TableCellProps<T = Record<string, unknown>> = {
+  name: string;
+  header?: string;
+  children?: (row: T, index: number, rows: T[]) => ReactNode;
+};
