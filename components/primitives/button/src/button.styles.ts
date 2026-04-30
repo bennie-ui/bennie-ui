@@ -47,6 +47,7 @@ export const buttonVariants = {
     backgroundColor: "black",
     _hover: { backgroundColor: "gray.900" },
   }),
+  unstyled: css({}),
 };
 
 // Define all button size styles statically

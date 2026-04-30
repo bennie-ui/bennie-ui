@@ -1,0 +1,92 @@
+import { Unstyled } from "@storybook/blocks";
+import { Section } from "@bennie-ui/section";
+import { Card, CardHeaderRight, CardContent, CardFooter, CardFooterLeft, CardFooterRight } from "@bennie-ui/card";
+import { css } from "styled-system/css";
+
+## Example
+
+```tsx
+<Card title="Section title">
+  <CardHeaderRight>Jan 1</CardHeaderRight>
+  <CardContent>Main body content.</CardContent>
+  <CardFooter>
+    <CardFooterLeft>Footer note</CardFooterLeft>
+    <CardFooterRight>Updated today</CardFooterRight>
+  </CardFooter>
+</Card>
+```
+
+## Slot components
+
+`Card` accepts a `title` prop for the header text and an optional `CardHeaderRight` slot for right-aligned header content. `CardFooter` uses `getChildrenByDisplayName` to place `Left` and `Right` slots into the correct positions. Header and footer text inherits default styles (`sm / 600 / slate.400 / uppercase`); children with an explicit `className` override them.
+
+```tsx
+<Card title="Recent entries">
+  <CardHeaderRight>
+    <span className={css({ color: "blue.400", textTransform: "none" })}>View all</span>
+  </CardHeaderRight>
+</Card>
+```
+
+## Default styles
+
+Header and footer inherit their text styles by default — no className needed on slot children.
+
+```tsx
+<Card title="Section title">
+  <CardHeaderRight>Jan 1</CardHeaderRight>
+</Card>
+
+<CardFooter>
+  <CardFooterLeft>Footer note</CardFooterLeft>
+  <CardFooterRight>Updated today</CardFooterRight>
+</CardFooter>
+```
+
+# Compiled examples
+
+<Unstyled>
+  <Section className={css({ display: "flex", flexDirection: "column", gap: "1rem", maxWidth: "400px" })}>
+
+    <Card title="Header only" />
+
+    <Card title="Header — default styles">
+      <CardHeaderRight>Jan 1</CardHeaderRight>
+    </Card>
+
+    <Card>
+      <CardContent>
+        <p style={{ color: "#94A3B8", fontSize: 14 }}>Content only — no header.</p>
+      </CardContent>
+      <CardFooter>
+        <CardFooterLeft>Footer — default styles</CardFooterLeft>
+        <CardFooterRight>Updated today</CardFooterRight>
+      </CardFooter>
+    </Card>
+
+    <Card title="Section title">
+      <CardHeaderRight>Slot right</CardHeaderRight>
+      <CardContent>
+        <p style={{ color: "#94A3B8", fontSize: 14 }}>Content area.</p>
+      </CardContent>
+    </Card>
+
+    <Card title="Full card">
+      <CardHeaderRight>Jan 1</CardHeaderRight>
+      <CardContent>
+        <p style={{ color: "#94A3B8", fontSize: 14 }}>Content area.</p>
+      </CardContent>
+      <CardFooter>
+        <CardFooterLeft>Footer note</CardFooterLeft>
+        <CardFooterRight>Updated today</CardFooterRight>
+      </CardFooter>
+    </Card>
+
+    <Card title="Recent entries">
+      <CardHeaderRight>
+        <span className={css({ color: "blue.400", textTransform: "none" })}>View all</span>
+      </CardHeaderRight>
+    </Card>
+
+  </Section>
+</Unstyled>

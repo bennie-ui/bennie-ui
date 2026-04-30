@@ -4,6 +4,7 @@
   "main": "src/index.ts",
   "scripts": {},
   "dependencies": {
+    "@bennie-ui/composition": "workspace:*",
     "react": "^18.2.0"
   },
   "devDependencies": {}

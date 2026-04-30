@@ -1,5 +1,4 @@
-import { ReactNode, SyntheticEvent } from "react";
-import { DATA_TEST_ID } from "@bennie-ui/constants";
+import React, { ReactNode } from "react";
 
 export type ButtonVariant =
   | "neutral"
@@ -10,29 +9,18 @@ export type ButtonVariant =
   | "warning"
   | "info"
   | "light"
-  | "dark";
+  | "dark"
+  | "unstyled";
 
 export type ButtonSize = "small" | "medium" | "large";
 
 export type ButtonRounded = "sm" | "md" | "lg";
 
-export interface ButtonAttributes {
-  className?: string;
-  id?: string;
-  [DATA_TEST_ID]?: string;
-  onClick?: (event: SyntheticEvent) => void;
-  disabled?: boolean;
-}
-
-export interface ButtonProperties {
-  id?: string;
+export interface ButtonProperties extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
-  className?: string;
   dataTestId?: string;
-  disabled?: boolean;
   variant?: ButtonVariant;
   size?: ButtonSize;
   rounded?: ButtonRounded | boolean;
   fullWidth?: boolean;
-  onClick?: (event: SyntheticEvent) => void;
 }

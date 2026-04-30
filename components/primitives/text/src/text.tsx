@@ -1,38 +1,11 @@
 import { FC } from "react";
 import { css } from "styled-system/css";
-import { TextAttributes, TextProperties } from "./text.types";
-import { DATA_TEST_ID } from "@bennie-ui/constants";
+import { TextProperties } from "./text.types";
 
-const Text: FC<TextProperties> = (properties) => {
-  const attributes: TextAttributes = {};
-
-  const TagType = properties.tag || "span";
-
-  if (properties.id) {
-    attributes.id = properties.id;
-  }
-
-  if (properties.dataTestId) {
-    attributes[DATA_TEST_ID] = properties.dataTestId;
-  }
-
-  if (properties.onClick) {
-    attributes.onClick = properties.onClick;
-  }
-
-  // Combine custom className with Panda CSS styles
-  const className = [
-    properties.className,
-    properties.css ? css(properties.css) : undefined,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  if (className) {
-    attributes.className = className;
-  }
-
-  return <TagType {...attributes}>{properties.children}</TagType>;
+const Text: FC<TextProperties> = ({ tag, dataTestId, children, css: cssStyles, className, ...rest }) => {
+  const TagType = tag || "span";
+  const combinedClassName = [className, cssStyles ? css(cssStyles) : undefined].filter(Boolean).join(" ") || undefined;
+  return <TagType data-testid={dataTestId} className={combinedClassName} {...rest}>{children}</TagType>;
 };
 
 Text.displayName = "Text";

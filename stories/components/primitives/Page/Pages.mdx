@@ -1,0 +1,63 @@
+import { Unstyled } from "@storybook/blocks";
+import { Page, PageActions, PageContent, PageFooter } from "@bennie-ui/page";
+import { css } from "styled-system/css";
+
+## Example
+
+```tsx
+<Page title="Page title" subtitle="Subtitle text">
+  <PageActions>
+    <SomeControl />
+  </PageActions>
+  <PageContent>
+    {/* charts, tables, forms, etc. */}
+  </PageContent>
+  <PageFooter>
+    <SomeControl />
+  </PageFooter>
+</Page>
+```
+
+## Slot components
+
+`Page` accepts a `title` prop and an optional `subtitle`. The `PageActions` slot is extracted and placed in the top-right of the header. All other slots (`PageContent`, `PageFooter`) render in document order below the header.
+
+```tsx
+<Page title="Page title">
+  <PageActions>
+    <button>Action</button>
+  </PageActions>
+  <PageContent>
+    <p>Content here.</p>
+  </PageContent>
+</Page>
+```
+
+## Slots
+
+| Slot | Position | Purpose |
+|---|---|---|
+| `PageActions` | Header right | Controls like toggles or buttons |
+| `PageContent` | Main area | Charts, tables, forms |
+| `PageFooter` | Bottom | Secondary controls, pagination |
+
+# Compiled examples
+
+<Unstyled>
+
+  <Page title="Title only" />
+
+  <Page title="Page title" subtitle="Subtitle text · last updated today" />
+
+  <Page title="Page title">
+    <PageActions>
+      <button style={{ padding: "4px 12px", borderRadius: 6, fontSize: 12, background: "#1E293B", color: "#94A3B8", border: "1px solid #2A2A3D", cursor: "pointer" }}>
+        Action
+      </button>
+    </PageActions>
+    <PageContent>
+      <p style={{ color: "#94A3B8", fontSize: 14 }}>Content area.</p>
+    </PageContent>
+  </Page>
+
+</Unstyled>

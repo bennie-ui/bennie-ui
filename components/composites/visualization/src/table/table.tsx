@@ -1,4 +1,4 @@
-import { FC, ReactNode, Children, isValidElement, ReactElement } from "react";
+import { FC, ReactElement } from "react";
 import { Section } from '@bennie-ui/section'
 import { TableStyles } from './table.styles'
 import { TableHeader } from './table.header'

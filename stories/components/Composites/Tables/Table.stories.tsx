@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useTable } from "@bennie-ui/tables";
+import { useTable } from "@bennie-ui/visualization";
 
 // Sample data types
 type User = {
@@ -41,7 +41,7 @@ const TableWrapper = ({ data, cells }: { data: any[], cells: Array<{ name: strin
 };
 
 const meta: Meta<typeof TableWrapper> = {
-  title: "Components/Composites/Tables/Table",
+  title: "Components/Composites/Visualization/Table",
   component: TableWrapper,
   tags: ["autodocs"],
   parameters: {

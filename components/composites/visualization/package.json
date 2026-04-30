@@ -1,0 +1,15 @@
+{
+  "name": "@bennie-ui/visualization",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {},
+  "dependencies": {
+    "@bennie-ui/card": "workspace:*",
+    "@bennie-ui/composition": "workspace:*",
+    "@bennie-ui/types": "workspace:*",
+    "@bennie-ui/units": "workspace:*",
+    "react": "^18.2.0",
+    "recharts": "^2.15.0"
+  },
+  "devDependencies": {}
+}
